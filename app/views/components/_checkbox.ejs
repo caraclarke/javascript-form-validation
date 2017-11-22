@@ -3,7 +3,7 @@
   <span class="checkbox block">
     <label for="<%= item.id %>" class="check-radio-label <%= item.class %>">
       <%- item.label %>
-    <input class="js-error checkbox-field" id="<%= item.id %>" name="<%= item.name %>" type="checkbox"
+    <input class="js-validate checkbox-field" id="<%= item.id %>" name="<%= item.name %>" type="checkbox"
       <%if ( item.dataRqName ) { %> data-reqname="<%= item.dataRqName %>" <% } %>
       <%= item.required %>
       <%= item.checked %> />
