@@ -158,7 +158,7 @@ gulp.task('watch', ['browserSync', 'sass'], function() {
   gulp.watch('app/scss/**/*.scss', ['sass']);
   gulp.watch('app/images/icons/preview.html', ['move:icons']);
   gulp.watch('app/views/**/*.ejs', ['ejs']);
-  gulp.watch(['app/js/**/*.js', '!app/js/build', '!app/js/build/**'], ['clean:js', 'js']);
+  gulp.watch(['app/js/*.js', 'app/js/validation/*.js', '!app/js/build', '!app/js/build/**'], ['clean:js', 'js']);
   gulp.watch('app/js/**/*.json', ['ejs']);
 });
 
