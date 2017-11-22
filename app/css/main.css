@@ -9799,3 +9799,11 @@ declaration-block-trailing-semicolon  */
 /**
 * Breakpoints
 */
+/***************************
+  STYLES
+****************************/
+html {
+  font-size: 16px; }
+
+.js-form-valid {
+  margin-top: 40px; }
