@@ -1,0 +1,15 @@
+{
+  "name": "form-validation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@ux-gitlab.ilab.cvscaremark.com:caraclarke/form-validation.git"
+  },
+  "author": "Cara Clarke <cara.clarke@cvshealth.com> (https://github.com/caraclarke)",
+  "license": "ISC"
+}

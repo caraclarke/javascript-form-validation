@@ -1,0 +1,26 @@
+.sass-cache/
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+tmp
+.DS_Store
+.idea
+npm-debug.log
+snapshots/*
+!app/vendor/*/dist/
+
+# ignore compiled js/css file in app folder #
+# app/css/main.css #
+# app/js/build #
+
+# dont need because committing build index.html #
+# app/*.html
+
+# ignore files moved incorrectly on error #
+app/*.ejs
+
+build/*
+
+repo-info.png
+proxy_map.js
