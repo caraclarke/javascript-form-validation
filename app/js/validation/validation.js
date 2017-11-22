@@ -6,8 +6,11 @@ form.forEach( (item) => {
   item.setAttribute("novalidate", true);
 });
 console.log("HEY")
+
 // EVENT LISTENERS
 document.addEventListener( "blur", ( e ) => {
+  e.stopPropagation();
+
   // return if form doesnt have validation flag
   if ( !e.target.form.classList.contains("js-form-valid") ) { return; }
 
