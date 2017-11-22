@@ -1,0 +1,229 @@
+/* ------------------------------------ *\
+    #MIXINS
+\* ------------------------------------ */
+
+@mixin transform-origin ($origin) {
+  -moz-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin rotate($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+@mixin transition-no-prop( $duration, $ease ) {
+  -webkit-transition: $duration $ease;
+  -moz-transition: $duration $ease;
+  -o-transition: $duration $ease;
+  transition: $duration $ease;
+}
+
+@mixin user-select( $value ) {
+  -webkit-touch-callout: $value;
+  -webkit-user-select: $value;
+  -khtml-user-select: $value;
+  -moz-user-select: $value;
+  -ms-user-select: $value;
+}
+
+/** CSS Transition
+ *  Usage: @include transition(width,0.3s,ease-out);
+ */
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
+/** Rem Unit font sizes with relative fallback http:/seesparkbox.com/foundry/scss_rem_mixin_now_with_a_better_fallback
+ *  Usage: @include font-size(1, large);
+ */
+@mixin font-size( $decimal-size, $keyword: null ) {
+  @if $keyword { font-size: $keyword; }
+  @else { font-size: $decimal-size * $base-font-multiplier * 16px; }
+
+  font-size: $decimal-size * 1rem;
+}
+
+/* stylelint-disable declaration-block-no-duplicate-properties */
+@mixin inline-block {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+/* stylelint-enable */
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin opacity($opacity) {
+  filter: alpha(opacity=$opacity*100);
+  opacity: $opacity;
+}
+
+@mixin appearance($appearance...) {
+  -webkit-appearance: $appearance;
+  -moz-appearance: $appearance;
+  -ms-appearance: $appearance;
+  -o-appearance: $appearance;
+  appearance: $appearance;
+
+  @if $appearance == none {
+    &::-ms-expand { display: none; }
+  }
+}
+
+@mixin placeholder($color) {
+  ::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  :-moz-placeholder {
+    color: $color;
+  }
+
+  ::-moz-placeholder {
+    color: $color;
+  }
+
+  :-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
+@mixin transform($transforms...) {
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -1px;
+}
+
+@mixin btn-link {
+  background: none;
+  border: 0 none;
+  color: $link-color;
+  text-decoration: none;
+  font-size: font(14);
+  font-weight: bold;
+  @include inline-block;
+
+  padding: 12px 10px;
+  line-height: $line-height-base;
+  @include transition(color, 0.15s, ease-in-out);
+
+  &:hover {
+    background-image: none;
+    border: 0 none;
+    text-decoration: none;
+    color: $link-hover;
+  }
+
+  &:active,
+  &:focus {
+    background-image: none;
+    border: 0 none;
+    text-decoration: none;
+  }
+}
+
+@mixin btn-img {
+  position: relative;
+
+  &:before {
+    content: "";
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-color: $color-black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+// SPC Specific
+@mixin autopay-row {
+  position: relative;
+  border-bottom: 1px solid $color-gray-15;
+  padding: 20px 50px 20px (24px + 10px);
+
+  * {
+    margin: 0;
+  }
+
+  > * {
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  > h3 {
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+
+  & > svg {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 20px;
+    left: 0;
+  }
+
+  & > svg + * {
+    color: $color-gray-65;
+  }
+
+  & a {
+    @include btn-link;
+
+    position: absolute;
+    z-index: 2;
+    top: 20px - 12px;
+    right: 0;
+  }
+
+  // Desktop
+  @media (min-width: 768px) {
+    & a,
+    & .edit-txt-link { position: static; }
+  }
+}
