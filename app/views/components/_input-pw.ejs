@@ -1,0 +1,30 @@
+<div class="text-input-area col-xs-12 pd">
+  <label id="<%= input.id %>" class="<%= input.labelClass %>"><%= input.labelText %></label>
+  <div class="input-cont">
+
+    <input
+      id="<%= input.inputId %>"
+      aria-labelledby="<%= input.id %> <%= input.descId %>"
+      class="text-field js-error <%= input.class %>"
+      name="<%= input.name %>"
+      type="<%= input.type %>"
+      placeholder="<%= input.placeholder %>"
+      <%if ( input.pattern ) { %> pattern="<%= input.pattern %>" <% } %>
+      <%if ( input.dataRqName ) { %> data-reqname="<%= input.dataRqName %>" <% } %>
+      <%if ( input.title ) { %> data-title="<%= input.title %>" <% } %>
+      <%if ( input.readOnly ) { %> <%= input.readOnly %> <% } %>
+      <%if ( input.minlength ) { %> minlength="<%= input.minlength %>" <% } %>
+      <%if ( input.maxlength ) { %> maxlength="<%= input.maxlength %>" <% } %>
+      <%= input.required %> />
+
+    <a class="pw-show <%= input.jsClass %>">Show</a>
+
+  <%if ( input.descText ) { %>
+    <div class="input-desc" id="<%= input.descId %>">
+      <p><%- input.descText %></p>
+    </div>
+  <% } %>
+
+  </div>
+
+</div>

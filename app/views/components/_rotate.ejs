@@ -1,0 +1,27 @@
+<div class="comm-q pd col-xs-12">
+  <ul class="pd col-xs-12">
+    <% question.questions.forEach(function(item) { %>
+    <li class="pd col-xs-12">
+      <div class="question col-xs-12">
+        <div class="icons inline-block <%= item.iconClass %>">
+          <span class="icon icon--right-solid-arrow"></span>
+        </div>
+
+        <div class="inline-block <%= item.questionClass %>"
+          tabindex="0"
+          role="button">
+          <p class="q-text">
+            <strong><%- item.question %></strong>
+          </p>
+        </div>
+
+        <div role="note" class="question-content pd col-xs-12"
+          aria-hidden="true"
+          aria-expanded="false">
+            <%- item.answer %>
+        </div>
+      </div>
+    </li>
+    <% }) %>
+  </ul>
+</div>

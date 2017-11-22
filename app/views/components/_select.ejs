@@ -1,0 +1,16 @@
+<div class="selection-area <%= select.topClass %>">
+
+<label for="<%= select.selectId %>"><%- select.selectLabel %>
+  <select
+    id="<%= select.selectId %>"
+    class="form_fieldset_form-group_select form-control js-select--control"
+    name="<%= select.selectName %>"
+    <%= select.required %> >
+
+    <% select.options.forEach(function(item) { %>
+      <option class="js-select--option" value="<%= item.value %>"><%- item.text %></option>
+    <% }); %>
+  </select>
+</label>
+
+</div>
