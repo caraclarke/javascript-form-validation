@@ -78,7 +78,7 @@ gulp.task('ejs', ['clean:ejs'], function() {
     }))
 });
 
-gulp.task('js', ['lint', 'validations'], function() {
+gulp.task('js', ['lint', 'validations', 'move:polyfills'], function() {
   return gulp.src(['app/js/*.js', '!app/js/*-polyfill.js'])
     .pipe(babel({
       presets: ['env']

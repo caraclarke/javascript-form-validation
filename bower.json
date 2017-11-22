@@ -1,0 +1,21 @@
+{
+  "name": "form-validation",
+  "description": "form validation examples",
+  "main": "index.js",
+  "authors": [
+    "CVS UX Team"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "bootstrap": "^3.3.7"
+  }
+}
