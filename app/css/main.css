@@ -9802,6 +9802,58 @@ declaration-block-trailing-semicolon  */
 /***************************
   STYLES
 ****************************/
+.text-input-area .text-field {
+  border: 2px solid #ccc;
+  background: #fff;
+  color: #333; }
+  .text-input-area .text-field .error {
+    border-color: #c00;
+    background: #fcf2f2; }
+  .text-input-area .text-field:active, .text-input-area .text-field:focus {
+    border-color: #000; }
+    .text-input-area .text-field:active.error, .text-input-area .text-field:focus.error {
+      border-color: #c00; }
+
+.text-input-area .text-field ~ .error-message {
+  display: none;
+  visibility: hidden; }
+
+.text-input-area .text-field.error ~ .error-message {
+  display: block;
+  visibility: visible;
+  color: #c00; }
+
+.checkbox-input-area .checkbox-help {
+  display: none;
+  visibility: hidden; }
+
+.checkbox-input-area .btn-tandc + .error-message {
+  color: #c00; }
+
+.checkbox-input-area input.error ~ .error-message {
+  color: #c00;
+  margin-top: 8px; }
+
+.checkbox-input-area input.error ~ .fake-input:before {
+  border: 2px solid #c00;
+  background: rgba(204, 0, 0, 0.1); }
+
+.radio-input-area.error .h4 {
+  color: #000; }
+
+.radio-input-area .error-message {
+  display: none;
+  visibility: hidden; }
+
+.radio-input-area.error .radio-button input + .fake-input:before {
+  -webkit-box-shadow: 0 0 0 2px #c00;
+  box-shadow: 0 0 0 2px #c00;
+  border: 2px solid rgba(204, 0, 0, 0.1);
+  background: rgba(204, 0, 0, 0.1); }
+
+.radio-input-area.error .error-message {
+  color: #c00; }
+
 html {
   font-size: 16px; }
 
