@@ -5,7 +5,8 @@ const form = document.querySelectorAll( ".js-form-valid" );
 form.forEach( (item) => {
   item.setAttribute("novalidate", true);
 });
-console.log("HEY")
+alert("HEY");
+console.log("yo");
 
 // EVENT LISTENERS
 document.addEventListener( "blur", ( e ) => {
@@ -15,5 +16,5 @@ document.addEventListener( "blur", ( e ) => {
   if ( !e.target.form.classList.contains("js-form-valid") ) { return; }
 
   const error = e.target.validity;
-  console.log({error});
+  console.log({ error });
 }, true);

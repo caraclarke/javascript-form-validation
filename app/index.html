@@ -14,7 +14,7 @@
 
 <div class="col-xs-12">
   <form id="example-form" class="js-form-valid col-xs-12 col-md-7">
-    
+
     <div class="text-input-area pd col-md-11 col-xs-12 ">
   <label for="input-benefit-fn" id="benefit-first-name" class="">First Name</label>
 
@@ -25,25 +25,25 @@
     name="firstName"
     type="text"
     placeholder="First Name"
-    
-     pattern="^[a-zA-Z\s\-&#39;]*$" 
-     data-reqname="First name" 
-     data-title="Enter a valid name with letters only." 
-    
-    
-     maxlength="30" 
+
+     pattern="^[a-zA-Z\s\-&#39;]*$"
+     data-reqname="First name"
+     data-title="Enter a valid name with letters only."
+
+
+     maxlength="30"
     required />
 
-  
+
     <div class="input-desc" id="benefit-fn-text">
       <p>Enter your full first name, not a nickname</p>
     </div>
-  
+
 </div>
 
 
     <div class="pd col-md-3 col-xs-12 primary-btn-wrap">
-      
+
       <button class="primary-btn btn-block" id="reg-btn" type="submit">Continue</button>
 
       </div>
@@ -53,9 +53,10 @@
 
   </div>
 
+    <script type="text/javascript" src="./js/build/node-polyfill.js"></script>
     <!-- build:js js/validation.min.js -->
       <script type="text/javascript" src="./js/build/validity-polyfill.js"></script>
-      <script type="text/javascrupt" src="./js/build/validation-main.js"></script>
+      <script type="text/javascript" src="./js/build/validation.js"></script>
     <!-- endbuild -->
   </body>
 </html>
