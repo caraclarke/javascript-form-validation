@@ -8,8 +8,30 @@ form.forEach(function (item) {
   item.setAttribute("novalidate", true);
 });
 
-// SHOW THE ERROR
-var showError = function showError(field, error) {
+// REMOVE THE ERROR MESSAGE
+var removeErrorMessage = function removeErrorMessage(field) {
+  // Remove error class to field
+  field.classList.remove('error');
+
+  // Remove ARIA role from the field
+  field.removeAttribute('aria-describedby');
+
+  // Get field id or name
+  var id = field.id || field.name;
+  if (!id) return;
+
+  // Check if an error message is in the DOM
+  var message = field.form.querySelector('.error-message#error-for-' + id + '');
+  if (!message) return;
+
+  // If so, hide it
+  message.innerHTML = '';
+  message.style.display = 'none';
+  message.style.visibility = 'hidden';
+};
+
+// SHOW THE ERROR MESSAGE
+var showErrorMessage = function showErrorMessage(field, error) {
   // Add error class to field
   field.classList.add("error");
 
@@ -105,6 +127,10 @@ document.addEventListener("blur", function (e) {
   var error = checkForError(e.target);
 
   if (error) {
-    showError(e.target, error);
+    showErrorMessage(e.target, error);
+    return;
   }
+
+  // Otherwise, remove any existing error message
+  removeErrorMessage(event.target);
 }, true);
