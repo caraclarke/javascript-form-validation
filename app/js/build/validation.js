@@ -7,8 +7,6 @@ var form = document.querySelectorAll(".js-form-valid");
 form.forEach(function (item) {
   item.setAttribute("novalidate", true);
 });
-alert("HEY");
-console.log("yo");
 
 // EVENT LISTENERS
 document.addEventListener("blur", function (e) {
