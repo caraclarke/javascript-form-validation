@@ -10,48 +10,80 @@ form.forEach(function (item) {
 
 // REMOVE THE ERROR MESSAGE
 var removeErrorMessage = function removeErrorMessage(field) {
+  var errField = field;
+
   // Remove error class to field
-  field.classList.remove('error');
+  if (errField.type === "radio" && errField.name) {
+    errField.parentElement.parentElement.parentElement.classList.remove("error");
 
-  // Remove ARIA role from the field
-  field.removeAttribute('aria-describedby');
+    var group = document.getElementsByName(errField.name);
+    if (group.length > 0) {
+      group.forEach(function (item) {
+        if (item.form !== errField.form) {
+          item.classList.remove("error");
+        }
+      });
 
-  // Get field id or name
-  var id = field.id || field.name;
+      errField = group[group.length - 1];
+    }
+  } else {
+    errField.classList.remove("error");
+  }
+
+  // Remove ARIA role from the errField
+  errField.removeAttribute("aria-describedby");
+
+  // Get errField id or name
+  var id = errField.id || errField.name;
   if (!id) return;
 
   // Check if an error message is in the DOM
-  var message = field.form.querySelector('.error-message#error-for-' + id + '');
+  var message = errField.form.querySelector(".error-message#error-for-" + id);
   if (!message) return;
 
   // If so, hide it
-  message.innerHTML = '';
-  message.style.display = 'none';
-  message.style.visibility = 'hidden';
+  message.innerHTML = "";
+  message.style.display = "none";
+  message.style.visibility = "hidden";
 };
 
 // SHOW THE ERROR MESSAGE
 var showErrorMessage = function showErrorMessage(field, error) {
-  // Add error class to field
-  field.classList.add("error");
+  var errField = field;
 
-  // Get field id or name
-  var id = field.id || field.name;
+  if (errField.type === "radio" && errField.name) {
+    errField.parentElement.parentElement.parentElement.classList.add("error");
+
+    var group = document.getElementsByName(errField.name);
+    if (group.length > 0) {
+      group.forEach(function (item) {
+        if (item.form !== errField.form) {
+          item.classList.add("error");
+        }
+
+        errField = group[group.length - 1];
+      });
+    }
+  } else {
+    errField.classList.add("error");
+  }
+
+  // Get errField id or name
+  var id = errField.id || errField.name;
   if (!id) return;
 
-  // Check if error message field already exists
+  // Check if error message errField already exists
   // If not, create one
-  var message = field.form.querySelector(".error-message#error-for-" + id);
+  var message = errField.form.querySelector(".error-message#error-for-" + id);
   if (!message) {
     message = document.createElement("div");
     message.className = "error-message";
     message.id = "error-for-" + id;
-    field.parentNode.insertBefore(message, field.nextSibling);
+    errField.parentNode.insertBefore(message, errField.nextSibling);
   }
 
-  // Update error message and field
-  field.classList.add("error");
-  field.setAttribute("aria-describedby", "error-for-" + id);
+  // Update error message and errField
+  errField.setAttribute("aria-describedby", "error-for-" + id);
   message.innerHTML = error;
 
   // Show error message
