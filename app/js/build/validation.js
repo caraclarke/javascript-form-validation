@@ -166,3 +166,34 @@ document.addEventListener("blur", function (e) {
   // Otherwise, remove any existing error message
   removeErrorMessage(event.target);
 }, true);
+
+document.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Only run on forms flagged for validation
+  if (!e.target.classList.contains("validate")) return;
+
+  // Get all of the form elements
+  var fields = e.target.elements;
+
+  // Validate each field
+  // Store the first field with an error to a variable so we can bring it into focus later
+  var error, hasErrors;
+  for (var i = 0; i < fields.length; i++) {
+    error = hasError(fields[i]);
+    if (error) {
+      showErrorMessage(fields[i], error);
+      if (!hasErrors) {
+        hasErrors = fields[i];
+      }
+    }
+  }
+
+  // If there are errrors, dont submit form and focus on first element with error
+  if (hasErrors) {
+    hasErrors.focus();
+  }
+
+  // Otherwise, let the form submit normally
+  // You could also bolt in an Ajax form submit process here
+}, false);
