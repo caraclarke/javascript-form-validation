@@ -6,6 +6,36 @@ form.forEach( (item) => {
   item.setAttribute("novalidate", true);
 });
 
+// SHOW THE ERROR
+const showError = ( field, error ) => {
+  // Add error class to field
+  field.classList.add("error");
+
+  // Get field id or name
+  var id = field.id || field.name;
+  if (!id) return;
+
+  // Check if error message field already exists
+  // If not, create one
+  var message = field.form.querySelector(`.error-message#error-for-${ id }`);
+  if (!message) {
+    message = document.createElement("div");
+    message.className = "error-message";
+    message.id = "error-for-" + id;
+    field.parentNode.insertBefore( message, field.nextSibling );
+  }
+
+  // Update error message and field
+  field.classList.add("error");
+  field.setAttribute("aria-describedby", `error-for-${ id }`);
+  message.innerHTML = error;
+
+  // Show error message
+  message.style.display = "block";
+  message.style.visibility = "visible";
+}
+
+// GET THE ERROR
 const getError = ( validity ) => {
   /* eslint-disable curly, template-curly-spacing, consistent-return */
 
@@ -58,8 +88,8 @@ const checkForError = ( field ) => {
   if (field.disabled || field.type === "file" || field.type === "reset" || field.type === "submit" || field.type === "button") return;
 
   const validity = getError(field.validity);
-  console.log(validity);
-}
+  return validity;
+};
 
 // EVENT LISTENERS
 document.addEventListener( "blur", ( e ) => {
@@ -69,4 +99,8 @@ document.addEventListener( "blur", ( e ) => {
   if ( !e.target.form.classList.contains("js-form-valid") ) { return; }
 
   const error = checkForError( e.target );
+
+  if ( error ) {
+    showError( e.target, error );
+  }
 }, true);
