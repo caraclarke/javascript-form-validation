@@ -22,10 +22,10 @@ const getError = ( validity ) => {
   }
 
   // If too short
-  if (validity.tooShort) return "Please lengthen this text.";
+  if (validity.tooShort) return `Please lengthen this text to at least ${field.getAttribute("minLength")} characters`;
 
   // If too long
-  if (validity.tooLong) return "Please shorten this text.";
+  if (validity.tooLong) return `Please shorten this text to no more than ${field.getAttribute("maxLength")} characters`;
 
   // If number input isn"t a number
   if (validity.badInput) return "Please enter a number.";
@@ -34,13 +34,19 @@ const getError = ( validity ) => {
   if (validity.stepMismatch) return "Please select a valid value.";
 
   // If a number field is over the max
-  if (validity.rangeOverflow) return "Please select a smaller value.";
+  if (validity.rangeOverflow) return `Please enter a value that is no more than ${field.getAttribute("max")}`;
 
   // If a number field is below the min
-  if (validity.rangeUnderflow) return "Please select a larger value.";
+  if (validity.rangeUnderflow) return `Please enter a value that is no less than ${field.getAttribute("min")}`;
 
-  // If pattern doesn"t match
-  if (validity.patternMismatch) return "Please match the requested format.";
+  // If pattern doesnt match
+  if (validity.patternMismatch) {
+    // If pattern info is included, return custom error
+    if (field.hasAttribute("data-title")) return field.getAttribute("data-title");
+
+    // Otherwise, generic error
+    return "Please match the requested format";
+  }
 
   // If all else fails, return a generic catchall error
   return "The value you entered for this field is invalid.";
