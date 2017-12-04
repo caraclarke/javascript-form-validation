@@ -1,7 +1,12 @@
-// DOM ELEMENTS
+/* **************************
+  DOM VARIABLES
+  *************************** */
+
 const form = document.querySelectorAll( ".js-form-valid" );
 
-// BACKUP ADD NOVALIDATE TO FORM ON PAGE
+/* **************************
+  VALIDATION FUNCTIONS
+  *************************** */
 form.forEach( (item) => {
   item.setAttribute("novalidate", true);
 });
@@ -145,7 +150,9 @@ const checkForError = ( field ) => {
   return validity;
 };
 
-// EVENT LISTENERS
+/* **************************
+  EVENT LISTENERS
+  *************************** */
 document.addEventListener( "blur", ( e ) => {
   e.stopPropagation();
 

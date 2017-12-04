@@ -1,9 +1,14 @@
 "use strict";
 
-// DOM ELEMENTS
+/* **************************
+  DOM VARIABLES
+  *************************** */
+
 var form = document.querySelectorAll(".js-form-valid");
 
-// BACKUP ADD NOVALIDATE TO FORM ON PAGE
+/* **************************
+  VALIDATION FUNCTIONS
+  *************************** */
 form.forEach(function (item) {
   item.setAttribute("novalidate", true);
 });
@@ -147,7 +152,9 @@ var checkForError = function checkForError(field) {
   return validity;
 };
 
-// EVENT LISTENERS
+/* **************************
+  EVENT LISTENERS
+  *************************** */
 document.addEventListener("blur", function (e) {
   e.stopPropagation();
 
