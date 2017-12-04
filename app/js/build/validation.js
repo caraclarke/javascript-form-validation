@@ -184,27 +184,27 @@ document.addEventListener("submit", function (e) {
   e.preventDefault();
 
   // Only run on forms flagged for validation
-  if (!e.target.classList.contains("validate")) return;
+  if (!e.target.classList.contains("js-form-valid")) return;
 
   // Get all of the form elements
   var fields = e.target.elements;
 
   // Validate each field
   // Store the first field with an error to a variable so we can bring it into focus later
-  var error, hasErrors;
+  var error, hasError;
   for (var i = 0; i < fields.length; i++) {
-    error = hasError(fields[i]);
+    error = checkForError(fields[i]);
     if (error) {
       showErrorMessage(fields[i], error);
-      if (!hasErrors) {
-        hasErrors = fields[i];
+      if (!hasError) {
+        hasError = fields[i];
       }
     }
   }
 
   // If there are errrors, dont submit form and focus on first element with error
-  if (hasErrors) {
-    hasErrors.focus();
+  if (hasError) {
+    hasError.focus();
   }
 
   // Otherwise, let the form submit normally
