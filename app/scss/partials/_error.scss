@@ -4,7 +4,7 @@
     background: $color-white;
     color: $color-gray-paragraph;
 
-    .error {
+    &.error {
       border-color: $color-brand-primary;
       background: $color-brand-primary-lighter;
     }

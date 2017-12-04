@@ -16,18 +16,18 @@
   <form id="example-form" class="js-form-valid col-xs-12 col-md-7">
     
     <div class="text-input-area pd col-md-11 col-xs-12 ">
-  <label for="input-benefit-fn" id="benefit-first-name" class="">First Name</label>
+  <label for="input-fn" id="first-name" class="">First Name</label>
 
   <input
-    id="input-benefit-fn"
-    aria-labelledby="benefit-first-name benefit-fn-text"
+    id="input-fn"
+    aria-labelledby="first-name fn-text"
     class="text-field js-validate "
     name="firstName"
     type="text"
     placeholder="First Name"
     
      pattern="^[a-zA-Z\s\-&#39;]*$" 
-     data-reqname="First name" 
+     data-fieldName="First name" 
      data-title="Enter a valid name with letters only." 
     
     
@@ -35,8 +35,36 @@
     required />
 
   
-    <div class="input-desc" id="benefit-fn-text">
+    <div class="input-desc" id="fn-text">
       <p>Enter your full first name, not a nickname</p>
+    </div>
+  
+</div>
+
+
+    
+    <div class="text-input-area pd col-md-11 col-xs-12 ">
+  <label for="input-ln" id="last-name" class="">Last Name</label>
+
+  <input
+    id="input-ln"
+    aria-labelledby="last-name ln-text"
+    class="text-field js-validate "
+    name="lastName"
+    type="text"
+    placeholder="Last name"
+    
+     pattern="^[a-zA-Z\s\-&#39;]*$" 
+     data-fieldName="Last Name" 
+     data-title="Enter a valid name with letters only" 
+    
+    
+     maxlength="30" 
+    required />
+
+  
+    <div class="input-desc" id="ln-text">
+      <p>Enter your full last name, not a nickname</p>
     </div>
   
 </div>

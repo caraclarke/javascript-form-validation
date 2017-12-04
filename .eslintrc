@@ -18,7 +18,7 @@
     "no-var": 0,
     "comma-spacing": [ 1, {"before": false, "after": true}],
     "consistent-return": 2,
-    "curly": [ 2, "all"],
+    "curly": [ 2, "multi-line"],
     "dot-notation": [ 1, { "allowKeywords": true }],
     "eqeqeq": [ 2, "smart"],
     "radix": [ 2, "as-needed"],

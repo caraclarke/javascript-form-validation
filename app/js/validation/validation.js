@@ -1,7 +1,12 @@
-// DOM ELEMENTS
+/* **************************
+  DOM VARIABLES
+  *************************** */
+
 const form = document.querySelectorAll( ".js-form-valid" );
 
-// BACKUP ADD NOVALIDATE TO FORM ON PAGE
+/* **************************
+  VALIDATION FUNCTIONS
+  *************************** */
 form.forEach( (item) => {
   item.setAttribute("novalidate", true);
 });
@@ -90,14 +95,20 @@ const showErrorMessage = ( field, error ) => {
 }
 
 // GET THE ERROR
-const getError = ( validity ) => {
+const getError = ( field ) => {
+  const validity = field.validity;
   /* eslint-disable curly, template-curly-spacing, consistent-return */
 
   // If valid, return null
   if (validity.valid) return;
+  let fieldName = "This section";
+
+  if ( field.getAttribute( "data-fieldName" ) ) {
+    fieldName = field.getAttribute( "data-fieldName" );
+  }
 
   // If field is required and empty
-  if (validity.valueMissing) return "Please fill out this field.";
+  if (validity.valueMissing) return `${fieldName} is missing`;
 
   // If not the right type
   if (validity.typeMismatch) {
@@ -141,11 +152,13 @@ const checkForError = ( field ) => {
   // Dont validate submits, buttons, file and reset inputs, and disabled fields
   if (field.disabled || field.type === "file" || field.type === "reset" || field.type === "submit" || field.type === "button") return;
 
-  const validity = getError(field.validity);
+  const validity = getError(field);
   return validity;
 };
 
-// EVENT LISTENERS
+/* **************************
+  EVENT LISTENERS
+  *************************** */
 document.addEventListener( "blur", ( e ) => {
   e.stopPropagation();
 
@@ -167,7 +180,7 @@ document.addEventListener( "submit", ( e ) => {
   e.preventDefault();
 
   // Only run on forms flagged for validation
-  if (!e.target.classList.contains("validate")) return;
+  if (!e.target.classList.contains("js-form-valid")) return;
 
   // Get all of the form elements
   var fields = e.target.elements;
@@ -175,20 +188,20 @@ document.addEventListener( "submit", ( e ) => {
   // Validate each field
   // Store the first field with an error to a variable so we can bring it into focus later
   var error,
-    hasErrors;
+    hasError;
   for (var i = 0; i < fields.length; i++) {
-    error = hasError(fields[ i ]);
+    error = checkForError(fields[ i ]);
     if (error) {
       showErrorMessage(fields[ i ], error);
-      if (!hasErrors) {
-        hasErrors = fields[ i ];
+      if (!hasError) {
+        hasError = fields[ i ];
       }
     }
   }
 
   // If there are errrors, dont submit form and focus on first element with error
-  if (hasErrors) {
-    hasErrors.focus();
+  if (hasError) {
+    hasError.focus();
   }
 
   // Otherwise, let the form submit normally

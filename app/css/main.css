@@ -9806,7 +9806,7 @@ declaration-block-trailing-semicolon  */
   border: 2px solid #ccc;
   background: #fff;
   color: #333; }
-  .text-input-area .text-field .error {
+  .text-input-area .text-field.error {
     border-color: #c00;
     background: #fcf2f2; }
   .text-input-area .text-field:active, .text-input-area .text-field:focus {
