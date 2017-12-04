@@ -42,6 +42,7 @@
   "inputAddressOne": {
     "labelText": "Street address",
     "labelClass": "",
+    "topClass": "pd col-md-11 col-xs-12",
     "id": "input-address-one",
     "inputId": "input-addOne",
     "class": "js-address",
@@ -59,6 +60,7 @@
   "inputAddressTwo": {
     "labelText": "Street address 2 (optional)",
     "labelClass": "",
+    "topClass": "pd col-md-11 col-xs-12",
     "id": "input-address-two",
     "class": "js-address",
     "pattern": "",
@@ -72,6 +74,7 @@
   "zipcode": {
     "labelText": "Zipcode",
     "labelClass": "",
+    "topClass": "pd col-md-11 col-xs-12",
     "id": "input-zipcode",
     "inputId": "input-zipcode",
     "class": "",
