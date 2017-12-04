@@ -97,14 +97,20 @@ var showErrorMessage = function showErrorMessage(field, error) {
 };
 
 // GET THE ERROR
-var getError = function getError(validity) {
+var getError = function getError(field) {
+  var validity = field.validity;
   /* eslint-disable curly, template-curly-spacing, consistent-return */
 
   // If valid, return null
   if (validity.valid) return;
+  var fieldName = "This section";
+
+  if (field.getAttribute("data-fieldName")) {
+    fieldName = field.getAttribute("data-fieldName");
+  }
 
   // If field is required and empty
-  if (validity.valueMissing) return "Please fill out this field.";
+  if (validity.valueMissing) return fieldName + " is missing";
 
   // If not the right type
   if (validity.typeMismatch) {
@@ -148,7 +154,7 @@ var checkForError = function checkForError(field) {
   // Dont validate submits, buttons, file and reset inputs, and disabled fields
   if (field.disabled || field.type === "file" || field.type === "reset" || field.type === "submit" || field.type === "button") return;
 
-  var validity = getError(field.validity);
+  var validity = getError(field);
   return validity;
 };
 

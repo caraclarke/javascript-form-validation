@@ -95,14 +95,20 @@ const showErrorMessage = ( field, error ) => {
 }
 
 // GET THE ERROR
-const getError = ( validity ) => {
+const getError = ( field ) => {
+  const validity = field.validity;
   /* eslint-disable curly, template-curly-spacing, consistent-return */
 
   // If valid, return null
   if (validity.valid) return;
+  let fieldName = "This section";
+
+  if ( field.getAttribute( "data-fieldName" ) ) {
+    fieldName = field.getAttribute( "data-fieldName" );
+  }
 
   // If field is required and empty
-  if (validity.valueMissing) return "Please fill out this field.";
+  if (validity.valueMissing) return `${fieldName} is missing`;
 
   // If not the right type
   if (validity.typeMismatch) {
@@ -146,7 +152,7 @@ const checkForError = ( field ) => {
   // Dont validate submits, buttons, file and reset inputs, and disabled fields
   if (field.disabled || field.type === "file" || field.type === "reset" || field.type === "submit" || field.type === "button") return;
 
-  const validity = getError(field.validity);
+  const validity = getError(field);
   return validity;
 };
 
