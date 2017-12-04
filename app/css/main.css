@@ -9854,6 +9854,9 @@ declaration-block-trailing-semicolon  */
 .radio-input-area.error .error-message {
   color: #c00; }
 
+.ui-form .primary-btn {
+  margin: 24px 15px 12px; }
+
 html {
   font-size: 16px; }
 
