@@ -81,7 +81,7 @@ const showErrorMessage = ( field, error ) => {
   if (!message) {
     message = document.createElement("div");
     message.className = "error-message";
-    message.id = "error-for-" + id;
+    message.id = `error-for-${ id }`;
     errField.parentNode.insertBefore( message, errField.nextSibling );
   }
 

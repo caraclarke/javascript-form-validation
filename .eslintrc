@@ -17,7 +17,7 @@
     "func-names": [1, "as-needed"],
     "no-var": 0,
     "comma-spacing": [ 1, {"before": false, "after": true}],
-    "consistent-return": 2,
+    "consistent-return": 0,
     "curly": [ 2, "multi-line"],
     "dot-notation": [ 1, { "allowKeywords": true }],
     "eqeqeq": [ 2, "smart"],
