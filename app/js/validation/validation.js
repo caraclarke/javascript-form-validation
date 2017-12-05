@@ -78,7 +78,7 @@ const showErrorMessage = ( field, error ) => {
   // Check if error message errField already exists
   // If not, create one
   var message = errField.form.querySelector(`.error-message#error-for-${ id }`);
-  if (!message) {
+  if ( !message ) {
     message = document.createElement("div");
     message.className = "error-message";
     message.id = `error-for-${ id }`;
@@ -166,6 +166,12 @@ document.addEventListener( "blur", ( e ) => {
 
   // return if form doesnt have validation flag
   if ( !e.target.form.classList.contains("js-form-valid") ) { return; }
+
+  if ( e.target.classList.contains( "js-dob" ) && e.target.value !== "" ) {
+    dateFormat( e.target );
+    checkDob( e.target );
+    return;
+  }
 
   const error = checkForError( e.target );
 
