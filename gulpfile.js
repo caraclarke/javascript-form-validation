@@ -80,9 +80,6 @@ gulp.task('ejs', ['clean:ejs'], function() {
 
 gulp.task('js', function() {
   return gulp.src(['app/js/*.js', '!app/js/*-polyfill.js'])
-    .pipe(babel({
-      presets: ['env']
-    }))
     .pipe(gulp.dest('app/js/build/'))
     .pipe(browserSync.reload({
       stream: true,

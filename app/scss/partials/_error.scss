@@ -1,0 +1,78 @@
+.text-input-area {
+  .text-field {
+    border: 2px solid $color-gray-15;
+    background: $color-white;
+    color: $color-gray-paragraph;
+
+    &.error {
+      border-color: $color-brand-primary;
+      background: $color-brand-primary-lighter;
+    }
+
+    &:active,
+    &:focus {
+      border-color: $color-black;
+
+      &.error {
+        border-color: $color-brand-primary;
+      }
+    }
+  }
+
+  .text-field ~ .error-message {
+    display: none;
+    visibility: hidden;
+  }
+
+  .text-field.error ~ .error-message {
+    display: block;
+    visibility: visible;
+    color: $color-brand-primary;
+  }
+}
+
+.checkbox-input-area {
+  .checkbox-help {
+    display: none;
+    visibility: hidden;
+  }
+
+  .btn-tandc + .error-message {
+    color: $color-error;
+  }
+
+  input.error ~ .error-message {
+    color: $color-error;
+    margin-top: 8px;
+  }
+
+  input.error ~ .fake-input:before {
+    border: 2px solid $color-error;
+    background: $color-error-light;
+  }
+}
+
+.radio-input-area {
+  &.error {
+    .h4 {
+      color: $color-black;
+    }
+  }
+
+  .error-message {
+    display: none;
+    visibility: hidden;
+  }
+
+  &.error {
+    .radio-button input + .fake-input:before {
+      box-shadow: 0 0 0 2px $color-error;
+      border: 2px solid $color-error-light;
+      background: $color-error-light;
+    }
+
+    .error-message {
+      color: $color-error;
+    }
+  }
+}
