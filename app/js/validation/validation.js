@@ -193,6 +193,8 @@ document.addEventListener( "blur", ( e ) => {
     dateFormat( e.target );
     checkDob( e.target );
     return;
+  } else if ( e.target.classList.contains( "js-pn" ) && e.target.value !== "" ) {
+    phoneValidate( e.target );
   }
 
   const error = checkForError( e.target );
