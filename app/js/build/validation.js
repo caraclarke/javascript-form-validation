@@ -149,48 +149,73 @@ var removeErrorMessage = function removeErrorMessage(field) {
   message.style.visibility = "hidden";
 };
 
+// CREATE THE ERROR MESSAGE
+var createErrorMessage = function createErrorMessage(errorField, id, error) {
+  var message = errorField.form.querySelector(".input-help#error-for-" + id);
+  var errorMsg = error;
+
+  if (!message) {
+    message = document.createElement("div");
+    message.className = "input-help";
+    message.id = "error-for-" + id;
+
+    // If the field is a radio button or checkbox, insert error after the label
+    var label = void 0;
+    if (errorField.type === "radio" || errorField.type === "checkbox") {
+      label = errorField.form.querySelector("label[for=\"" + id + "\"]") || errorField.parentNode;
+      if (label) {
+        label.parentNode.append(message);
+      }
+    }
+
+    // Otherwise, insert it after the field
+    if (!label) {
+      errorField.parentNode.insertBefore(message, errorField.nextSibling);
+    } else if (label && !(errorField.type === "radio" || errorField.type === "checkbox")) {
+      errorField.parentNode.insertBefore(message, errorField.lastChild);
+    }
+  }
+
+  // Update error message
+  errorField.setAttribute("aria-describedby", "error-for-" + id);
+
+  // Show error message
+  message.innerHTML = errorMsg;
+  message.setAttribute("role", "alert");
+  message.style.display = "block";
+  message.style.visibility = "visible";
+};
+
 // SHOW THE ERROR MESSAGE
 var showErrorMessage = function showErrorMessage(field, error) {
-  var errField = field;
+  var errorField = field;
 
-  if (errField.type === "radio" && errField.name) {
-    errField.parentElement.parentElement.parentElement.classList.add("error");
+  if (errorField.type === "radio" && errorField.name) {
+    errorField.parentElement.parentElement.parentElement.classList.add("error");
 
-    var group = document.getElementsByName(errField.name);
+    var group = document.getElementsByName(errorField.name);
     if (group.length > 0) {
       group.forEach(function (item) {
-        if (item.form !== errField.form) {
+        if (item.form !== errorField.form) {
           item.classList.add("error");
         }
 
-        errField = group[group.length - 1];
+        errorField = group[group.length - 1];
       });
     }
   } else {
-    errField.classList.add("error");
+    errorField.classList.add("error");
   }
 
-  // Get errField id or name
-  var id = errField.id || errField.name;
-  if (!id) return;
+  // Get errorField id or name
+  var id = errorField.id || errorField.name;
+  if (!id) {
+    return;
+  }
 
-  // Check if error message errField already exists
+  // Check if error message field already exists
   // If not, create one
-  var message = errField.form.querySelector(".error-message#error-for-" + id);
-  if (!message) {
-    message = document.createElement("div");
-    message.className = "error-message";
-    message.id = "error-for-" + id;
-    errField.parentNode.insertBefore(message, errField.nextSibling);
-  }
-
-  // Update error message and errField
-  errField.setAttribute("aria-describedby", "error-for-" + id);
-  message.innerHTML = error;
-
-  // Show error message
-  message.style.display = "block";
-  message.style.visibility = "visible";
+  createErrorMessage(errorField, id, error);
 };
 
 // GET THE ERROR

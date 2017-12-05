@@ -109,6 +109,32 @@
     "required": "required",
     "dataFieldName": "Date of birth"
   },
+  "gender": {
+    "radioTopLabel": "Gender:",
+    "requiredText": "This section is required",
+    "radio": [
+      {
+        "labelText": "Female",
+        "radioName": "gender",
+        "dataRqName": "Gender",
+        "radioValue": "genderFemale",
+        "radioId": "gender-female",
+        "radioClass": "js-error",
+        "class": "col-xs-12 pd block",
+        "required": "required"
+      },
+      {
+        "labelText": "Male",
+        "radioName": "gender",
+        "dataRqName": "Gender",
+        "radioValue": "genderMale",
+        "radioId": "gender-male",
+        "radioClass": "js-error",
+        "class": "col-xs-12 pd block",
+        "required": "required"
+      }
+    ]
+  },
   "continueBtn": {
     "class": "primary-btn btn-block",
     "id": "reg-btn",
