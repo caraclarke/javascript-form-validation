@@ -19,12 +19,12 @@
     }
   }
 
-  .text-field ~ .error-message {
+  .text-field ~ .input-help {
     display: none;
     visibility: hidden;
   }
 
-  .text-field.error ~ .error-message {
+  .text-field.error ~ .input-help {
     display: block;
     visibility: visible;
     color: $color-brand-primary;
@@ -32,18 +32,13 @@
 }
 
 .checkbox-input-area {
-  .checkbox-help {
+  .input-help {
     display: none;
     visibility: hidden;
   }
 
-  .btn-tandc + .error-message {
+  .check-radio-label + .input-help {
     color: $color-error;
-  }
-
-  input.error ~ .error-message {
-    color: $color-error;
-    margin-top: 8px;
   }
 
   input.error ~ .fake-input:before {
@@ -59,7 +54,7 @@
     }
   }
 
-  .error-message {
+  .input-help {
     display: none;
     visibility: hidden;
   }
@@ -71,7 +66,7 @@
       background: $color-error-light;
     }
 
-    .error-message {
+    .input-help {
       color: $color-error;
     }
   }

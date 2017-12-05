@@ -177,6 +177,95 @@
 
     </div>
 
+    <div class="col-xs-12 pd">
+      
+      <fieldset class="radio-input-area js-radio">
+  <legend class="h4 radio-label">Gender:</legend>
+  
+  <span class="radio-button js-validate col-xs-12 pd block">
+    <label for="gender-female" class="check-radio-label js-validate">Female
+    <!-- <p>Female</p> -->
+
+    <input
+    name="gender"
+    class="radio-field js-error"
+    id="gender-female"
+    type="radio"
+    value="gender-female"
+     data-fieldName="Gender" 
+    required />
+    <span class="fake-input"></span>
+    </label>
+  </span>
+
+  
+  <span class="radio-button js-validate col-xs-12 pd block">
+    <label for="gender-male" class="check-radio-label js-validate">Male
+    <!-- <p>Male</p> -->
+
+    <input
+    name="gender"
+    class="radio-field js-error"
+    id="gender-male"
+    type="radio"
+    value="gender-male"
+     data-fieldName="Gender" 
+    required />
+    <span class="fake-input"></span>
+    </label>
+  </span>
+
+  
+</fieldset>
+
+    </div>
+
+    <div class="col-xs-12 pd">
+      
+      <div class="text-input-area col-xs-12 pd ">
+  <label for="input-eadd" id="email-address" class="">Email Address</label>
+
+  <input
+    id="input-eadd"
+    aria-labelledby="email-address "
+    class="text-field js-validate js-email"
+    name="emailAddress"
+    type="email"
+    placeholder="Email Address"
+    
+     pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" 
+     data-fieldName="Email Address" 
+     data-title="Enter a valid email address" 
+    
+    
+    
+    required />
+
+  
+</div>
+
+    </div>
+
+    <div class="col-xs-12 pd">
+      
+      <div class="checkbox-input-area js-terms col-xs-12 pd">
+  
+  <span class="checkbox block">
+    <label for="terms-and-cond" class="check-radio-label ">
+      I agree to the Terms &amp; Conditions
+    <input class="js-validate checkbox-field" id="terms-and-cond" name="termsandcond" type="checkbox"
+       data-fieldName="Terms and Conditions" 
+      required
+       />
+    <span class="fake-input"></span>
+    </label>
+  </span>
+
+  
+</div>
+
+    </div>
+
     <div class="pd col-md-3 col-xs-12 primary-btn-wrap">
       
       <button class="primary-btn btn-block" id="reg-btn" type="submit">Continue</button>

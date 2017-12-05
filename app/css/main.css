@@ -9814,25 +9814,21 @@ declaration-block-trailing-semicolon  */
     .text-input-area .text-field:active.error, .text-input-area .text-field:focus.error {
       border-color: #c00; }
 
-.text-input-area .text-field ~ .error-message {
+.text-input-area .text-field ~ .input-help {
   display: none;
   visibility: hidden; }
 
-.text-input-area .text-field.error ~ .error-message {
+.text-input-area .text-field.error ~ .input-help {
   display: block;
   visibility: visible;
   color: #c00; }
 
-.checkbox-input-area .checkbox-help {
+.checkbox-input-area .input-help {
   display: none;
   visibility: hidden; }
 
-.checkbox-input-area .btn-tandc + .error-message {
+.checkbox-input-area .check-radio-label + .input-help {
   color: #c00; }
-
-.checkbox-input-area input.error ~ .error-message {
-  color: #c00;
-  margin-top: 8px; }
 
 .checkbox-input-area input.error ~ .fake-input:before {
   border: 2px solid #c00;
@@ -9841,7 +9837,7 @@ declaration-block-trailing-semicolon  */
 .radio-input-area.error .h4 {
   color: #000; }
 
-.radio-input-area .error-message {
+.radio-input-area .input-help {
   display: none;
   visibility: hidden; }
 
@@ -9851,11 +9847,53 @@ declaration-block-trailing-semicolon  */
   border: 2px solid rgba(204, 0, 0, 0.1);
   background: rgba(204, 0, 0, 0.1); }
 
-.radio-input-area.error .error-message {
+.radio-input-area.error .input-help {
   color: #c00; }
 
 .ui-form .primary-btn {
   margin: 24px 15px 12px; }
+
+.ui-form .checkbox-input-area .check-radio-label {
+  padding-left: 0;
+  margin-top: 2px; }
+
+.ui-form .radio-input-area {
+  margin-left: 15px;
+  margin-right: 15px; }
+  .ui-form .radio-input-area legend {
+    text-decoration: none;
+    border-bottom: 0;
+    font-weight: bolder;
+    margin-bottom: 12px; }
+  .ui-form .radio-input-area label {
+    display: inline-block;
+    margin-bottom: 4px;
+    margin-top: 8px; }
+  .ui-form .radio-input-area .radio-button,
+  .ui-form .radio-input-area .checkbox {
+    margin-bottom: 6px; }
+    .ui-form .radio-input-area .radio-button .check-radio-label,
+    .ui-form .radio-input-area .checkbox .check-radio-label {
+      line-height: 29px; }
+    .ui-form .radio-input-area .radio-button input,
+    .ui-form .radio-input-area .checkbox input {
+      display: inline;
+      position: absolute;
+      left: -9999px; }
+    .ui-form .radio-input-area .radio-button .fake-input,
+    .ui-form .radio-input-area .checkbox .fake-input {
+      height: 30px;
+      padding-right: 10px; }
+      .ui-form .radio-input-area .radio-button .fake-input:before,
+      .ui-form .radio-input-area .checkbox .fake-input:before {
+        height: 25px;
+        width: 25px; }
+    .ui-form .radio-input-area .radio-button input:active ~ .fake-input,
+    .ui-form .radio-input-area .radio-button input:focus ~ .fake-input,
+    .ui-form .radio-input-area .checkbox input:active ~ .fake-input,
+    .ui-form .radio-input-area .checkbox input:focus ~ .fake-input {
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px; }
 
 html {
   font-size: 16px; }
