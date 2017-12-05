@@ -9865,6 +9865,7 @@ declaration-block-trailing-semicolon  */
   margin-left: 15px;
   margin-right: 15px; }
   .ui-form .radio-input-area legend {
+    font-size: 14px;
     text-decoration: none;
     border-bottom: 0;
     font-weight: bolder;

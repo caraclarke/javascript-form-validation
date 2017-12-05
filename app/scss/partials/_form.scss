@@ -4,8 +4,8 @@
   }
 
   .checkbox input:checked + .fake-input:before {
-    border-color: #000;
-    background: #000 url(../images/icons/svg/check.svg) center center no-repeat;
+    border-color: $color-black;
+    background: $color-black url(../images/icons/svg/check.svg) center center no-repeat;
   }
 
   .checkbox-input-area {
@@ -20,6 +20,7 @@
     margin-right: 15px;
 
     legend {
+      font-size: 14px;
       text-decoration: none;
       border-bottom: 0;
       font-weight: bolder;
