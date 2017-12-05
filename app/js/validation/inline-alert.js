@@ -2,7 +2,9 @@ const feInlineAlert = document.querySelector( "#fe-error-container" );
 const inlineAlertList = document.querySelector( "#fe-error-container #error-list" );
 
 const clearFormLevelErrorLinks = ( ) => {
-  inlineAlertList.innerHTML = "";
+  while (inlineAlertList.hasChildNodes()) {
+    inlineAlertList.removeChild( inlineAlertList.lastChild );
+  }
 };
 
 const createFormLevelErrorLink = ( errField, error ) => {

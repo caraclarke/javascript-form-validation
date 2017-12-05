@@ -101,7 +101,9 @@ var feInlineAlert = document.querySelector("#fe-error-container");
 var inlineAlertList = document.querySelector("#fe-error-container #error-list");
 
 var clearFormLevelErrorLinks = function clearFormLevelErrorLinks() {
-  inlineAlertList.innerHTML = "";
+  while (inlineAlertList.hasChildNodes()) {
+    inlineAlertList.removeChild(inlineAlertList.lastChild);
+  }
 };
 
 var createFormLevelErrorLink = function createFormLevelErrorLink(errField, error) {
