@@ -221,10 +221,13 @@ document.addEventListener( "submit", ( e ) => {
   // Store the first field with an error to a variable so we can bring it into focus later
   var error,
     hasError;
-  for (var i = 0; i < fields.length; i++) {
+    clearFormLevelErrorLinks();
+  for ( var i = 0; i < fields.length; i++ ) {
     error = checkForError(fields[ i ]);
     if (error) {
       showErrorMessage(fields[ i ], error);
+      createFormLevelErrorLink( fields[ i ], error );
+
       if (!hasError) {
         hasError = fields[ i ];
       }
@@ -232,8 +235,11 @@ document.addEventListener( "submit", ( e ) => {
   }
 
   // If there are errrors, dont submit form and focus on first element with error
-  if (hasError) {
-    hasError.focus();
+  if ( hasError ) {
+    feInlineAlert.classList.remove( "hide" );
+    feInlineAlert.focus();
+  } else {
+    feInlineAlert.classList.add( "hide" );
   }
 
   // Otherwise, let the form submit normally

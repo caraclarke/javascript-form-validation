@@ -71,3 +71,23 @@
     }
   }
 }
+
+.inline-alert--error {
+  .err-list {
+    li {
+      display: block;
+      text-decoration: underline;
+      margin-bottom: 8px;
+
+      a {
+        font-weight: normal;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $color-brand-primary-light;
+        }
+      }
+    }
+  }
+}
