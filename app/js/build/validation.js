@@ -205,9 +205,9 @@ var createErrorMessage = function createErrorMessage(errorField, id, error) {
 
     // Otherwise, insert it after the field
     if (!label) {
-      errorField.parentNode.insertBefore(message, errorField.nextSibling);
+      errorField.parentNode.appendChild(message, errorField.nextSibling);
     } else if (label && !(errorField.type === "radio" || errorField.type === "checkbox")) {
-      errorField.parentNode.insertBefore(message, errorField.lastChild);
+      errorField.parentNode.insertAfter(message, errorField.nextSibling);
     }
   }
 
