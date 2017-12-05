@@ -97,6 +97,24 @@ var checkDob = function checkDob(inputVal) {
 };
 "use strict";
 
+var feInlineAlert = document.querySelector("#fe-error-container");
+var inlineAlertList = document.querySelector("#fe-error-container #error-list");
+
+var clearFormLevelErrorLinks = function clearFormLevelErrorLinks() {
+  inlineAlertList.innerHTML = "";
+};
+
+var createFormLevelErrorLink = function createFormLevelErrorLink(errField, error) {
+  var id = errField.getAttribute("id");
+  var listItem = document.createElement("li");
+  listItem.className = "error-item";
+  listItem.id = "list-error-for-" + id;
+
+  listItem.innerHTML = "<a href=\"#" + id + "\">" + error + "</a>";
+  inlineAlertList.appendChild(listItem);
+};
+"use strict";
+
 var spaceRegex = /\s/g;
 
 var phoneFormat = function phoneFormat(element) {
@@ -359,10 +377,13 @@ document.addEventListener("submit", function (e) {
   // Validate each field
   // Store the first field with an error to a variable so we can bring it into focus later
   var error, hasError;
+  clearFormLevelErrorLinks();
   for (var i = 0; i < fields.length; i++) {
     error = checkForError(fields[i]);
     if (error) {
       showErrorMessage(fields[i], error);
+      createFormLevelErrorLink(fields[i], error);
+
       if (!hasError) {
         hasError = fields[i];
       }
@@ -371,7 +392,10 @@ document.addEventListener("submit", function (e) {
 
   // If there are errrors, dont submit form and focus on first element with error
   if (hasError) {
-    hasError.focus();
+    feInlineAlert.classList.remove("hide");
+    feInlineAlert.focus();
+  } else {
+    feInlineAlert.classList.add("hide");
   }
 
   // Otherwise, let the form submit normally
