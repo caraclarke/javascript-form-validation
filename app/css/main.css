@@ -9857,6 +9857,44 @@ declaration-block-trailing-semicolon  */
 .ui-form .primary-btn {
   margin: 24px 15px 12px; }
 
+.ui-form .radio-input-area {
+  margin-left: 15px;
+  margin-right: 15px; }
+  .ui-form .radio-input-area legend {
+    text-decoration: none;
+    border-bottom: 0;
+    font-weight: bolder;
+    margin-bottom: 12px; }
+  .ui-form .radio-input-area label {
+    display: inline-block;
+    margin-bottom: 4px;
+    margin-top: 8px; }
+  .ui-form .radio-input-area .radio-button,
+  .ui-form .radio-input-area .checkbox {
+    margin-bottom: 6px; }
+    .ui-form .radio-input-area .radio-button .check-radio-label,
+    .ui-form .radio-input-area .checkbox .check-radio-label {
+      line-height: 29px; }
+    .ui-form .radio-input-area .radio-button input,
+    .ui-form .radio-input-area .checkbox input {
+      display: inline;
+      position: absolute;
+      left: -9999px; }
+    .ui-form .radio-input-area .radio-button .fake-input,
+    .ui-form .radio-input-area .checkbox .fake-input {
+      height: 30px;
+      padding-right: 10px; }
+      .ui-form .radio-input-area .radio-button .fake-input:before,
+      .ui-form .radio-input-area .checkbox .fake-input:before {
+        height: 25px;
+        width: 25px; }
+    .ui-form .radio-input-area .radio-button input:active ~ .fake-input,
+    .ui-form .radio-input-area .radio-button input:focus ~ .fake-input,
+    .ui-form .radio-input-area .checkbox input:active ~ .fake-input,
+    .ui-form .radio-input-area .checkbox input:focus ~ .fake-input {
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px; }
+
 html {
   font-size: 16px; }
 
