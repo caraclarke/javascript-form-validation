@@ -9853,6 +9853,10 @@ declaration-block-trailing-semicolon  */
 .ui-form .primary-btn {
   margin: 24px 15px 12px; }
 
+.ui-form .checkbox input:checked + .fake-input:before {
+  border-color: #000;
+  background: #000 url(../images/icons/svg/check.svg) center center no-repeat; }
+
 .ui-form .checkbox-input-area .check-radio-label {
   padding-left: 0;
   margin-top: 2px; }

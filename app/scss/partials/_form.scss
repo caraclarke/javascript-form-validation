@@ -3,6 +3,11 @@
     margin: 24px 15px 12px;
   }
 
+  .checkbox input:checked + .fake-input:before {
+    border-color: #000;
+    background: #000 url(../images/icons/svg/check.svg) center center no-repeat;
+  }
+
   .checkbox-input-area {
     .check-radio-label {
       padding-left: 0;
