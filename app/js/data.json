@@ -89,6 +89,26 @@
     "requiredText": "This section is required",
     "dataFieldName": "Zipcode"
   },
+  "inputDOB": {
+    "labelText": "Date of birth",
+    "labelClass": "",
+    "topClass": "pd col-md-11 col-xs-12",
+    "id": "dob",
+    "inputId": "input-dob",
+    "class": "js-dob",
+    "name": "dob",
+    "type": "text",
+    "placeholder": "MM/DD/YYYY",
+    "descText": "MM/DD/YYYY",
+    "descId": "input-dob-text",
+    "title": "MM/DD/YYYY",
+    "maxlength": "10",
+    "minlength": "8",
+    "requiredText": "This section is required",
+    "errorText": "Enter a valid DOB",
+    "required": "required",
+    "dataFieldName": "Date of birth"
+  },
   "continueBtn": {
     "class": "primary-btn btn-block",
     "id": "reg-btn",
