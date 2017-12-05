@@ -180,7 +180,7 @@
     <div class="col-xs-12 pd">
       
       <fieldset class="radio-input-area js-radio">
-  <legend class="h4 radio-label">Gender:</legend>
+  <legend class="radio-label">Gender:</legend>
   
   <span class="radio-button js-validate col-xs-12 pd block">
     <label for="gender-female" class="check-radio-label js-validate">Female
@@ -261,6 +261,36 @@
     </label>
   </span>
 
+  
+</div>
+
+    </div>
+
+    <div class="col-xs-12 pd">
+      
+      <div class="text-input-area phone-section col-xs-12 pd ">
+  <label for="input-pn" id="phone" class="">Mobile Phone</label>
+
+  <input
+    id="input-pn"
+    aria-labelledby="phone phone-num-text"
+    class="text-field js-validate js-pn"
+    name="phoneNumber"
+    type="tel"
+    placeholder="Mobile Phone"
+    
+     pattern="([0-9]{3}-[0-9]{3}-[0-9]{4})" 
+     data-fieldName="Mobile phone" 
+    
+    
+     minlength="10" 
+     maxlength="12" 
+    required />
+
+  
+    <div class="input-desc" id="phone-num-text">
+      <p>By providing your mobile number, you consent to receive texts from or on behalf of CVS Caremark regarding your mail service prescriptions. Consent is not a condition of purchase and may be revoked at any time. Your carrier’s message and data rates apply. <a class='text-btn' href='http://info.caremark.com/mobile/textmessaging'>View SMS terms &amp; conditions</a></p>
+    </div>
   
 </div>
 
