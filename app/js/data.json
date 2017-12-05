@@ -116,7 +116,7 @@
       {
         "labelText": "Female",
         "radioName": "gender",
-        "dataRqName": "Gender",
+        "dataFieldName": "Gender",
         "radioValue": "genderFemale",
         "radioId": "gender-female",
         "radioClass": "js-error",
@@ -126,7 +126,7 @@
       {
         "labelText": "Male",
         "radioName": "gender",
-        "dataRqName": "Gender",
+        "dataFieldName": "Gender",
         "radioValue": "genderMale",
         "radioId": "gender-male",
         "radioClass": "js-error",
@@ -134,6 +134,22 @@
         "required": "required"
       }
     ]
+  },
+  "emailAddress": {
+    "labelText": "Email Address",
+    "labelClass": "",
+    "topClass": "col-xs-12 pd",
+    "id": "email-address",
+    "inputId": "input-eadd",
+    "class": "js-email",
+    "name": "emailAddress",
+    "type": "email",
+    "placeholder": "Email Address",
+    "descText": "",
+    "title": "Enter a valid email address",
+    "pattern": "^([^\\x00-\\x20\\x22\\x28\\x29\\x2c\\x2e\\x3a-\\x3c\\x3e\\x40\\x5b-\\x5d\\x7f-\\xff]+|\\x22([^\\x0d\\x22\\x5c\\x80-\\xff]|\\x5c[\\x00-\\x7f])*\\x22)(\\x2e([^\\x00-\\x20\\x22\\x28\\x29\\x2c\\x2e\\x3a-\\x3c\\x3e\\x40\\x5b-\\x5d\\x7f-\\xff]+|\\x22([^\\x0d\\x22\\x5c\\x80-\\xff]|\\x5c[\\x00-\\x7f])*\\x22))*\\x40([^\\x00-\\x20\\x22\\x28\\x29\\x2c\\x2e\\x3a-\\x3c\\x3e\\x40\\x5b-\\x5d\\x7f-\\xff]+|\\x5b([^\\x0d\\x5b-\\x5d\\x80-\\xff]|\\x5c[\\x00-\\x7f])*\\x5d)(\\x2e([^\\x00-\\x20\\x22\\x28\\x29\\x2c\\x2e\\x3a-\\x3c\\x3e\\x40\\x5b-\\x5d\\x7f-\\xff]+|\\x5b([^\\x0d\\x5b-\\x5d\\x80-\\xff]|\\x5c[\\x00-\\x7f])*\\x5d))*(\\.\\w{2,})+$",
+    "required": "required",
+    "dataFieldName": "Email Address"
   },
   "continueBtn": {
     "class": "primary-btn btn-block",
