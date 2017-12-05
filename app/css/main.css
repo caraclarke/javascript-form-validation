@@ -9823,16 +9823,12 @@ declaration-block-trailing-semicolon  */
   visibility: visible;
   color: #c00; }
 
-.checkbox-input-area .checkbox-help {
+.checkbox-input-area .input-help {
   display: none;
   visibility: hidden; }
 
-.checkbox-input-area .btn-tandc + .input-help {
+.checkbox-input-area .check-radio-label + .input-help {
   color: #c00; }
-
-.checkbox-input-area input.error ~ .input-help {
-  color: #c00;
-  margin-top: 8px; }
 
 .checkbox-input-area input.error ~ .fake-input:before {
   border: 2px solid #c00;
@@ -9856,6 +9852,10 @@ declaration-block-trailing-semicolon  */
 
 .ui-form .primary-btn {
   margin: 24px 15px 12px; }
+
+.ui-form .checkbox-input-area .check-radio-label {
+  padding-left: 0;
+  margin-top: 2px; }
 
 .ui-form .radio-input-area {
   margin-left: 15px;

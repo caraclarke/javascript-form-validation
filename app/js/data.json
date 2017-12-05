@@ -151,6 +151,20 @@
     "required": "required",
     "dataFieldName": "Email Address"
   },
+  "termsAndCond": {
+    "topClass": "js-terms col-xs-12 pd",
+    "boxes": [
+      {
+        "id": "terms-and-cond",
+        "class": "",
+        "label": "I agree to the Terms &amp; Conditions",
+        "name": "termsandcond",
+        "required": "required",
+        "requiredText": "You must accept to the Terms &amp; Conditions to continue",
+        "dataFieldName": "Terms and Conditions"
+      }
+    ]
+  },
   "continueBtn": {
     "class": "primary-btn btn-block",
     "id": "reg-btn",
