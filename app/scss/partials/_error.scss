@@ -32,18 +32,13 @@
 }
 
 .checkbox-input-area {
-  .checkbox-help {
+  .input-help {
     display: none;
     visibility: hidden;
   }
 
-  .btn-tandc + .input-help {
+  .check-radio-label + .input-help {
     color: $color-error;
-  }
-
-  input.error ~ .input-help {
-    color: $color-error;
-    margin-top: 8px;
   }
 
   input.error ~ .fake-input:before {
