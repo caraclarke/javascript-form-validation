@@ -112,36 +112,39 @@ form.forEach(function (item) {
 
 // REMOVE THE ERROR MESSAGE
 var removeErrorMessage = function removeErrorMessage(field) {
-  var errField = field;
+  var inputField = field;
 
-  // Remove error class to field
-  if (errField.type === "radio" && errField.name) {
-    errField.parentElement.parentElement.parentElement.classList.remove("error");
+  if (inputField.type === "radio" && inputField.name) {
+    inputField.parentElement.parentElement.parentElement.classList.remove("error");
 
-    var group = document.getElementsByName(errField.name);
+    var group = document.getElementsByName(inputField.name);
     if (group.length > 0) {
       group.forEach(function (item) {
-        if (item.form !== errField.form) {
+        if (item.form !== inputField.form) {
           item.classList.remove("error");
         }
       });
 
-      errField = group[group.length - 1];
+      inputField = group[group.length - 1];
     }
   } else {
-    errField.classList.remove("error");
+    inputField.classList.remove("error");
   }
 
-  // Remove ARIA role from the errField
-  errField.removeAttribute("aria-describedby");
+  // Remove ARIA role from the inputField
+  inputField.removeAttribute("aria-describedby");
 
-  // Get errField id or name
-  var id = errField.id || errField.name;
-  if (!id) return;
+  // Get inputField id or name
+  var id = inputField.id || inputField.name;
+  if (!id) {
+    return;
+  }
 
   // Check if an error message is in the DOM
-  var message = errField.form.querySelector(".error-message#error-for-" + id);
-  if (!message) return;
+  var message = inputField.form.querySelector(".input-help#error-for-" + id);
+  if (!message) {
+    return;
+  }
 
   // If so, hide it
   message.innerHTML = "";
