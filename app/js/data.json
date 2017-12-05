@@ -161,7 +161,7 @@
         "name": "termsandcond",
         "required": "required",
         "requiredText": "You must accept to the Terms &amp; Conditions to continue",
-        "dataRqName": "Terms and Conditions"
+        "dataFieldName": "Terms and Conditions"
       }
     ]
   },
