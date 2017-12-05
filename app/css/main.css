@@ -9814,11 +9814,11 @@ declaration-block-trailing-semicolon  */
     .text-input-area .text-field:active.error, .text-input-area .text-field:focus.error {
       border-color: #c00; }
 
-.text-input-area .text-field ~ .error-message {
+.text-input-area .text-field ~ .input-help {
   display: none;
   visibility: hidden; }
 
-.text-input-area .text-field.error ~ .error-message {
+.text-input-area .text-field.error ~ .input-help {
   display: block;
   visibility: visible;
   color: #c00; }
@@ -9827,10 +9827,10 @@ declaration-block-trailing-semicolon  */
   display: none;
   visibility: hidden; }
 
-.checkbox-input-area .btn-tandc + .error-message {
+.checkbox-input-area .btn-tandc + .input-help {
   color: #c00; }
 
-.checkbox-input-area input.error ~ .error-message {
+.checkbox-input-area input.error ~ .input-help {
   color: #c00;
   margin-top: 8px; }
 
@@ -9841,7 +9841,7 @@ declaration-block-trailing-semicolon  */
 .radio-input-area.error .h4 {
   color: #000; }
 
-.radio-input-area .error-message {
+.radio-input-area .input-help {
   display: none;
   visibility: hidden; }
 
@@ -9851,7 +9851,7 @@ declaration-block-trailing-semicolon  */
   border: 2px solid rgba(204, 0, 0, 0.1);
   background: rgba(204, 0, 0, 0.1); }
 
-.radio-input-area.error .error-message {
+.radio-input-area.error .input-help {
   color: #c00; }
 
 .ui-form .primary-btn {
