@@ -3,7 +3,7 @@ var babel = require('gulp-babel');
 var browserSync = require('browser-sync').create();
 var cache = require('gulp-cache');
 var cssnano = require('gulp-cssnano');
-var concat = require('gulp-concat');
+// var concat = require('gulp-concat');
 var del = require('del');
 var ejs = require('gulp-ejs');
 var eslint = require('gulp-eslint');
@@ -92,9 +92,8 @@ gulp.task('validations', ['lint', 'js'], function() {
     .pipe(babel({
       presets: ['env']
     }))
-    .pipe(concat('validation.js'))
     .pipe(gulp.dest('app/js/build/'))
-});
+});  // .pipe(concat('validation.js'))
 
 gulp.task('move:polyfills', function() {
   return gulp.src('app/js/*-polyfill.js')
