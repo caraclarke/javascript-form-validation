@@ -84,7 +84,9 @@ var reqPwErr = function reqPwErr(capBool, lowerBool, numBool, matchBool, reqFiel
   return "Please enter a valid password";
 };
 
-// ORGANIZE
+/* **************************
+  CHECK FOR VALIDITY
+*************************** */
 var passwordCheck = function passwordCheck(element) {
   var password = element.value;
 

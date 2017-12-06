@@ -9913,6 +9913,19 @@ declaration-block-trailing-semicolon  */
       outline: 5px auto -webkit-focus-ring-color;
       outline-offset: -2px; }
 
+.input-cont {
+  position: relative;
+  display: inline-block;
+  width: 100%; }
+  .input-cont a {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    text-transform: uppercase; }
+    .input-cont a:hover, .input-cont a:active, .input-cont a:focus {
+      color: #eb0000;
+      text-decoration: none; }
+
 html {
   font-size: 16px; }
 

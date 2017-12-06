@@ -312,58 +312,68 @@
 
     <div class="col-xs-12 pd">
       
-      <div class="text-input-area col-xs-12 pd ">
-  <label for="input-pw" id="password" class="">Password</label>
+      <div class="text-input-area col-xs-12 pd">
+  <label id="password" class="">Password</label>
+  <div class="input-cont">
 
-  <input
-    id="input-pw"
-    aria-labelledby="password pw-text"
-    class="text-field js-validate js-password-show js-password"
-    name="password"
-    type="password"
-    placeholder="Password"
-    
-     pattern="^[^.,&lt;&gt;*%]+$" 
-     data-fieldName="Password" 
-    
-    
-     minlength="8" 
-     maxlength="25" 
-    required />
+    <input
+      id="input-pw"
+      aria-labelledby="password pw-text"
+      class="text-field js-validate js-password-show js-password"
+      name="password"
+      type="password"
+      placeholder="Password"
+       pattern="^[^.,&lt;&gt;*%]+$" 
+       data-fieldName="Password" 
+      
+      
+       minlength="8" 
+       maxlength="25" 
+      required />
+
+    <a class="pw-show js-show-one">Show</a>
 
   
     <div class="input-desc" id="pw-text">
       <p>Must contain 8 characters, at least 1 uppercase letter, at least 1 lowercase letter and no special characters</p>
     </div>
   
+
+  </div>
+
 </div>
 
 
       
-      <div class="text-input-area col-xs-12 pd ">
-  <label for="input-cpw" id="confirm-password" class="">Confirm Password</label>
+      <div class="text-input-area col-xs-12 pd">
+  <label id="confirm-password" class="">Confirm Password</label>
+  <div class="input-cont">
 
-  <input
-    id="input-cpw"
-    aria-labelledby="confirm-password pw-confirm-text"
-    class="text-field js-validate js-password-confirm-show js-password"
-    name="confirmPassword"
-    type="password"
-    placeholder="Confirm Password"
-    
-     pattern="^[^.,&lt;&gt;*%]+$" 
-     data-fieldName="Confirm password" 
-    
-    
-     minlength="8" 
-     maxlength="25" 
-    required />
+    <input
+      id="input-cpw"
+      aria-labelledby="confirm-password pw-confirm-text"
+      class="text-field js-validate js-password-confirm-show js-password"
+      name="confirmPassword"
+      type="password"
+      placeholder="Confirm Password"
+       pattern="^[^.,&lt;&gt;*%]+$" 
+       data-fieldName="Confirm password" 
+      
+      
+       minlength="8" 
+       maxlength="25" 
+      required />
+
+    <a class="pw-show js-show-two">Show</a>
 
   
     <div class="input-desc" id="pw-confirm-text">
       <p>Must contain 8 characters, at least 1 uppercase letter, at least 1 lowercase letter and no special characters</p>
     </div>
   
+
+  </div>
+
 </div>
 
     </div>
@@ -380,6 +390,7 @@
   </div>
 
     <script type="text/javascript" src="./js/build/node-polyfill.js"></script>
+    <script type="text/javascript" src="./js/build/password.js"></script>
     <!-- build:js js/validation.min.js -->
       <script type="text/javascript" src="./js/build/validity-polyfill.js"></script>
       <script type="text/javascript" src="./js/build/validation.js"></script>

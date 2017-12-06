@@ -82,7 +82,9 @@ const reqPwErr = ( capBool, lowerBool, numBool, matchBool, reqField ) => {
   return "Please enter a valid password";
 };
 
-// ORGANIZE
+/* **************************
+  CHECK FOR VALIDITY
+*************************** */
 const passwordCheck = ( element ) => {
   const password = element.value;
 
