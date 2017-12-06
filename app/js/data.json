@@ -189,6 +189,130 @@
       "deliminter": "-"
     }
   },
+  "password": {
+    "labelText": "Password",
+    "labelClass": "",
+    "topClass": "col-xs-12 pd",
+    "id": "password",
+    "inputId": "input-pw",
+    "roleId": "passwordOne",
+    "class": "js-password-show js-password",
+    "name": "password",
+    "type": "password",
+    "pattern": "^[^.,<>*%]+$",
+    "maxlength": "25",
+    "minlength": "8",
+    "placeholder": "Password",
+    "descText": "Must contain 8 characters, at least 1 uppercase letter, at least 1 lowercase letter and no special characters",
+    "descId": "pw-text",
+    "requiredText": "This section is required",
+    "required": "required",
+    "jsClass": "js-show-one",
+    "dataFieldName": "Password"
+  },
+  "passwordConfirm": {
+    "labelText": "Confirm Password",
+    "labelClass": "",
+    "topClass": "col-xs-12 pd",
+    "id": "confirm-password",
+    "inputId": "input-cpw",
+    "roleId": "passwordTwo",
+    "class": "js-password-confirm-show js-password",
+    "name": "confirmPassword",
+    "type": "password",
+    "pattern": "^[^.,<>*%]+$",
+    "maxlength": "25",
+    "minlength": "8",
+    "placeholder": "Confirm Password",
+    "descText": "Must contain 8 characters, at least 1 uppercase letter, at least 1 lowercase letter and no special characters",
+    "descId": "pw-confirm-text",
+    "requiredText": "This section is required",
+    "required": "required",
+    "jsClass": "js-show-two",
+    "dataFieldName": "Confirm password"
+  },
+  "securityQuestion": {
+    "questionOne": {
+      "topClass": "col-xs-12 pd",
+      "selectLabel": "Security Question 1",
+      "selectId": "security-question",
+      "selectName": "securityQuestions",
+      "required": "required",
+      "options": [
+        {
+          "value": "1",
+          "text": "What is your mother's maiden name?"
+        },
+        {
+          "value": "2",
+          "text": "What is your father's middle name?"
+        },
+        {
+          "value": "3",
+          "text": "What was the name of your middle school?"
+        }
+      ]
+    },
+    "questionTwo": {
+      "topClass": "col-xs-12 pd",
+      "selectLabel": "Security Question 2",
+      "selectId": "security-question-two",
+      "selectName": "securityQuestionsTwo",
+      "required": "required",
+      "options": [
+        {
+          "value": "4",
+          "text": "What is your mothers maiden name"
+        },
+        {
+          "value": "5",
+          "text": "What is your fathers middle name"
+        },
+        {
+          "value": "6",
+          "text": "What was the name of your middle school"
+        }
+      ]
+    },
+    "answerInputOne": {
+      "labelText": "Security answer",
+      "labelClass": "",
+      "topClass": "col-xs-12 pd",
+      "id": "security-answer-one",
+      "roleId": "sqOne",
+      "class": "js-security",
+      "name": "securityAnswerOne",
+      "type": "text",
+      "inputId": "input-sqOne",
+      "maxlength": "40",
+      "minlength": "3",
+      "placeholder": "Security answer",
+      "descText": "Must contain at least 3 characters, and not match your username or password",
+      "descId": "sq-one-text",
+      "requiredText": "This section is required",
+      "required": "required",
+      "dataFieldName": "Security Answer"
+    },
+    "answerInputTwo": {
+      "labelText": "Security answer",
+      "labelClass": "",
+      "topClass": "col-xs-12 pd",
+      "id": "security-answer-two",
+      "roleId": "sqTwo",
+      "inputId": "input-sqTwo",
+      "class": "js-security",
+      "name": "securityAnswerTwo",
+      "type": "text",
+      "maxlength": "40",
+      "minlength": "3",
+      "placeholder": "Security answer",
+      "descText": "Must contain at least 3 characters, and not match your username or password",
+      "descId": "sq-two-text",
+      "requiredText": "This section is required",
+      "required": "required",
+      "dataFieldName": "Security Answer"
+    }
+  },
   "continueBtn": {
     "class": "primary-btn btn-block",
     "id": "reg-btn",

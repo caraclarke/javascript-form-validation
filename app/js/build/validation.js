@@ -168,6 +168,8 @@ var getError = function getError(field) {
   if (validity.patternMismatch) {
     if (field.classList.contains("js-address")) return "Please do not use any of these special characters < > &";
 
+    if (field.classList.contains("js-password")) return "Please do not use any of these special characters . , < > * %";
+
     // If pattern info is included, return custom error
     if (field.hasAttribute("data-title")) return field.getAttribute("data-title");
 
@@ -212,6 +214,8 @@ document.addEventListener("blur", function (e) {
   if (error) {
     showErrorMessage(e.target, error);
     return;
+  } else if (!error && e.target.classList.contains("js-password")) {
+    passwordCheck(e.target);
   }
 
   // Otherwise, remove any existing error message
