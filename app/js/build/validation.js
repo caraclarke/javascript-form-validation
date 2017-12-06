@@ -214,6 +214,8 @@ document.addEventListener("blur", function (e) {
   if (error) {
     showErrorMessage(e.target, error);
     return;
+  } else if (!error && e.target.classList.contains("js-password")) {
+    passwordCheck(e.target);
   }
 
   // Otherwise, remove any existing error message
