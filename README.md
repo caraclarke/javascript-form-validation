@@ -4,17 +4,17 @@ This project is a set of files and examples of form validation. It can be levera
 
 ### Validation Files
 - validation.js
-    - holds main validation logic and functions 
+    - holds main validation logic and functions
 - dob-validation.js
     - date of birth specific validations and formatting
 - phone-validation.js
-    - phone specific validations and formatting 
+    - phone specific validations and formatting
 - inline-alert.js
-   - functions for creating and clearing inline alert error links list 
+   - functions for creating and clearing inline alert error links list
 - password-validation.js
     - contains functions for validating various password requirements
 - security-question.js
-    - contains functions for validating various security q/a requirements 
+    - contains functions for validating various security q/a requirements
 
 These files are minified and combined in the build process, but are kept separate when translated to es2015 and can be found in `app/js/validation/` or built in `app/js/build/`
 
@@ -64,13 +64,13 @@ Performs a variety of checks to figure out if a date is valid. Uses `setCustomVa
 ### How to set up an input
 The files validate against inputs (including radio and checkbox) that have the `js-validate` class within a form that has a `js-form-valid` class. It uses the following attributes for various validations:
 - pattern: regex pattern for allowed input (letters, numbers, special characters)
-    - can also use regex for disallowed characters i.e. `"pattern": "^[^<>&]+$",` means no `< > &` characters. 
+    - can also use regex for disallowed characters i.e. `"pattern": "^[^<>&]+$",` means no `< > &` characters.
 - data-fieldName: used for `${data-fieldName} is missing` or required errors
 - data-title: used for custom error messages
 - required: HTML attribute to indicate required field
 - maxlength: maximum field length
 - minlength: minimum field length
- 
+
 So an example of a first name input that allows letters, spaces and `-`, has a max length and is required would be:
 ```
 <label for="input-fn" id="first-name">First Name</label>
@@ -80,9 +80,9 @@ So an example of a first name input that allows letters, spaces and `-`, has a m
     name="firstName"
     type="text"
     placeholder="First Name"
-    pattern="^[a-zA-Z\\s\\-']*$" 
-    data-fieldName="First name" 
-    data-title="Enter a valid name with letters only." 
-    maxlength="30" 
+    pattern="^[a-zA-Z\\s\\-']*$"
+    data-fieldName="First name"
+    data-title="Enter a valid name with letters only."
+    maxlength="30"
     required />
 ```
