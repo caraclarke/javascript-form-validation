@@ -160,6 +160,8 @@ const getError = ( field ) => {
   if (validity.patternMismatch) {
     if ( field.classList.contains("js-address") ) return "Please do not use any of these special characters < > &";
 
+    if ( field.classList.contains("js-password") ) return "Please do not use any of these special characters . , < > * %";
+
     // If pattern info is included, return custom error
     if (field.hasAttribute("data-title")) return field.getAttribute("data-title");
 
