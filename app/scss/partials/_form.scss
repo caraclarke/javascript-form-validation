@@ -3,6 +3,11 @@
     margin: 24px 15px 12px;
   }
 
+  .input-help {
+    line-height: 1rem;
+    margin-bottom: 8px;
+  }
+
   .checkbox input:checked + .fake-input:before {
     border-color: $color-black;
     background: $color-black url(../images/icons/svg/check.svg) center center no-repeat;

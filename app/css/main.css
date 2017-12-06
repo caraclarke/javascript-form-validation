@@ -9850,8 +9850,21 @@ declaration-block-trailing-semicolon  */
 .radio-input-area.error .input-help {
   color: #c00; }
 
+.inline-alert--error .err-list li {
+  display: block;
+  text-decoration: underline;
+  margin-bottom: 8px; }
+  .inline-alert--error .err-list li a {
+    font-weight: normal; }
+    .inline-alert--error .err-list li a:hover, .inline-alert--error .err-list li a:focus, .inline-alert--error .err-list li a:active {
+      color: #eb0000; }
+
 .ui-form .primary-btn {
   margin: 24px 15px 12px; }
+
+.ui-form .input-help {
+  line-height: 1rem;
+  margin-bottom: 8px; }
 
 .ui-form .checkbox input:checked + .fake-input:before {
   border-color: #000;

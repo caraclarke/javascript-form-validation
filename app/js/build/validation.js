@@ -1,134 +1,5 @@
 "use strict";
 
-// format DOB
-var lengthRequirement = function lengthRequirement(value, lengthReq) {
-  var elementValue = value;
-  var maxLength = lengthReq;
-
-  var sliceValue = maxLength - elementValue.length;
-  elementValue = elementValue.slice(0, sliceValue);
-  return elementValue;
-};
-
-var dateFormat = function dateFormat(element) {
-  var dEl = element;
-  var value = dEl.value.replace(/\s/g, "");
-  var formatRegex = /\//g;
-
-  if (formatRegex.test(value)) {
-    value = value.replace(/\//g, "");
-  }
-
-  if (value.length > 8) {
-    value = lengthRequirement(value, 8);
-    dEl.value = value.replace(/^([\d]{2})([\d]{2})([\d]{4})$/, "$1/$2/$3");
-  } else {
-    dEl.value = value.replace(/^([\d]{2})\/*([\d]{2})\/*([\d]{4})$/, "$1/$2/$3");
-  }
-};
-
-/* **************************
-  VALIDATE DOB INPUT
-*************************** */
-
-// http://stackoverflow.com/a/1433119/6826746
-var daysInMonth = function daysInMonth(m, y) {
-  // m is 0 indexed: 0-11
-  switch (m) {
-    case 1:
-      return y % 4 === 0 && y % 100 || y % 400 === 0 ? 29 : 28;
-    case 8:case 3:case 5:case 10:
-      return 30;
-    default:
-      return 31;
-  }
-};
-
-var isValid = function isValid(d, m, y) {
-  // m is 0 indexed: 0-11
-  return m >= 0 && m < 12 && d > 0 && d <= daysInMonth(m, y);
-};
-
-var checkDob = function checkDob(inputVal) {
-  var regex = /\//g;
-
-  if (inputVal) {
-    var value = inputVal.value;
-
-    if (regex.test(value)) {
-      value = value.replace(/\//g, "");
-    }
-
-    if (value.length < 8) {
-      inputVal.setCustomValidity("Invalid Date");
-      showErrorMessage(inputVal, "MM/DD/YYYY");
-      return false;
-    } else if (value.length > 8) {
-      value = lengthRequirement(value, 8);
-    }
-
-    var mm = parseInt(value.slice(0, 2)) - 1,
-        dd = parseInt(value.slice(2, 4)),
-        yyyy = parseInt(value.slice(4, 8));
-
-    if (isValid(dd, mm, yyyy)) {
-      var date = new Date(yyyy, mm, dd);
-      var now = new Date();
-
-      if (now > date) {
-        // input date is before todays date
-        inputVal.setCustomValidity("");
-        removeErrorMessage(inputVal);
-        return false;
-      } else {
-        // the input date is after todays date
-        inputVal.setCustomValidity("Please enter a date that is not in the future");
-        showErrorMessage(inputVal, "Please enter a date that is not in the future");
-        return true;
-      }
-    } else {
-      inputVal.setCustomValidity("Invalid Date");
-      showErrorMessage(inputVal, "MM/DD/YYYY");
-      return true;
-    }
-  } // end if inputVal
-
-  return false;
-};
-"use strict";
-
-var spaceRegex = /\s/g;
-
-var phoneFormat = function phoneFormat(element) {
-  var phEl = element;
-  var value = phEl.value.replace(/\s/g, "");
-  var formatRegex = /\//g;
-
-  if (formatRegex.test(value)) {
-    value = value.replace(/\//g, "");
-  }
-
-  if (value.length > 10) {
-    value = lengthRequirement(value, 10);
-    phEl.value = value.replace(/([\d]{3})-*([\d]{3})-*([\d]{4})$/, "$1-$2-$3");
-  } else {
-    phEl.value = value.replace(/([\d]{3})-*([\d]{3})-*([\d]{4})$/, "$1-$2-$3");
-  }
-};
-
-var phoneValidate = function phoneValidate(element) {
-  var phoneNumber = element.value;
-
-  if (spaceRegex.test(phoneNumber)) {
-    element.setCustomValidity("no spaces");
-    showErrorMessage(element, "Mobile number cannot contain spaces");
-  } else {
-    element.setCustomValidity("");
-    phoneFormat(element);
-  }
-};
-"use strict";
-
 /* **************************
   DOM VARIABLES
   *************************** */
@@ -205,9 +76,9 @@ var createErrorMessage = function createErrorMessage(errorField, id, error) {
 
     // Otherwise, insert it after the field
     if (!label) {
-      errorField.parentNode.insertBefore(message, errorField.nextSibling);
+      errorField.parentNode.appendChild(message, errorField.nextSibling);
     } else if (label && !(errorField.type === "radio" || errorField.type === "checkbox")) {
-      errorField.parentNode.insertBefore(message, errorField.lastChild);
+      errorField.parentNode.insertAfter(message, errorField.nextSibling);
     }
   }
 
@@ -359,10 +230,13 @@ document.addEventListener("submit", function (e) {
   // Validate each field
   // Store the first field with an error to a variable so we can bring it into focus later
   var error, hasError;
+  clearFormLevelErrorLinks();
   for (var i = 0; i < fields.length; i++) {
     error = checkForError(fields[i]);
     if (error) {
       showErrorMessage(fields[i], error);
+      createFormLevelErrorLink(fields[i], error);
+
       if (!hasError) {
         hasError = fields[i];
       }
@@ -371,7 +245,10 @@ document.addEventListener("submit", function (e) {
 
   // If there are errrors, dont submit form and focus on first element with error
   if (hasError) {
-    hasError.focus();
+    feInlineAlert.classList.remove("hide");
+    feInlineAlert.focus();
+  } else {
+    feInlineAlert.classList.add("hide");
   }
 
   // Otherwise, let the form submit normally
