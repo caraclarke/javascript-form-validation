@@ -19,7 +19,7 @@ var answersMatching = false;
   *************************** */
 
 // check if security question is matching the password
-var checkPassword = function checkPassword(password, confirmPassword, answer, index, removeText, addText, field) {
+var checkPassword = function checkPassword(password, confirmPassword, answer, field) {
   if (answer === password || answer === confirmPassword) {
     field.setCustomValidity("Answer cannot match password");
     return false;
@@ -29,7 +29,7 @@ var checkPassword = function checkPassword(password, confirmPassword, answer, in
 };
 
 // check if security question is matching the username
-var checkUsername = function checkUsername(username, answer, index, removeText, addText, field) {
+var checkUsername = function checkUsername(username, answer, field) {
   if (username === answer) {
     field.setCustomValidity("Answer cannot match username");
     return false;
@@ -53,7 +53,7 @@ var checkQuestion = function checkQuestion(index, field) {
   // does it equal the selected question && case insentitive -> false
   if (selectedOption[index].toLowerCase() === field.value.toLowerCase()) {
     field.setCustomValidity("Answers cannot question");
-    showError(field, "Answer must not be equal to a security question you selected");
+    showErrorMessage(field, "Answer must not be equal to a security question you selected");
     result = false;
   } else {
     result = true;
@@ -72,7 +72,7 @@ var checkQMatch = function checkQMatch() {
     if (answerOne.value === answerTwo.value) {
       securityField.forEach(function (field) {
         field.setCustomValidity("Answers cannot match");
-        showError(field, "Answers must be unique");
+        showErrorMessage(field, "Answers must be unique");
       });
 
       return false;
@@ -87,7 +87,6 @@ var checkQMatch = function checkQMatch() {
 *************************** */
 
 var reqSqErr = function reqSqErr(pwMatchBool, unMatchBool, optionMatchBool, matchAnswerBool, field) {
-
   if (!pwMatchBool) {
     field.setCustomValidity("Field text matches password");
   }
@@ -128,10 +127,10 @@ var securityQCheck = function securityQCheck(element) {
   var errMsg = "";
 
   if (password !== "") {
-    matchPassword = checkPassword(password, confirmPassword, question, elIndex, initialIndex, metIndex, element);
+    matchPassword = checkPassword(password, confirmPassword, question, element);
   }
   if (username !== "") {
-    matchUsername = checkUsername(username, question, elIndex, initialIndex, metIndex, element);
+    matchUsername = checkUsername(username, question, element);
   }
 
   matchesQuestion = checkQuestion(elIndex, element);
@@ -142,14 +141,14 @@ var securityQCheck = function securityQCheck(element) {
 
     securityField.forEach(function (item) {
       if (item.checkValidity()) {
-        removeError(item);
+        removeErrorMessage(item);
       } else if (!item.checkValidity() && item.value !== "") {
-        elementActions(item);
+        checkForError(item);
       }
     });
   } else {
     element.setCustomValidity("Please enter a valid answer");
     errMsg = reqSqErr(matchPassword, matchUsername, matchesQuestion, answersMatching, element);
-    showError(element, errMsg);
+    showErrorMessage(element, errMsg);
   }
 };

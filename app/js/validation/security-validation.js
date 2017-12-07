@@ -17,7 +17,7 @@ let answersMatching = false;
   *************************** */
 
   // check if security question is matching the password
-const checkPassword = ( password, confirmPassword, answer, index, removeText, addText, field ) => {
+const checkPassword = ( password, confirmPassword, answer, field ) => {
   if ( answer === password || answer === confirmPassword ) {
     field.setCustomValidity("Answer cannot match password");
     return false;
@@ -27,7 +27,7 @@ const checkPassword = ( password, confirmPassword, answer, index, removeText, ad
 };
 
 // check if security question is matching the username
-const checkUsername = ( username, answer, index, removeText, addText, field ) => {
+const checkUsername = ( username, answer, field ) => {
   if ( username === answer ) {
     field.setCustomValidity("Answer cannot match username");
     return false;
@@ -51,7 +51,7 @@ const checkQuestion = ( index, field ) => {
   // does it equal the selected question && case insentitive -> false
   if ( selectedOption[ index ].toLowerCase() === field.value.toLowerCase() ) {
     field.setCustomValidity("Answers cannot question");
-    showError( field, "Answer must not be equal to a security question you selected" );
+    showErrorMessage( field, "Answer must not be equal to a security question you selected" );
     result = false;
   } else {
     result = true;
@@ -70,7 +70,7 @@ const checkQMatch = () => {
     if ( answerOne.value === answerTwo.value ) {
       securityField.forEach( (field) => {
         field.setCustomValidity("Answers cannot match");
-        showError( field, "Answers must be unique" );
+        showErrorMessage( field, "Answers must be unique" );
       });
 
       return false;
@@ -85,7 +85,6 @@ const checkQMatch = () => {
 *************************** */
 
 const reqSqErr = ( pwMatchBool, unMatchBool, optionMatchBool, matchAnswerBool, field ) => {
-
   if ( !pwMatchBool ) {
     field.setCustomValidity("Field text matches password");
   }
@@ -106,7 +105,7 @@ const reqSqErr = ( pwMatchBool, unMatchBool, optionMatchBool, matchAnswerBool, f
 
   if ( field.value === "" ) {
     field.setCustomValidity("required section");
-    return `Please answer the security question.`;
+    return "Please answer the security question.";
   }
 
   return "Please enter a valid answer";
@@ -125,8 +124,8 @@ const securityQCheck = ( element ) => {
   const elIndex = fieldsIndex.indexOf( element );
   let errMsg = "";
 
-  if ( password !== "" ) { matchPassword = checkPassword( password, confirmPassword, question, elIndex, initialIndex, metIndex, element ); }
-  if ( username !== "" ) { matchUsername = checkUsername( username, question, elIndex, initialIndex, metIndex, element ); }
+  if ( password !== "" ) { matchPassword = checkPassword( password, confirmPassword, question, element ); }
+  if ( username !== "" ) { matchUsername = checkUsername( username, question, element ); }
 
   matchesQuestion = checkQuestion( elIndex, element );
   answersMatching = checkQMatch();
@@ -136,14 +135,14 @@ const securityQCheck = ( element ) => {
 
     securityField.forEach((item) => {
       if ( item.checkValidity() ) {
-        removeError( item );
+        removeErrorMessage( item );
       } else if ( !item.checkValidity() && item.value !== "" ) {
-        elementActions( item );
+        checkForError( item );
       }
     });
   } else {
     element.setCustomValidity("Please enter a valid answer");
     errMsg = reqSqErr( matchPassword, matchUsername, matchesQuestion, answersMatching, element );
-    showError(element, errMsg);
+    showErrorMessage( element, errMsg );
   }
 };
