@@ -56,6 +56,21 @@
       <% include ../components/_input-pw %>
     </div>
 
+    <div class="col-xs-12 pd">
+      <% var select= data.securityQuestion.questionOne; %>
+      <% include ../components/_select %>
+      <% input= data.securityQuestion.answerInputOne; %>
+      <% include ../components/_input %>
+
+      <% info= data.securityQuestion.answerInputOne; %>
+      <% include ../components/_sq-requirements %>
+
+      <% select= data.securityQuestion.questionTwo; %>
+      <% include ../components/_select %>
+      <% input= data.securityQuestion.answerInputTwo; %>
+      <% include ../components/_input %>
+    </div>
+
     <div class="pd col-md-5 col-xs-12 primary-btn-wrap">
       <% var btn= data.continueBtn; %>
       <% include ../components/_btn %>

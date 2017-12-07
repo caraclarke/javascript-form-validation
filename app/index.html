@@ -378,6 +378,150 @@
 
     </div>
 
+    <div class="col-xs-12 pd">
+      
+      <div class="selection-area col-xs-12 pd">
+
+<label for="security-question">Security Question 1
+  <select
+    id="security-question"
+    class="form_fieldset_form-group_select form-control js-select--control"
+    name="securityQuestions"
+    required >
+
+    
+      <option class="js-select--option" value="1">What is your mother's maiden name?</option>
+    
+      <option class="js-select--option" value="2">What is your father's middle name?</option>
+    
+      <option class="js-select--option" value="3">What was the name of your middle school?</option>
+    
+  </select>
+</label>
+
+</div>
+
+      
+      <div class="text-input-area col-xs-12 pd ">
+  <label for="input-sqOne" id="security-answer-one" class="">Security answer</label>
+
+  <input
+    id="input-sqOne"
+    aria-labelledby="security-answer-one sq-one-text"
+    class="text-field js-validate js-security"
+    name="securityAnswerOne"
+    type="text"
+    placeholder="Security answer"
+    
+    
+     data-fieldName="Security Answer" 
+    
+    
+     minlength="3" 
+     maxlength="40" 
+    required />
+
+  
+    <div class="input-desc" id="sq-one-text">
+      <p>Must contain at least 3 characters, and not match your username or password</p>
+    </div>
+  
+</div>
+
+
+      
+      <ul class="req-checker col-xs-12 pd hide"
+  aria-live="polite" aria-relevant="additions" aria-atomic="true" role="status"
+  id="sqOne">
+    <li class="req-checker_criteria js-allSqChecked js-SqChar">
+      <span class="icon req-checker_criteria_icon icon--green-check"></span>
+      <span aria-controls="sqOne" class="js-sq-char js-submitText">At least <strong>3 characters</strong>.</span>
+      <span aria-controls="sqOne" class="is-hidden js-sq-char js-submitText">Requirement met: <strong>At least 3 characters</strong>.</span>
+      <span aria-controls="sqOne" class="is-hidden js-sq-char js-submitText">Requirement not met: <strong>At least 3 characters</strong>.</span>
+    </li>
+
+    <li class="req-checker_criteria js-allSqChecked js-SqUn">
+      <span class="icon req-checker_criteria_icon icon--green-check"></span>
+      <span class="js-submitText js-un-match">Your security answer <strong>can't match your username</strong></span>
+      <span class="js-submitText is-hidden js-un-match">Requirement met: your security answer <strong>can't match <br /><span class="pw-indent">your username</span></strong></span>
+      <span class="js-submitText is-hidden js-un-match">Requirement not met: your security answer <strong>can't match <br /><span class="pw-indent">your username</span></strong></span>
+    </li>
+
+    <li class="req-checker_criteria js-allSqChecked js-SqPw">
+      <span class="icon req-checker_criteria_icon icon--green-check"></span>
+      <span class="js-submitText js-pw-match">Your security answer <strong>can't match your password</strong></span>
+      <span class="js-submitText is-hidden js-pw-match">Requirement met: your security answer <strong>can't match <br /><span class="pw-indent">your password</span></strong></span>
+      <span class="js-submitText is-hidden js-pw-match">Requirement not met: your security answer <strong>can't match <br /><span class="pw-indent">your password</span></strong></span>
+    </li>
+
+    <li class="req-checker_criteria js-sqCharCri charCri">
+      <span class="js-submitText js-sp-char">Do not use <strong>these special characters:
+        <span class="sr-only">period</span>
+        &#46; &lt; &#42; &#37;</strong>
+      </span>
+      <span class="js-submitText is-hidden js-sp-char">Requirement met: do not use <strong>these special characters:
+        <span class="sr-only">period</span>
+        &#46; &lt; &#42; &#37;</strong>
+      </span>
+      <span class="js-submitText is-hidden js-sp-char">Requirement not met: do not use <strong>these special characters:
+        <span class="sr-only">period</span>
+        &#46; &lt; &#42; &#37;</strong>
+      </span>
+    </li>
+</ul>
+
+
+      
+      <div class="selection-area col-xs-12 pd">
+
+<label for="security-question-two">Security Question 2
+  <select
+    id="security-question-two"
+    class="form_fieldset_form-group_select form-control js-select--control"
+    name="securityQuestionsTwo"
+    required >
+
+    
+      <option class="js-select--option" value="4">What is your mothers maiden name</option>
+    
+      <option class="js-select--option" value="5">What is your fathers middle name</option>
+    
+      <option class="js-select--option" value="6">What was the name of your middle school</option>
+    
+  </select>
+</label>
+
+</div>
+
+      
+      <div class="text-input-area col-xs-12 pd ">
+  <label for="input-sqTwo" id="security-answer-two" class="">Security answer</label>
+
+  <input
+    id="input-sqTwo"
+    aria-labelledby="security-answer-two sq-two-text"
+    class="text-field js-validate js-security"
+    name="securityAnswerTwo"
+    type="text"
+    placeholder="Security answer"
+    
+    
+     data-fieldName="Security Answer" 
+    
+    
+     minlength="3" 
+     maxlength="40" 
+    required />
+
+  
+    <div class="input-desc" id="sq-two-text">
+      <p>Must contain at least 3 characters, and not match your username or password</p>
+    </div>
+  
+</div>
+
+    </div>
+
     <div class="pd col-md-5 col-xs-12 primary-btn-wrap">
       
       <button class="primary-btn btn-block" id="reg-btn" type="submit">Continue</button>
@@ -397,6 +541,7 @@
       <script type="text/javascript" src="./js/build/dob-validation.js"></script>
       <script type="text/javascript" src="./js/build/phone-validation.js"></script>
       <script type="text/javascript" src="./js/build/password-validation.js"></script>
+      <script type="text/javascript" src="./js/build/security-validation.js"></script>
       <script type="text/javascript" src="./js/build/inline-alert.js"></script>
     <!-- endbuild -->
   </body>
