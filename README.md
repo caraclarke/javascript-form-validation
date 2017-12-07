@@ -62,7 +62,7 @@ Returns true or false whether a date is a valid date. `02/27/1985` yes, `48/17/2
 Performs a variety of checks to figure out if a date is valid. Uses `setCustomValidity` to make field invalid or valid depending on input.
 
 ### How to set up an input
-The files validate against inputs (including radio and checkbox) that have the `js-error` class within a form that has a `js-form-valid` class. It uses the following attributes for various validations:
+The files validate against inputs (including radio and checkbox) that have the `js-validate` class within a form that has a `js-form-valid` class. It uses the following attributes for various validations:
 - pattern: regex pattern for allowed input (letters, numbers, special characters)
     - can also use regex for disallowed characters i.e. `"pattern": "^[^<>&]+$",` means no `< > &` characters. 
 - data-fieldName: used for `${data-fieldName} is missing` or required errors
