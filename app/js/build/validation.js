@@ -213,15 +213,14 @@ document.addEventListener("blur", function (e) {
 
   if (error) {
     showErrorMessage(e.target, error);
-    return;
   } else if (!error && e.target.classList.contains("js-password")) {
     passwordCheck(e.target);
   } else if (!error && e.target.classList.contains("js-security")) {
     securityQCheck(e.target);
+  } else {
+    // Otherwise, remove any existing error message
+    removeErrorMessage(event.target);
   }
-
-  // Otherwise, remove any existing error message
-  removeErrorMessage(event.target);
 }, true);
 
 document.addEventListener("submit", function (e) {

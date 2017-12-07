@@ -1,9 +1,6 @@
 // SECURITY REQUIREMENTS
 const securityField = document.querySelectorAll( ".js-security" );
 const usernameField = document.querySelector( ".js-username" );
-
-// SQ SPECIFIC DOM
-const dropdownElement = document.querySelectorAll( ".js-select--control" );
 const sqOptions = document.querySelectorAll( ".js-select--option" );
 
 // SECURITY QUESTION
