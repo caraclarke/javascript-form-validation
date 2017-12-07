@@ -1,9 +1,9 @@
 "use strict";
 
 // format DOB
-var lengthRequirement = function lengthRequirement(value, lengthReq) {
+var lengthRequirement = function lengthRequirement(value, expectedLength) {
   var elementValue = value;
-  var maxLength = lengthReq;
+  var maxLength = expectedLength;
 
   var sliceValue = maxLength - elementValue.length;
   elementValue = elementValue.slice(0, sliceValue);
@@ -49,19 +49,19 @@ var isValid = function isValid(d, m, y) {
   return m >= 0 && m < 12 && d > 0 && d <= daysInMonth(m, y);
 };
 
-var checkDob = function checkDob(inputVal) {
+var checkDob = function checkDob(input) {
   var regex = /\//g;
 
-  if (inputVal) {
-    var value = inputVal.value;
+  if (input) {
+    var value = input.value;
 
     if (regex.test(value)) {
       value = value.replace(/\//g, "");
     }
 
     if (value.length < 8) {
-      inputVal.setCustomValidity("Invalid Date");
-      showErrorMessage(inputVal, "MM/DD/YYYY");
+      input.setCustomValidity("Invalid Date");
+      showErrorMessage(input, "MM/DD/YYYY");
       return false;
     } else if (value.length > 8) {
       value = lengthRequirement(value, 8);
@@ -77,18 +77,18 @@ var checkDob = function checkDob(inputVal) {
 
       if (now > date) {
         // input date is before todays date
-        inputVal.setCustomValidity("");
-        removeErrorMessage(inputVal);
+        input.setCustomValidity("");
+        removeErrorMessage(input);
         return false;
       } else {
         // the input date is after todays date
-        inputVal.setCustomValidity("Please enter a date that is not in the future");
-        showErrorMessage(inputVal, "Please enter a date that is not in the future");
+        input.setCustomValidity("Please enter a date that is not in the future");
+        showErrorMessage(input, "Please enter a date that is not in the future");
         return true;
       }
     } else {
-      inputVal.setCustomValidity("Invalid Date");
-      showErrorMessage(inputVal, "MM/DD/YYYY");
+      input.setCustomValidity("Invalid Date");
+      showErrorMessage(input, "MM/DD/YYYY");
       return true;
     }
   } // end if inputVal

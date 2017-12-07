@@ -1,7 +1,7 @@
 // format DOB
-const lengthRequirement = ( value, lengthReq ) => {
+const lengthRequirement = ( value, expectedLength ) => {
   let elementValue = value;
-  const maxLength = lengthReq;
+  const maxLength = expectedLength;
 
   const sliceValue = maxLength - elementValue.length;
   elementValue = elementValue.slice(0, sliceValue);
@@ -45,19 +45,19 @@ const isValid = function (d, m, y) {
   return m >= 0 && m < 12 && d > 0 && d <= daysInMonth(m, y);
 };
 
-const checkDob = ( inputVal ) => {
+const checkDob = ( input ) => {
   const regex = /\//g;
 
-  if ( inputVal ) {
-    let value = inputVal.value;
+  if ( input ) {
+    let value = input.value;
 
     if ( regex.test( value ) ) {
       value = value.replace(/\//g, "");
     }
 
     if ( value.length < 8 ) {
-      inputVal.setCustomValidity("Invalid Date");
-      showErrorMessage(inputVal, "MM/DD/YYYY");
+      input.setCustomValidity("Invalid Date");
+      showErrorMessage(input, "MM/DD/YYYY");
       return false;
     } else if ( value.length > 8 ) {
       value = lengthRequirement( value, 8 );
@@ -72,17 +72,17 @@ const checkDob = ( inputVal ) => {
       const now = new Date();
 
       if ( now > date ) { // input date is before todays date
-        inputVal.setCustomValidity("");
-        removeErrorMessage(inputVal);
+        input.setCustomValidity("");
+        removeErrorMessage(input);
         return false;
       } else { // the input date is after todays date
-        inputVal.setCustomValidity("Please enter a date that is not in the future");
-        showErrorMessage(inputVal, "Please enter a date that is not in the future");
+        input.setCustomValidity("Please enter a date that is not in the future");
+        showErrorMessage(input, "Please enter a date that is not in the future");
         return true;
       }
     } else {
-      inputVal.setCustomValidity("Invalid Date");
-      showErrorMessage(inputVal, "MM/DD/YYYY");
+      input.setCustomValidity("Invalid Date");
+      showErrorMessage(input, "MM/DD/YYYY");
       return true;
     }
   } // end if inputVal
