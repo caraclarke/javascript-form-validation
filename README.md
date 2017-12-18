@@ -73,10 +73,7 @@ The files validate against inputs (including radio and checkbox) that have the `
 - maxlength: maximum field length
 - minlength: minimum field length
 
-<<<<<<< HEAD
 So an example of a first name input that allows letters, spaces and `-`, has a max length and is required would be:
-=======
-So an example of a first name input that is letters only, has a max length and is required would be:
 
 ```
 <label for="input-fn" id="first-name">First Name</label>
