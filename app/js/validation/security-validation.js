@@ -74,6 +74,10 @@ const checkQMatch = () => {
     }
   }
 
+  securityField.forEach( ( item ) => {
+    item.setCustomValidity("");
+    removeErrorMessage( item );
+  });
   return true;
 };
 

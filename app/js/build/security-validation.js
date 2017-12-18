@@ -76,6 +76,10 @@ var checkQMatch = function checkQMatch() {
     }
   }
 
+  securityField.forEach(function (item) {
+    item.setCustomValidity("");
+    removeErrorMessage(item);
+  });
   return true;
 };
 
