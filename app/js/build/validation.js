@@ -213,13 +213,14 @@ document.addEventListener("blur", function (e) {
 
   if (error) {
     showErrorMessage(e.target, error);
-    return;
   } else if (!error && e.target.classList.contains("js-password")) {
     passwordCheck(e.target);
+  } else if (!error && e.target.classList.contains("js-security")) {
+    securityQCheck(e.target);
+  } else {
+    // Otherwise, remove any existing error message
+    removeErrorMessage(event.target);
   }
-
-  // Otherwise, remove any existing error message
-  removeErrorMessage(event.target);
 }, true);
 
 document.addEventListener("submit", function (e) {
@@ -234,7 +235,9 @@ document.addEventListener("submit", function (e) {
   // Validate each field
   // Store the first field with an error to a variable so we can bring it into focus later
   var error, hasError;
+
   clearFormLevelErrorLinks();
+
   for (var i = 0; i < fields.length; i++) {
     error = checkForError(fields[i]);
     if (error) {

@@ -189,6 +189,22 @@
       "deliminter": "-"
     }
   },
+  "username": {
+    "labelText": "Username",
+    "labelClass": "",
+    "topClass": "col-xs-12 pd",
+    "id": "user-name",
+    "inputId": "input-un",
+    "class": "js-username",
+    "name": "username",
+    "type": "text",
+    "placeholder": "Username",
+    "descText": "",
+    "title": "Enter a valid username",
+    "pattern": "^[a-zA-Z0-9]+$",
+    "required": "required",
+    "dataRqName": "Username"
+  },
   "password": {
     "labelText": "Password",
     "labelClass": "",
