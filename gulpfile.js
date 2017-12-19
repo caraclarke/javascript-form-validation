@@ -51,7 +51,7 @@ gulp.task('build:vendor', function() {
 
 gulp.task('move:icons', function() {
   return gulp.src('app/scss/icons/*.css')
-    .pipe(gulp.dest('app/images/icons'));
+    .pipe(gulp.dest('app/css/icons/'));
 });
 
 gulp.task('build:icons', function() {

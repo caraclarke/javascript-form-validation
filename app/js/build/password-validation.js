@@ -2,6 +2,7 @@
 
 // PW REQUIREMENTS
 var passwordField = document.querySelectorAll(".js-password");
+var passwordReqIcon = document.querySelector(".check-icon");
 
 // PASSWORD
 var hasCapital = false;
@@ -53,10 +54,12 @@ var checkPwMatch = function checkPwMatch() {
         showErrorMessage(field, "Passwords do not match");
       });
 
+      passwordField[1].classList.remove("matching");
       return false;
     }
   }
 
+  passwordField[1].classList.add("matching");
   return true;
 };
 
@@ -99,6 +102,7 @@ var passwordCheck = function passwordCheck(element) {
 
   if (hasCapital && hasLowercase && hasNumber && isMatching) {
     element.setCustomValidity("");
+    passwordReqIcon.classList.remove("hide");
 
     passwordField.forEach(function (item) {
       if (item.checkValidity()) {
@@ -109,6 +113,7 @@ var passwordCheck = function passwordCheck(element) {
     });
   } else {
     element.setCustomValidity("Please enter a valid answer");
+    passwordReqIcon.classList.add("hide");
     var errMsg = reqPwErr(hasCapital, hasLowercase, hasNumber, isMatching, element);
     showErrorMessage(element, errMsg);
   }

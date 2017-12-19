@@ -7,6 +7,7 @@
 var form = document.querySelectorAll(".js-form-valid");
 var dobField = document.querySelector(".js-dob");
 var mobilePhoneField = document.querySelector(".js-pn");
+var passwords = document.querySelectorAll(".js-password");
 
 /* **************************
   VALIDATION FUNCTIONS
@@ -199,8 +200,8 @@ var checkForError = function checkForError(field) {
 document.addEventListener("focusin", function (e) {
   e.stopPropagation();
 
-  // return if form doesnt have validation flag
-  if (!e.target.classList.contains("js-validate")) {
+  // dont need to clear the error if there is no error
+  if (!e.target.classList.contains("error")) {
     return;
   }
 
@@ -224,6 +225,15 @@ mobilePhoneField.addEventListener("blur", function (e) {
     phoneFormat(e.target);
   }
 }, true);
+
+// check password and email on blur
+passwords.forEach(function (item) {
+  item.addEventListener("blur", function (e) {
+    e.stopPropagation();
+
+    passwordCheck(e.target);
+  });
+});
 
 document.addEventListener("submit", function (e) {
   e.preventDefault();

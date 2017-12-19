@@ -1,5 +1,6 @@
 // PW REQUIREMENTS
 const passwordField = document.querySelectorAll( ".js-password" );
+const passwordReqIcon = document.querySelector( ".check-icon" );
 
 // PASSWORD
 let hasCapital = false;
@@ -46,15 +47,17 @@ const checkPwMatch = () => {
 
   if ( password.value !== "" && passwordConfirm.value !== "" ) {
     if ( password.value !== passwordConfirm.value ) {
-      passwordField.forEach( (field) => {
+      passwordField.forEach( ( field ) => {
         field.setCustomValidity("Passwords must match");
         showErrorMessage( field, "Passwords do not match" );
       });
 
+      passwordField[ 1 ].classList.remove( "matching" );
       return false;
     }
   }
 
+  passwordField[ 1 ].classList.add( "matching" );
   return true;
 };
 
@@ -97,6 +100,7 @@ const passwordCheck = ( element ) => {
 
   if ( hasCapital && hasLowercase && hasNumber && isMatching ) {
     element.setCustomValidity("");
+    passwordReqIcon.classList.remove( "hide" );
 
     passwordField.forEach((item) => {
       if ( item.checkValidity() ) {
@@ -107,6 +111,7 @@ const passwordCheck = ( element ) => {
     });
   } else {
     element.setCustomValidity("Please enter a valid answer");
+    passwordReqIcon.classList.add( "hide" );
     const errMsg = reqPwErr( hasCapital, hasLowercase, hasNumber, isMatching, element );
     showErrorMessage( element, errMsg );
   }
