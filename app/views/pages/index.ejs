@@ -5,60 +5,72 @@
     <% include ../components/_error-inline-alert %>
 
     <div class="col-xs-12 pd">
+      <h5>An example of a text input with only certain characters allowed (pattern) and a maxlength requirement</h5>
       <% var input= data.firstName; %>
-      <% include ../components/_input %>
-
-      <% input= data.lastName; %>
       <% include ../components/_input %>
     </div>
 
     <div class="col-xs-12 pd">
+      <h5>An example of a required text field with certain characters disallowed (pattern)</h5>
       <% input= data.inputAddressOne; %>
       <% include ../components/_input %>
+    </div>
 
-      <% input= data.inputAddressTwo; %>
-      <% include ../components/_input %>
-
+    <div class="col-xs-12 pd">
+      <h5>Numbers only and min/maxlength</h5>
       <% input= data.zipcode; %>
       <% include ../components/_input %>
     </div>
 
     <div class="col-xs-12 pd">
+      <h5>DOB validation for valid date, date not in the future and formatting</h5>
+
       <% input= data.inputDOB; %>
       <% include ../components/_input %>
     </div>
 
     <div class="col-xs-12 pd">
+      <h5>Radio button validation example</h5>
+
       <% var radioBtn= data.gender; %>
       <% include ../components/_radio-btn %>
     </div>
 
     <div class="col-xs-12 pd">
-      <% input= data.emailAddress; %>
-      <% include ../components/_input %>
-    </div>
+      <h5>Checkbox validation example</h5>
 
-    <div class="col-xs-12 pd">
       <% var checkbox= data.termsAndCond; %>
       <% include ../components/_checkbox %>
     </div>
 
     <div class="col-xs-12 pd">
+      <h5>Phone validation and formatting example</h5>
+
       <% input= data.phoneNumber; %>
       <% include ../components/_input %>
     </div>
 
     <div class="col-xs-12 pd">
-      <% input= data.username; %>
-      <% include ../components/_input %>
-    </div>
+      <h5>Example password validations, including the hint text listed below and checking for password match</h5>
 
-    <div class="col-xs-12 pd">
       <% input= data.password; %>
       <% include ../components/_input-pw %>
 
       <% input= data.passwordConfirm; %>
       <% include ../components/_input-pw %>
+    </div>
+
+    <div class="col-xs-12 pd">
+      <h5>The following examples relate to potential security question validations and follow these rules:</h5>
+      <ul>
+        <li>Security Answer cannot match password or username</li>
+        <li>Security Answer cannot match question</li>
+        <li>Security Answers cannot match</li>
+        <li>Length 3-40 characters</li>
+        <li>Only disallowed < * &amp; symbols</li>
+      </ul>
+      <% input= data.username; %>
+      <% include ../components/_input %>
     </div>
 
     <div class="col-xs-12 pd">

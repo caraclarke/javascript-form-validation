@@ -30,6 +30,7 @@
 
 
     <div class="col-xs-12 pd">
+      <h5>An example of a text input with only certain characters allowed (pattern) and a maxlength requirement</h5>
       
       <div class="text-input-area pd col-md-11 col-xs-12 ">
   <label for="input-fn" id="first-name" class="">First Name</label>
@@ -57,37 +58,10 @@
   
 </div>
 
-
-      
-      <div class="text-input-area pd col-md-11 col-xs-12 ">
-  <label for="input-ln" id="last-name" class="">Last Name</label>
-
-  <input
-    id="input-ln"
-    aria-labelledby="last-name ln-text"
-    class="text-field js-validate "
-    name="lastName"
-    type="text"
-    placeholder="Last name"
-    
-     pattern="^[a-zA-Z\s\-&#39;]*$" 
-     data-fieldName="Last Name" 
-     data-title="Enter a valid name with letters only" 
-    
-    
-     maxlength="30" 
-    required />
-
-  
-    <div class="input-desc" id="ln-text">
-      <p>Enter your full last name, not a nickname</p>
-    </div>
-  
-</div>
-
     </div>
 
     <div class="col-xs-12 pd">
+      <h5>An example of a required text field with certain characters disallowed (pattern)</h5>
       
       <div class="text-input-area pd col-md-11 col-xs-12 ">
   <label for="input-addOne" id="input-address-one" class="">Street address</label>
@@ -111,31 +85,10 @@
   
 </div>
 
+    </div>
 
-      
-      <div class="text-input-area pd col-md-11 col-xs-12 ">
-  <label for="" id="input-address-two" class="">Street address 2 (optional)</label>
-
-  <input
-    id=""
-    aria-labelledby="input-address-two "
-    class="text-field js-validate js-address"
-    name="addressOne"
-    type="text"
-    placeholder="Street address"
-    
-     pattern="^[^&lt;&gt;&amp;]+$" 
-    
-     data-title="Enter a valid address with no special characters" 
-    
-    
-    
-     />
-
-  
-</div>
-
-
+    <div class="col-xs-12 pd">
+      <h5>Numbers only and min/maxlength</h5>
       
       <div class="text-input-area pd col-md-11 col-xs-12 ">
   <label for="input-zipcode" id="input-zipcode" class="">Zipcode</label>
@@ -162,6 +115,8 @@
     </div>
 
     <div class="col-xs-12 pd">
+      <h5>DOB validation for valid date, date not in the future and formatting</h5>
+
       
       <div class="text-input-area pd col-md-11 col-xs-12 ">
   <label for="input-dob" id="dob" class="">Date of birth</label>
@@ -192,6 +147,8 @@
     </div>
 
     <div class="col-xs-12 pd">
+      <h5>Radio button validation example</h5>
+
       
       <fieldset class="radio-input-area js-radio">
   <legend class="radio-label">Gender:</legend>
@@ -235,32 +192,8 @@
     </div>
 
     <div class="col-xs-12 pd">
-      
-      <div class="text-input-area col-xs-12 pd ">
-  <label for="input-eadd" id="email-address" class="">Email Address</label>
+      <h5>Checkbox validation example</h5>
 
-  <input
-    id="input-eadd"
-    aria-labelledby="email-address "
-    class="text-field js-validate js-email"
-    name="emailAddress"
-    type="email"
-    placeholder="Email Address"
-    
-     pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" 
-     data-fieldName="Email Address" 
-     data-title="Enter a valid email address" 
-    
-    
-    
-    required />
-
-  
-</div>
-
-    </div>
-
-    <div class="col-xs-12 pd">
       
       <div class="checkbox-input-area js-terms col-xs-12 pd">
   
@@ -281,6 +214,8 @@
     </div>
 
     <div class="col-xs-12 pd">
+      <h5>Phone validation and formatting example</h5>
+
       
       <div class="text-input-area phone-section col-xs-12 pd ">
   <label for="input-pn" id="phone" class="">Mobile Phone</label>
@@ -311,32 +246,8 @@
     </div>
 
     <div class="col-xs-12 pd">
-      
-      <div class="text-input-area col-xs-12 pd ">
-  <label for="input-un" id="user-name" class="">Username</label>
+      <h5>Example password validations, including the hint text listed below and checking for password match</h5>
 
-  <input
-    id="input-un"
-    aria-labelledby="user-name "
-    class="text-field js-validate js-username"
-    name="username"
-    type="text"
-    placeholder="Username"
-    
-     pattern="^[a-zA-Z0-9]+$" 
-    
-     data-title="Enter a valid username" 
-    
-    
-    
-    required />
-
-  
-</div>
-
-    </div>
-
-    <div class="col-xs-12 pd">
       
       <div class="text-input-area col-xs-12 pd">
   <label id="password" class="">Password</label>
@@ -400,6 +311,40 @@
 
   </div>
 
+</div>
+
+    </div>
+
+    <div class="col-xs-12 pd">
+      <h5>The following examples relate to potential security question validations and follow these rules:</h5>
+      <ul>
+        <li>Security Answer cannot match password or username</li>
+        <li>Security Answer cannot match question</li>
+        <li>Security Answers cannot match</li>
+        <li>Length 3-40 characters</li>
+        <li>Only disallowed < * &amp; symbols</li>
+      </ul>
+      
+      <div class="text-input-area col-xs-12 pd ">
+  <label for="input-un" id="user-name" class="">Username</label>
+
+  <input
+    id="input-un"
+    aria-labelledby="user-name "
+    class="text-field js-validate js-username"
+    name="username"
+    type="text"
+    placeholder="Username"
+    
+     pattern="^[a-zA-Z0-9]+$" 
+    
+     data-title="Enter a valid username" 
+    
+    
+    
+    required />
+
+  
 </div>
 
     </div>
