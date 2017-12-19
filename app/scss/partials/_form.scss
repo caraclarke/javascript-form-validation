@@ -3,9 +3,19 @@
     margin: 24px 15px 12px;
   }
 
+  .input-desc,
   .input-help {
     line-height: 1rem;
     margin-bottom: 8px;
+
+    p {
+      display: inline-block;
+    }
+
+    .check-icon {
+      padding: 7px;
+      display: inline-block;
+    }
   }
 
   .checkbox input:checked + .fake-input:before {
