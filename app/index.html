@@ -18,6 +18,32 @@
 
 
 <div class="col-xs-12">
+  <form id="search-form" class="js-form-valid search-form col-xs-12 col-md-7">
+      
+      <div class="text-input-area pd col-md-11 col-xs-12 ">
+  <label for="input-search" id="search" class="">Search</label>
+
+  <input
+    id="input-search"
+    aria-labelledby="search input-search-text"
+    class="text-field js-validate js-search"
+    name="search"
+    type="text"
+    placeholder=""
+    
+    
+     data-fieldName="Search" 
+    
+    
+    
+    
+     />
+
+  
+</div>
+
+  </form>
+
   <form id="example-form" class="js-form-valid ui-form col-xs-12 col-md-7">
     <div class="inline-alert inline-alert--error hide" id="fe-error-container" tabindex="-1">
   <span class="alert-icon icon--icon-error"></span>
@@ -30,7 +56,6 @@
 
 
     <div class="col-xs-12 pd">
-      <h5>An example of a text input with only certain characters allowed (pattern) and a maxlength requirement</h5>
       
       <div class="text-input-area pd col-md-11 col-xs-12 ">
   <label for="input-fn" id="first-name" class="">First Name</label>
@@ -61,7 +86,6 @@
     </div>
 
     <div class="col-xs-12 pd">
-      <h5>An example of a required text field with certain characters disallowed (pattern)</h5>
       
       <div class="text-input-area pd col-md-11 col-xs-12 ">
   <label for="input-addOne" id="input-address-one" class="">Street address</label>
@@ -88,7 +112,6 @@
     </div>
 
     <div class="col-xs-12 pd">
-      <h5>Numbers only and min/maxlength</h5>
       
       <div class="text-input-area pd col-md-11 col-xs-12 ">
   <label for="input-zipcode" id="input-zipcode" class="">Zipcode</label>
@@ -115,8 +138,6 @@
     </div>
 
     <div class="col-xs-12 pd">
-      <h5>DOB validation for valid date, date not in the future and formatting</h5>
-
       
       <div class="text-input-area pd col-md-11 col-xs-12 ">
   <label for="input-dob" id="dob" class="">Date of birth</label>
@@ -147,8 +168,6 @@
     </div>
 
     <div class="col-xs-12 pd">
-      <h5>Radio button validation example</h5>
-
       
       <fieldset class="radio-input-area js-radio">
   <legend class="radio-label">Gender:</legend>
@@ -192,8 +211,6 @@
     </div>
 
     <div class="col-xs-12 pd">
-      <h5>Checkbox validation example</h5>
-
       
       <div class="checkbox-input-area js-terms col-xs-12 pd">
   
@@ -214,8 +231,6 @@
     </div>
 
     <div class="col-xs-12 pd">
-      <h5>Email validation</h5>
-
       
       <div class="text-input-area col-xs-12 pd ">
   <label for="input-eadd" id="email-address" class="">Email Address</label>
@@ -242,8 +257,6 @@
     </div>
 
     <div class="col-xs-12 pd">
-      <h5>Phone validation and formatting example</h5>
-
       
       <div class="text-input-area phone-section col-xs-12 pd ">
   <label for="input-pn" id="phone" class="">Mobile Phone</label>
@@ -274,8 +287,6 @@
     </div>
 
     <div class="col-xs-12 pd">
-      <h5>Example password validations, including the hint text listed below and checking for password match</h5>
-
       
       <div class="text-input-area col-xs-12 pd">
   <label id="password" class="">Password</label>
@@ -311,7 +322,7 @@
 
       
       <div class="text-input-area col-xs-12 pd">
-  <label id="confirm-password" class="">Confirm Password</label>
+  <label id="confirm-password" class="">Re-enter Password</label>
   <div class="input-cont">
 
     <input
@@ -332,10 +343,6 @@
     <a class="pw-show js-show-two">Show</a>
 
   
-    <div class="input-desc" id="pw-confirm-text">
-      <p>Must contain 8 characters, at least 1 uppercase letter, at least 1 lowercase letter and no special characters</p>
-    </div>
-  
 
   </div>
 
@@ -343,7 +350,7 @@
 
     </div>
 
-    <div class="col-xs-12 pd">
+   <!--  <div class="col-xs-12 pd">
       <h5>The following examples relate to potential security question validations and follow these rules:</h5>
       <ul>
         <li>Security Answer cannot match password or username</li>
@@ -375,7 +382,7 @@
   
 </div>
 
-    </div>
+    </div> -->
 
     <div class="col-xs-12 pd">
       

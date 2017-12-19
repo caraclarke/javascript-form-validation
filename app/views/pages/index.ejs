@@ -1,65 +1,55 @@
 <% include ../partials/_header %>
 
 <div class="col-xs-12">
+  <form id="search-form" class="js-form-valid search-form col-xs-12 col-md-7">
+      <% var input= data.searchField; %>
+      <% include ../components/_input %>
+  </form>
+
   <form id="example-form" class="js-form-valid ui-form col-xs-12 col-md-7">
     <% include ../components/_error-inline-alert %>
 
     <div class="col-xs-12 pd">
-      <h5>An example of a text input with only certain characters allowed (pattern) and a maxlength requirement</h5>
-      <% var input= data.firstName; %>
+      <% input= data.firstName; %>
       <% include ../components/_input %>
     </div>
 
     <div class="col-xs-12 pd">
-      <h5>An example of a required text field with certain characters disallowed (pattern)</h5>
       <% input= data.inputAddressOne; %>
       <% include ../components/_input %>
     </div>
 
     <div class="col-xs-12 pd">
-      <h5>Numbers only and min/maxlength</h5>
       <% input= data.zipcode; %>
       <% include ../components/_input %>
     </div>
 
     <div class="col-xs-12 pd">
-      <h5>DOB validation for valid date, date not in the future and formatting</h5>
-
       <% input= data.inputDOB; %>
       <% include ../components/_input %>
     </div>
 
     <div class="col-xs-12 pd">
-      <h5>Radio button validation example</h5>
-
       <% var radioBtn= data.gender; %>
       <% include ../components/_radio-btn %>
     </div>
 
     <div class="col-xs-12 pd">
-      <h5>Checkbox validation example</h5>
-
       <% var checkbox= data.termsAndCond; %>
       <% include ../components/_checkbox %>
     </div>
 
     <div class="col-xs-12 pd">
-      <h5>Email validation</h5>
-
       <% input= data.emailAddress; %>
       <% include ../components/_input %>
     </div>
 
     <div class="col-xs-12 pd">
-      <h5>Phone validation and formatting example</h5>
-
       <% input= data.phoneNumber; %>
       <% include ../components/_input %>
     </div>
 
     <div class="col-xs-12 pd">
-      <h5>Example password validations, including the hint text listed below and checking for password match</h5>
-
       <% input= data.password; %>
       <% include ../components/_input-pw %>
 
@@ -67,7 +57,7 @@
       <% include ../components/_input-pw %>
     </div>
 
-    <div class="col-xs-12 pd">
+   <!--  <div class="col-xs-12 pd">
       <h5>The following examples relate to potential security question validations and follow these rules:</h5>
       <ul>
         <li>Security Answer cannot match password or username</li>
@@ -78,7 +68,7 @@
       </ul>
       <% input= data.username; %>
       <% include ../components/_input %>
-    </div>
+    </div> -->
 
     <div class="col-xs-12 pd">
       <% var select= data.securityQuestion.questionOne; %>
