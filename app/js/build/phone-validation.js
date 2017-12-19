@@ -27,6 +27,5 @@ var phoneValidate = function phoneValidate(element) {
     showErrorMessage(element, "Mobile number cannot contain spaces");
   } else {
     element.setCustomValidity("");
-    phoneFormat(element);
   }
 };
