@@ -5,7 +5,7 @@
 const form = document.querySelectorAll( ".js-form-valid" );
 const dobField = document.querySelector( ".js-dob" );
 const mobilePhoneField = document.querySelector( ".js-pn" );
-const passwords = document.querySelectorAll( ".js-password" );
+const emailField = document.querySelector( ".js-email" );
 
 /* **************************
   VALIDATION FUNCTIONS
@@ -189,6 +189,13 @@ const checkForError = ( field ) => {
   EVENT LISTENERS
   *************************** */
 
+emailField.addEventListener( "blur", ( e ) => {
+  e.stopPropagation();
+
+  const error = checkForError( e.target );
+  if ( error ) { showErrorMessage( e.target, error); }
+});
+
 document.addEventListener( "focusin", ( e ) => {
   e.stopPropagation();
 
@@ -215,15 +222,6 @@ mobilePhoneField.addEventListener( "blur" , ( e ) => {
     phoneFormat( e.target );
   }
 }, true);
-
-// check password and email on blur
-passwords.forEach( ( item ) => {
-  item.addEventListener( "blur", ( e ) => {
-    e.stopPropagation();
-
-    passwordCheck( e.target );
-  });
-});
 
 document.addEventListener( "submit", ( e ) => {
   e.preventDefault();

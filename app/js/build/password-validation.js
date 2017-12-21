@@ -118,3 +118,15 @@ var passwordCheck = function passwordCheck(element) {
     showErrorMessage(element, errMsg);
   }
 };
+
+/* **************************
+  EVENT LISTENERS
+*************************** */
+
+passwordField.forEach(function (item) {
+  item.addEventListener("blur", function (e) {
+    e.stopPropagation();
+
+    passwordCheck(e.target);
+  });
+});

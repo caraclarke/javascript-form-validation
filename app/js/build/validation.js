@@ -7,7 +7,7 @@
 var form = document.querySelectorAll(".js-form-valid");
 var dobField = document.querySelector(".js-dob");
 var mobilePhoneField = document.querySelector(".js-pn");
-var passwords = document.querySelectorAll(".js-password");
+var emailField = document.querySelector(".js-email");
 
 /* **************************
   VALIDATION FUNCTIONS
@@ -197,6 +197,15 @@ var checkForError = function checkForError(field) {
   EVENT LISTENERS
   *************************** */
 
+emailField.addEventListener("blur", function (e) {
+  e.stopPropagation();
+
+  var error = checkForError(e.target);
+  if (error) {
+    showErrorMessage(e.target, error);
+  }
+});
+
 document.addEventListener("focusin", function (e) {
   e.stopPropagation();
 
@@ -225,15 +234,6 @@ mobilePhoneField.addEventListener("blur", function (e) {
     phoneFormat(e.target);
   }
 }, true);
-
-// check password and email on blur
-passwords.forEach(function (item) {
-  item.addEventListener("blur", function (e) {
-    e.stopPropagation();
-
-    passwordCheck(e.target);
-  });
-});
 
 document.addEventListener("submit", function (e) {
   e.preventDefault();

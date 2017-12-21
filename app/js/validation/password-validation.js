@@ -116,3 +116,15 @@ const passwordCheck = ( element ) => {
     showErrorMessage( element, errMsg );
   }
 };
+
+/* **************************
+  EVENT LISTENERS
+*************************** */
+
+passwordField.forEach( ( item ) => {
+  item.addEventListener( "blur", ( e ) => {
+    e.stopPropagation();
+
+    passwordCheck( e.target );
+  });
+});
