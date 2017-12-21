@@ -199,8 +199,8 @@ var checkForError = function checkForError(field) {
 document.addEventListener("focusin", function (e) {
   e.stopPropagation();
 
-  // return if form doesnt have validation flag
-  if (!e.target.classList.contains("js-validate")) {
+  // dont need to clear the error if there is no error
+  if (!e.target.classList.contains("error")) {
     return;
   }
 
