@@ -139,7 +139,7 @@ var showCapsLockWarning = function showCapsLockWarning(newIsCapsLockOn, field) {
 };
 
 var checkIfCapsLockIsOn = function checkIfCapsLockIsOn(keyboardEvent) {
-  isCapsLockOn = keyboardEvent ? keyboardEvent.getModifierState("CapsLock") : true;
+  isCapsLockOn = keyboardEvent ? keyboardEvent.getModifierState("CapsLock") : false;
   return isCapsLockOn;
 };
 

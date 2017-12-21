@@ -137,7 +137,7 @@ const showCapsLockWarning = ( newIsCapsLockOn, field ) => {
 };
 
 const checkIfCapsLockIsOn = ( keyboardEvent ) => {
-  isCapsLockOn = ( keyboardEvent ) ? keyboardEvent.getModifierState("CapsLock") : true;
+  isCapsLockOn = ( keyboardEvent ) ? keyboardEvent.getModifierState("CapsLock") : false;
   return isCapsLockOn;
 };
 
