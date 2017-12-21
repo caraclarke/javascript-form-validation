@@ -5,6 +5,7 @@
 const form = document.querySelectorAll( ".js-form-valid" );
 const dobField = document.querySelector( ".js-dob" );
 const mobilePhoneField = document.querySelector( ".js-pn" );
+const emailField = document.querySelector( ".js-email" );
 
 /* **************************
   VALIDATION FUNCTIONS
@@ -187,6 +188,13 @@ const checkForError = ( field ) => {
 /* **************************
   EVENT LISTENERS
   *************************** */
+
+emailField.addEventListener( "blur", ( e ) => {
+  e.stopPropagation();
+
+  const error = checkForError( e.target );
+  if ( error ) { showErrorMessage( e.target, error); }
+});
 
 document.addEventListener( "focusin", ( e ) => {
   e.stopPropagation();

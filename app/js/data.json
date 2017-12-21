@@ -50,7 +50,7 @@
     "maxlength": "25",
     "minlength": "8",
     "placeholder": "Confirm Password",
-    "descText": "",
+    "descText": "Passwords match <span class='icons icon--green-check'></span>",
     "descId": "pw-confirm-text",
     "requiredText": "Confirm password is required",
     "required": "required",

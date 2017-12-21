@@ -7,6 +7,7 @@
 var form = document.querySelectorAll(".js-form-valid");
 var dobField = document.querySelector(".js-dob");
 var mobilePhoneField = document.querySelector(".js-pn");
+var emailField = document.querySelector(".js-email");
 
 /* **************************
   VALIDATION FUNCTIONS
@@ -195,6 +196,15 @@ var checkForError = function checkForError(field) {
 /* **************************
   EVENT LISTENERS
   *************************** */
+
+emailField.addEventListener("blur", function (e) {
+  e.stopPropagation();
+
+  var error = checkForError(e.target);
+  if (error) {
+    showErrorMessage(e.target, error);
+  }
+});
 
 document.addEventListener("focusin", function (e) {
   e.stopPropagation();

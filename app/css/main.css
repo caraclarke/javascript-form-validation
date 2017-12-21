@@ -9862,9 +9862,17 @@ declaration-block-trailing-semicolon  */
 .ui-form .primary-btn {
   margin: 24px 15px 12px; }
 
+.ui-form .input-desc,
 .ui-form .input-help {
   line-height: 1rem;
   margin-bottom: 8px; }
+  .ui-form .input-desc p,
+  .ui-form .input-help p {
+    display: inline-block; }
+  .ui-form .input-desc .check-icon,
+  .ui-form .input-help .check-icon {
+    padding: 7px;
+    display: inline-block; }
 
 .ui-form .checkbox input:checked + .fake-input:before {
   border-color: #000;
@@ -9925,6 +9933,17 @@ declaration-block-trailing-semicolon  */
     .input-cont a:hover, .input-cont a:active, .input-cont a:focus {
       color: #eb0000;
       text-decoration: none; }
+
+#input-cpw ~ .input-desc {
+  display: none;
+  visibility: hidden; }
+
+#input-cpw.matching ~ .input-desc {
+  display: block;
+  visibility: visible; }
+  #input-cpw.matching ~ .input-desc .icons {
+    padding: 7px;
+    display: inline-block; }
 
 html {
   font-size: 16px; }
