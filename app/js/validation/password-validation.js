@@ -1,6 +1,8 @@
 // PW REQUIREMENTS
 const passwordField = document.querySelectorAll( ".js-password" );
 const passwordReqIcon = document.querySelector( ".check-icon" );
+const checkForMobile = !/Mobi/.test(navigator.userAgent);
+let isCapsLockOn = false;
 
 // PASSWORD
 let hasCapital = false;
@@ -118,6 +120,33 @@ const passwordCheck = ( element ) => {
 };
 
 /* **************************
+  CAPS LOCK CHECKER FUNCTIONS
+*************************** */
+
+const showCapsLockWarning = ( newIsCapsLockOn, field ) => {
+  if ( !newIsCapsLockOn ) {
+    field.parentElement.classList.remove( "caps-lock-on");
+    isCapsLockOn = false;
+    return;
+  }
+
+  if ( newIsCapsLockOn ) {
+    field.parentElement.classList.add( "caps-lock-on");
+    isCapsLockOn = true;
+  }
+};
+
+const checkIfCapsLockIsOn = ( keyboardEvent ) => {
+  isCapsLockOn = ( keyboardEvent ) ? keyboardEvent.getModifierState("CapsLock") : true;
+  return isCapsLockOn;
+};
+
+const handleKeyPress = ( event ) => {
+  const newIsCapsLockOn = checkIfCapsLockIsOn( event );
+  showCapsLockWarning( newIsCapsLockOn, event.target );
+};
+
+/* **************************
   EVENT LISTENERS
 *************************** */
 
@@ -126,5 +155,20 @@ passwordField.forEach( ( item ) => {
     e.stopPropagation();
 
     passwordCheck( e.target );
+    if ( checkForMobile ) { showCapsLockWarning( false, e.target ); }
   });
+
+  if ( checkForMobile ) {
+    item.addEventListener( "focus", ( e ) => {
+      handleKeyPress( e );
+    });
+
+    // item.addEventListener( "keypress", ( e ) => {
+    //   handleKeyPress( event );
+    // });
+
+    item.addEventListener( "keyup", ( e ) => {
+      handleKeyPress( e );
+    });
+  }
 });

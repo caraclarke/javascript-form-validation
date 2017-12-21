@@ -1,0 +1,20 @@
+.caps-lock-on {
+  position: relative;
+
+  &:before {
+    font-weight: normal;
+    content: 'Your Caps Lock key is on.';
+    position: absolute;
+    top: -11px;
+    right: 0;
+    display: inline-block;
+    background: url('data:image/png;charset=utf-8;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAYAAACZ3F9/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAeUlEQVQokbWPuw2AMAxEnwQzsABjsACfgpI1GI5PGfbIArRMEBoiBXBCkOAkFz772Trwqwcy3zDx+A3QAS2wATrw4AQNTj8C9VsoCvZBVhNQXc3iAbKagdI1VsAcpQRAOXMN5NJVE+OlwtIiLC7Sh8/k5gnlvunfjDvOHCEL5p125AAAAABJRU5ErkJggg==') no-repeat $color-utility-caps-lock;
+    color: $color-black;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 2px;
+    text-align: right;
+    margin-top: 1px;
+    padding-left: 20px;
+  }
+}
