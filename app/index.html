@@ -22,11 +22,12 @@
       
       <div class="text-input-area pd col-md-11 col-xs-12 ">
   <label for="input-search" id="search" class="">Search</label>
+  <div class="input-cont">
 
   <input
     id="input-search"
     aria-labelledby="search input-search-text"
-    class="text-field js-validate js-search"
+    class="text-field js-validate js-search-input js-search"
     name="search"
     type="text"
     placeholder=""
@@ -39,7 +40,16 @@
     
      />
 
+    <button type="button" class="search-icons js-search-clear">
+      <span class="icon icon--clear-icon"></span>
+    </button>
+    <button type="button" class="search-icons js-search-enter">
+      <span class="icon icon--icon-mag"></span>
+    </button>
+
   
+</div>
+
 </div>
 
   </form>
@@ -551,6 +561,7 @@
 
     <script type="text/javascript" src="./js/build/node-polyfill.js"></script>
     <script type="text/javascript" src="./js/build/password.js"></script>
+    <script type="text/javascript" src="./js/build/search-input.js"></script>
     <!-- build:js js/validation.min.js -->
       <script type="text/javascript" src="./js/build/validity-polyfill.js"></script>
       <script type="text/javascript" src="./js/build/validation.js"></script>
