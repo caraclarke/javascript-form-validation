@@ -30,22 +30,7 @@
     </div>
 
     <div class="col-xs-12 pd">
-      <% var radioBtn= data.gender; %>
-      <% include ../components/_radio-btn %>
-    </div>
-
-    <div class="col-xs-12 pd">
-      <% var checkbox= data.termsAndCond; %>
-      <% include ../components/_checkbox %>
-    </div>
-
-    <div class="col-xs-12 pd">
       <% input= data.emailAddress; %>
-      <% include ../components/_input %>
-    </div>
-
-    <div class="col-xs-12 pd">
-      <% input= data.phoneNumber; %>
       <% include ../components/_input %>
     </div>
 
@@ -55,6 +40,21 @@
 
       <% input= data.passwordConfirm; %>
       <% include ../components/_input-pw %>
+    </div>
+
+    <div class="col-xs-12 pd">
+      <% input= data.phoneNumber; %>
+      <% include ../components/_input %>
+    </div>
+
+    <div class="col-xs-12 pd">
+      <% var radioBtn= data.gender; %>
+      <% include ../components/_radio-btn %>
+    </div>
+
+    <div class="col-xs-12 pd">
+      <% var checkbox= data.termsAndCond; %>
+      <% include ../components/_checkbox %>
     </div>
 
    <!--  <div class="col-xs-12 pd">
@@ -68,7 +68,7 @@
       </ul>
       <% input= data.username; %>
       <% include ../components/_input %>
-    </div> -->
+    </div>
 
     <div class="col-xs-12 pd">
       <% var select= data.securityQuestion.questionOne; %>
@@ -83,7 +83,7 @@
       <% include ../components/_select %>
       <% input= data.securityQuestion.answerInputTwo; %>
       <% include ../components/_input %>
-    </div>
+    </div> -->
 
     <div class="pd col-md-5 col-xs-12 primary-btn-wrap">
       <% var btn= data.continueBtn; %>
