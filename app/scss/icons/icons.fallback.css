@@ -1,6 +1,10 @@
 .icon--check { background-image: url('png/check.png'); background-repeat: no-repeat; }
 
+.icon--clear-icon { background-image: url('png/clear-icon.png'); background-repeat: no-repeat; }
+
 .icon--green-check { background-image: url('png/green-check.png'); background-repeat: no-repeat; }
 
 .icon--icon-error { background-image: url('png/icon-error.png'); background-repeat: no-repeat; }
+
+.icon--icon-mag { background-image: url('png/icon-mag.png'); background-repeat: no-repeat; }
 
