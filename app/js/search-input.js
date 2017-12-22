@@ -1,6 +1,14 @@
+/* **************************
+  DOM VARIABLES
+*************************** */
+
 const searchInput = document.querySelector( ".js-search-input" );
 const clearSearch = document.querySelector( ".js-search-clear" );
 const searchIcon = document.querySelector( ".js-search-enter" );
+
+/* **************************
+  EVENT LISTENERS
+*************************** */
 
 searchInput.addEventListener( "keyup", ( e ) => {
   if ( searchInput.value !== "" ) {
