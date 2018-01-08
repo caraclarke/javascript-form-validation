@@ -33,6 +33,7 @@ searchIcon.addEventListener( "click", ( e ) => {
     searchInput.setCustomValidity( "Please enter a valid search term" );
     showErrorMessage( searchInput, "Please enter a valid search term" );
   } else {
+
     // call the search function
   }
 });

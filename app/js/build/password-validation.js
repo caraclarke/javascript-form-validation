@@ -162,10 +162,6 @@ passwordField.forEach(function (item) {
     }
   });
 
-  item.addEventListener("focus", function (e) {
-    handleKeyPress(e);
-  });
-
   item.addEventListener("keydown", function (e) {
     handleKeyPress(e);
   });
