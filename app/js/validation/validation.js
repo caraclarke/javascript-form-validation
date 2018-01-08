@@ -207,7 +207,7 @@ document.addEventListener( "focusin", ( e ) => {
 });
 
 // blur format phone and DOB
-dobField.addEventListener( "blur" , ( e ) => {
+dobField.addEventListener( "blur", ( e ) => {
   e.stopPropagation();
 
   if ( e.target.value !== "" ) {
@@ -215,7 +215,7 @@ dobField.addEventListener( "blur" , ( e ) => {
   }
 }, true);
 
-mobilePhoneField.addEventListener( "blur" , ( e ) => {
+mobilePhoneField.addEventListener( "blur", ( e ) => {
   e.stopPropagation();
 
   if ( e.target.value !== "" ) {
