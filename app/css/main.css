@@ -9921,30 +9921,6 @@ declaration-block-trailing-semicolon  */
       outline: 5px auto -webkit-focus-ring-color;
       outline-offset: -2px; }
 
-.input-cont {
-  position: relative;
-  display: inline-block;
-  width: 100%; }
-  .input-cont a {
-    position: absolute;
-    right: 10px;
-    top: 20px;
-    text-transform: uppercase; }
-    .input-cont a:hover, .input-cont a:active, .input-cont a:focus {
-      color: #eb0000;
-      text-decoration: none; }
-
-#input-cpw ~ .input-desc {
-  display: none;
-  visibility: hidden; }
-
-#input-cpw.matching ~ .input-desc {
-  display: block;
-  visibility: visible; }
-  #input-cpw.matching ~ .input-desc .icons {
-    padding: 7px;
-    display: inline-block; }
-
 .caps-lock-on {
   position: relative; }
   .caps-lock-on:before {
@@ -9962,6 +9938,57 @@ declaration-block-trailing-semicolon  */
     text-align: right;
     margin-top: 1px;
     padding-left: 20px; }
+
+.input-cont {
+  position: relative;
+  display: inline-block;
+  width: 100%; }
+  .input-cont.has-text .search-icons:first-of-type {
+    display: inline-block;
+    visibility: visible; }
+  .input-cont button {
+    background: none;
+    border: none;
+    padding: 0; }
+  .input-cont a,
+  .input-cont button {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    text-transform: uppercase; }
+    .input-cont a.search-icons:first-of-type,
+    .input-cont button.search-icons:first-of-type {
+      right: 45px;
+      top: 28px;
+      display: none;
+      visibility: hidden; }
+      .input-cont a.search-icons:first-of-type span.icon,
+      .input-cont button.search-icons:first-of-type span.icon {
+        padding: 7px; }
+    .input-cont a.search-icons:last-of-type,
+    .input-cont button.search-icons:last-of-type {
+      right: 5px;
+      top: 30px; }
+      .input-cont a.search-icons:last-of-type span.icon,
+      .input-cont button.search-icons:last-of-type span.icon {
+        padding: 15px; }
+    .input-cont a:hover, .input-cont a:active, .input-cont a:focus,
+    .input-cont button:hover,
+    .input-cont button:active,
+    .input-cont button:focus {
+      color: #eb0000;
+      text-decoration: none; }
+
+#input-cpw ~ .input-desc {
+  display: none;
+  visibility: hidden; }
+
+#input-cpw.matching ~ .input-desc {
+  display: block;
+  visibility: visible; }
+  #input-cpw.matching ~ .input-desc .icons {
+    padding: 7px;
+    display: inline-block; }
 
 html {
   font-size: 16px; }
