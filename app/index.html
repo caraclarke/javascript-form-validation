@@ -22,11 +22,12 @@
       
       <div class="text-input-area pd col-md-11 col-xs-12 ">
   <label for="input-search" id="search" class="">Search</label>
+  <div class="input-cont">
 
   <input
     id="input-search"
     aria-labelledby="search input-search-text"
-    class="text-field js-validate js-search"
+    class="text-field js-validate js-search-input js-search"
     name="search"
     type="text"
     placeholder=""
@@ -39,7 +40,16 @@
     
      />
 
+    <button type="button" class="search-icons js-search-clear">
+      <span class="icon icon--clear-icon"></span>
+    </button>
+    <button type="button" class="search-icons js-search-enter">
+      <span class="icon icon--icon-mag"></span>
+    </button>
+
   
+</div>
+
 </div>
 
   </form>
@@ -169,69 +179,6 @@
 
     <div class="col-xs-12 pd">
       
-      <fieldset class="radio-input-area js-radio">
-  <legend class="radio-label">Gender:</legend>
-  
-  <span class="radio-button js-validate col-xs-12 pd block">
-    <label for="gender-female" class="check-radio-label js-validate">Female
-    <!-- <p>Female</p> -->
-
-    <input
-    name="gender"
-    class="radio-field js-error"
-    id="gender-female"
-    type="radio"
-    value="gender-female"
-     data-fieldName="Gender" 
-    required />
-    <span class="fake-input"></span>
-    </label>
-  </span>
-
-  
-  <span class="radio-button js-validate col-xs-12 pd block">
-    <label for="gender-male" class="check-radio-label js-validate">Male
-    <!-- <p>Male</p> -->
-
-    <input
-    name="gender"
-    class="radio-field js-error"
-    id="gender-male"
-    type="radio"
-    value="gender-male"
-     data-fieldName="Gender" 
-    required />
-    <span class="fake-input"></span>
-    </label>
-  </span>
-
-  
-</fieldset>
-
-    </div>
-
-    <div class="col-xs-12 pd">
-      
-      <div class="checkbox-input-area js-terms col-xs-12 pd">
-  
-  <span class="checkbox block">
-    <label for="terms-and-cond" class="check-radio-label ">
-      I agree to the Terms &amp; Conditions
-    <input class="js-validate checkbox-field" id="terms-and-cond" name="termsandcond" type="checkbox"
-       data-fieldName="Terms and Conditions" 
-      required
-       />
-    <span class="fake-input"></span>
-    </label>
-  </span>
-
-  
-</div>
-
-    </div>
-
-    <div class="col-xs-12 pd">
-      
       <div class="text-input-area col-xs-12 pd ">
   <label for="input-eadd" id="email-address" class="">Email Address</label>
 
@@ -251,36 +198,6 @@
     
     required />
 
-  
-</div>
-
-    </div>
-
-    <div class="col-xs-12 pd">
-      
-      <div class="text-input-area phone-section col-xs-12 pd ">
-  <label for="input-pn" id="phone" class="">Mobile Phone</label>
-
-  <input
-    id="input-pn"
-    aria-labelledby="phone phone-num-text"
-    class="text-field js-validate js-pn"
-    name="phoneNumber"
-    type="tel"
-    placeholder="Mobile Phone"
-    
-     pattern="([0-9]{3}-[0-9]{3}-[0-9]{4})" 
-     data-fieldName="Mobile phone" 
-    
-    
-     minlength="10" 
-     maxlength="12" 
-    required />
-
-  
-    <div class="input-desc" id="phone-num-text">
-      <p>By providing your mobile number, you consent to receive texts from or on behalf of CVS Caremark regarding your mail service prescriptions. Consent is not a condition of purchase and may be revoked at any time. Your carrier’s message and data rates apply. <a class='text-btn' href='http://info.caremark.com/mobile/textmessaging'>View SMS terms &amp; conditions</a></p>
-    </div>
   
 </div>
 
@@ -360,6 +277,99 @@
 
     </div>
 
+    <div class="col-xs-12 pd">
+      
+      <div class="text-input-area phone-section col-xs-12 pd ">
+  <label for="input-pn" id="phone" class="">Mobile Phone</label>
+
+  <input
+    id="input-pn"
+    aria-labelledby="phone phone-num-text"
+    class="text-field js-validate js-pn"
+    name="phoneNumber"
+    type="tel"
+    placeholder="Mobile Phone"
+    
+     pattern="([0-9]{3}-[0-9]{3}-[0-9]{4})" 
+     data-fieldName="Mobile phone" 
+    
+    
+     minlength="10" 
+     maxlength="12" 
+    required />
+
+  
+    <div class="input-desc" id="phone-num-text">
+      <p>By providing your mobile number, you consent to receive texts from or on behalf of CVS Caremark regarding your mail service prescriptions. Consent is not a condition of purchase and may be revoked at any time. Your carrier’s message and data rates apply. <a class='text-btn' href='http://info.caremark.com/mobile/textmessaging'>View SMS terms &amp; conditions</a></p>
+    </div>
+  
+</div>
+
+    </div>
+
+    <div class="col-xs-12 pd">
+      
+      <fieldset class="radio-input-area js-radio">
+  <legend class="radio-label">Gender:</legend>
+  
+  <span class="radio-button js-validate col-xs-12 pd block">
+    <label for="gender-female" class="check-radio-label js-validate">Female
+    <!-- <p>Female</p> -->
+
+    <input
+    name="gender"
+    class="radio-field js-error"
+    id="gender-female"
+    type="radio"
+    value="gender-female"
+     data-fieldName="Gender" 
+    required />
+    <span class="fake-input"></span>
+    </label>
+  </span>
+
+  
+  <span class="radio-button js-validate col-xs-12 pd block">
+    <label for="gender-male" class="check-radio-label js-validate">Male
+    <!-- <p>Male</p> -->
+
+    <input
+    name="gender"
+    class="radio-field js-error"
+    id="gender-male"
+    type="radio"
+    value="gender-male"
+     data-fieldName="Gender" 
+    required />
+    <span class="fake-input"></span>
+    </label>
+  </span>
+
+  
+</fieldset>
+
+    </div>
+
+    <div class="col-xs-12 pd">
+      
+      <div class="checkbox-input-area js-terms col-xs-12 pd">
+  
+  <span class="checkbox block">
+    <label for="terms-and-cond" class="check-radio-label ">
+      I agree to the Terms &amp; Conditions
+    <input class="js-validate checkbox-field" id="terms-and-cond" name="termsandcond" type="checkbox"
+       data-fieldName="Terms and Conditions" 
+      required
+       />
+    <span class="fake-input"></span>
+    </label>
+  </span>
+
+  
+</div>
+
+    </div>
+
    <!--  <div class="col-xs-12 pd">
       <h5>The following examples relate to potential security question validations and follow these rules:</h5>
       <ul>
@@ -392,7 +402,7 @@
   
 </div>
 
-    </div> -->
+    </div>
 
     <div class="col-xs-12 pd">
       
@@ -536,7 +546,7 @@
   
 </div>
 
-    </div>
+    </div> -->
 
     <div class="pd col-md-5 col-xs-12 primary-btn-wrap">
       
@@ -551,6 +561,7 @@
 
     <script type="text/javascript" src="./js/build/node-polyfill.js"></script>
     <script type="text/javascript" src="./js/build/password.js"></script>
+    <script type="text/javascript" src="./js/build/search-input.js"></script>
     <!-- build:js js/validation.min.js -->
       <script type="text/javascript" src="./js/build/validity-polyfill.js"></script>
       <script type="text/javascript" src="./js/build/validation.js"></script>

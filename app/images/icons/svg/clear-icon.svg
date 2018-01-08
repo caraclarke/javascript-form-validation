@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>➔ Active?</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M1.70710678,11.7071068 L11.7071068,1.70710678 L10.2928932,0.292893219 L0.292893219,10.2928932 L1.70710678,11.7071068 Z M11.7071068,10.2928932 L1.70710678,0.292893219 L0.292893219,1.70710678 L10.2928932,11.7071068 L11.7071068,10.2928932 Z" id="path-1"></path>
+        <rect id="path-3" x="0" y="0" width="16" height="13"></rect>
+    </defs>
+    <g id="Form-Inputs-/-search" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-231.000000, -36.000000)">
+        <g id="~Overrides-/-input--search__x-:active" transform="translate(231.000000, 36.000000)">
+            <g id="Icons-/-Utilities-/-Close-X-/-xsm">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                <g id="🖍-/-Black" mask="url(#mask-2)">
+                    <g transform="translate(-3.000000, 0.000000)">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use id="Color" stroke="none" fill="#000000" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
