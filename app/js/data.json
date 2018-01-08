@@ -225,7 +225,7 @@
     "inputId": "input-dob",
     "class": "js-dob",
     "name": "dob",
-    "type": "text",
+    "type": "tel",
     "placeholder": "MM/DD/YYYY",
     "descText": "MM/DD/YYYY",
     "descId": "input-dob-text",
