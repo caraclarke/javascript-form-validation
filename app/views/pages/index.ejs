@@ -1,24 +1,25 @@
 <% include ../partials/_header %>
 
 <div class="col-xs-12">
+  <form id="search-form" class="js-form-valid search-form col-xs-12 col-md-7">
+      <% var input= data.searchField; %>
+      <% include ../components/_search-input %>
+  </form>
+
   <form id="example-form" class="js-form-valid ui-form col-xs-12 col-md-7">
     <% include ../components/_error-inline-alert %>
 
     <div class="col-xs-12 pd">
-      <% var input= data.firstName; %>
-      <% include ../components/_input %>
-
-      <% input= data.lastName; %>
+      <% input= data.firstName; %>
       <% include ../components/_input %>
     </div>
 
     <div class="col-xs-12 pd">
       <% input= data.inputAddressOne; %>
       <% include ../components/_input %>
+    </div>
 
-      <% input= data.inputAddressTwo; %>
-      <% include ../components/_input %>
-
+    <div class="col-xs-12 pd">
       <% input= data.zipcode; %>
       <% include ../components/_input %>
     </div>
@@ -29,27 +30,7 @@
     </div>
 
     <div class="col-xs-12 pd">
-      <% var radioBtn= data.gender; %>
-      <% include ../components/_radio-btn %>
-    </div>
-
-    <div class="col-xs-12 pd">
       <% input= data.emailAddress; %>
-      <% include ../components/_input %>
-    </div>
-
-    <div class="col-xs-12 pd">
-      <% var checkbox= data.termsAndCond; %>
-      <% include ../components/_checkbox %>
-    </div>
-
-    <div class="col-xs-12 pd">
-      <% input= data.phoneNumber; %>
-      <% include ../components/_input %>
-    </div>
-
-    <div class="col-xs-12 pd">
-      <% input= data.username; %>
       <% include ../components/_input %>
     </div>
 
@@ -59,6 +40,34 @@
 
       <% input= data.passwordConfirm; %>
       <% include ../components/_input-pw %>
+    </div>
+
+    <div class="col-xs-12 pd">
+      <% input= data.phoneNumber; %>
+      <% include ../components/_input %>
+    </div>
+
+    <div class="col-xs-12 pd">
+      <% var radioBtn= data.gender; %>
+      <% include ../components/_radio-btn %>
+    </div>
+
+    <div class="col-xs-12 pd">
+      <% var checkbox= data.termsAndCond; %>
+      <% include ../components/_checkbox %>
+    </div>
+
+   <!--  <div class="col-xs-12 pd">
+      <h5>The following examples relate to potential security question validations and follow these rules:</h5>
+      <ul>
+        <li>Security Answer cannot match password or username</li>
+        <li>Security Answer cannot match question</li>
+        <li>Security Answers cannot match</li>
+        <li>Length 3-40 characters</li>
+        <li>Only disallowed < * &amp; symbols</li>
+      </ul>
+      <% input= data.username; %>
+      <% include ../components/_input %>
     </div>
 
     <div class="col-xs-12 pd">
@@ -74,7 +83,7 @@
       <% include ../components/_select %>
       <% input= data.securityQuestion.answerInputTwo; %>
       <% include ../components/_input %>
-    </div>
+    </div> -->
 
     <div class="pd col-md-5 col-xs-12 primary-btn-wrap">
       <% var btn= data.continueBtn; %>

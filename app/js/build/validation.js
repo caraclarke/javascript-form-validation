@@ -5,6 +5,9 @@
   *************************** */
 
 var form = document.querySelectorAll(".js-form-valid");
+var dobField = document.querySelector(".js-dob");
+var mobilePhoneField = document.querySelector(".js-pn");
+var emailField = document.querySelector(".js-email");
 
 /* **************************
   VALIDATION FUNCTIONS
@@ -193,33 +196,42 @@ var checkForError = function checkForError(field) {
 /* **************************
   EVENT LISTENERS
   *************************** */
-document.addEventListener("blur", function (e) {
+
+emailField.addEventListener("blur", function (e) {
   e.stopPropagation();
 
-  // return if form doesnt have validation flag
-  if (!e.target.form.classList.contains("js-form-valid")) {
-    return;
-  }
-
-  if (e.target.classList.contains("js-dob") && e.target.value !== "") {
-    dateFormat(e.target);
-    checkDob(e.target);
-    return;
-  } else if (e.target.classList.contains("js-pn") && e.target.value !== "") {
-    phoneValidate(e.target);
-  }
-
   var error = checkForError(e.target);
-
   if (error) {
     showErrorMessage(e.target, error);
-  } else if (!error && e.target.classList.contains("js-password")) {
-    passwordCheck(e.target);
-  } else if (!error && e.target.classList.contains("js-security")) {
-    securityQCheck(e.target);
-  } else {
-    // Otherwise, remove any existing error message
-    removeErrorMessage(event.target);
+  }
+});
+
+document.addEventListener("focusin", function (e) {
+  e.stopPropagation();
+
+  // dont need to clear the error if there is no error
+  if (!e.target.classList.contains("error")) {
+    return;
+  }
+
+  // remove error styling when focus into input
+  removeErrorMessage(e.target);
+});
+
+// blur format phone and DOB
+dobField.addEventListener("blur", function (e) {
+  e.stopPropagation();
+
+  if (e.target.value !== "") {
+    dateFormat(e.target);
+  }
+}, true);
+
+mobilePhoneField.addEventListener("blur", function (e) {
+  e.stopPropagation();
+
+  if (e.target.value !== "") {
+    phoneFormat(e.target);
   }
 }, true);
 
@@ -239,6 +251,12 @@ document.addEventListener("submit", function (e) {
   clearFormLevelErrorLinks();
 
   for (var i = 0; i < fields.length; i++) {
+    if (fields[i].classList.contains("js-dob") && fields[i].value !== "") {
+      checkDob(fields[i]);
+    } else if (fields[i].classList.contains("js-pn") && fields[i].value !== "") {
+      phoneValidate(fields[i]);
+    }
+
     error = checkForError(fields[i]);
     if (error) {
       showErrorMessage(fields[i], error);
@@ -247,6 +265,10 @@ document.addEventListener("submit", function (e) {
       if (!hasError) {
         hasError = fields[i];
       }
+    } else if (!error && fields[i].classList.contains("js-password")) {
+      passwordCheck(fields[i]);
+    } else if (!error && fields[i].classList.contains("js-security")) {
+      securityQCheck(fields[i]);
     }
   }
 

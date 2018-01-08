@@ -9862,9 +9862,17 @@ declaration-block-trailing-semicolon  */
 .ui-form .primary-btn {
   margin: 24px 15px 12px; }
 
+.ui-form .input-desc,
 .ui-form .input-help {
   line-height: 1rem;
   margin-bottom: 8px; }
+  .ui-form .input-desc p,
+  .ui-form .input-help p {
+    display: inline-block; }
+  .ui-form .input-desc .check-icon,
+  .ui-form .input-help .check-icon {
+    padding: 7px;
+    display: inline-block; }
 
 .ui-form .checkbox input:checked + .fake-input:before {
   border-color: #000;
@@ -9917,17 +9925,60 @@ declaration-block-trailing-semicolon  */
   position: relative;
   display: inline-block;
   width: 100%; }
-  .input-cont a {
+  .input-cont.has-text .search-icons:first-of-type {
+    display: inline-block;
+    visibility: visible; }
+  .input-cont button {
+    background: none;
+    border: none;
+    padding: 0; }
+  .input-cont a,
+  .input-cont button {
     position: absolute;
     right: 10px;
     top: 20px;
     text-transform: uppercase; }
-    .input-cont a:hover, .input-cont a:active, .input-cont a:focus {
+    .input-cont a.search-icons:first-of-type,
+    .input-cont button.search-icons:first-of-type {
+      right: 45px;
+      top: 28px;
+      display: none;
+      visibility: hidden; }
+      .input-cont a.search-icons:first-of-type span.icon,
+      .input-cont button.search-icons:first-of-type span.icon {
+        padding: 7px; }
+    .input-cont a.search-icons:last-of-type,
+    .input-cont button.search-icons:last-of-type {
+      right: 5px;
+      top: 30px; }
+      .input-cont a.search-icons:last-of-type span.icon,
+      .input-cont button.search-icons:last-of-type span.icon {
+        padding: 15px; }
+    .input-cont a:hover, .input-cont a:active, .input-cont a:focus,
+    .input-cont button:hover,
+    .input-cont button:active,
+    .input-cont button:focus {
       color: #eb0000;
       text-decoration: none; }
+
+#input-cpw ~ .input-desc {
+  display: none;
+  visibility: hidden; }
+
+#input-cpw.matching ~ .input-desc {
+  display: block;
+  visibility: visible; }
+  #input-cpw.matching ~ .input-desc .icons {
+    padding: 7px;
+    display: inline-block; }
 
 html {
   font-size: 16px; }
 
 .js-form-valid {
   margin-top: 40px; }
+  .js-form-valid h5 {
+    padding-top: 15px;
+    padding-bottom: 12px;
+    border-top: 1px solid #ccc;
+    margin-top: 4px; }
