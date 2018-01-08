@@ -88,7 +88,7 @@
 
   
     <div class="input-desc" id="fn-text">
-      <p>Enter your full first name, not a nickname</p>
+      <p>Name can only contain letters, spaces and dashes</p>
     </div>
   
 </div>
@@ -117,6 +117,10 @@
     required />
 
   
+    <div class="input-desc" id="">
+      <p>Address cannot accept < > or &</p>
+    </div>
+  
 </div>
 
     </div>
@@ -128,7 +132,7 @@
 
   <input
     id="input-zipcode"
-    aria-labelledby="input-zipcode "
+    aria-labelledby="input-zipcode input-zipcode-text"
     class="text-field js-validate "
     name="zipcode"
     type="tel"
@@ -142,6 +146,10 @@
      maxlength="10" 
     required />
 
+  
+    <div class="input-desc" id="input-zipcode-text">
+      <p>Must be 10 characters, input can only be numbers</p>
+    </div>
   
 </div>
 
@@ -157,12 +165,12 @@
     aria-labelledby="dob input-dob-text"
     class="text-field js-validate js-dob"
     name="dob"
-    type="text"
+    type="tel"
     placeholder="MM/DD/YYYY"
     
     
      data-fieldName="Date of birth" 
-     data-title="MM/DD/YYYY" 
+     data-title="Enter a valid DOB" 
     
      minlength="8" 
      maxlength="10" 
@@ -198,6 +206,10 @@
     
     required />
 
+  
+    <div class="input-desc" id="">
+      <p>Email must be in standard email format</p>
+    </div>
   
 </div>
 
@@ -300,7 +312,7 @@
 
   
     <div class="input-desc" id="phone-num-text">
-      <p>By providing your mobile number, you consent to receive texts from or on behalf of CVS Caremark regarding your mail service prescriptions. Consent is not a condition of purchase and may be revoked at any time. Your carrier’s message and data rates apply. <a class='text-btn' href='http://info.caremark.com/mobile/textmessaging'>View SMS terms &amp; conditions</a></p>
+      <p>XXX-XXX-XXXX format, no letters or other special characters</p>
     </div>
   
 </div>
@@ -399,6 +411,10 @@
     
     required />
 
+  
+    <div class="input-desc" id="">
+      <p>Letters and numbers only</p>
+    </div>
   
 </div>
 
