@@ -158,17 +158,15 @@ passwordField.forEach( ( item ) => {
     if ( checkForMobile ) { showCapsLockWarning( false, e.target ); }
   });
 
-  if ( checkForMobile ) {
-    item.addEventListener( "focus", ( e ) => {
-      handleKeyPress( e );
-    });
+  item.addEventListener( "focus", ( e ) => {
+    handleKeyPress( e );
+  });
 
-    // item.addEventListener( "keypress", ( e ) => {
-    //   handleKeyPress( event );
-    // });
+  item.addEventListener( "keydown", ( e ) => {
+    handleKeyPress( e );
+  });
 
-    item.addEventListener( "keyup", ( e ) => {
-      handleKeyPress( e );
-    });
-  }
+  item.addEventListener( "keyup", ( e ) => {
+    handleKeyPress( e );
+  });
 });

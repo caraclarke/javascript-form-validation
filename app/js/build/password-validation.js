@@ -162,17 +162,15 @@ passwordField.forEach(function (item) {
     }
   });
 
-  if (checkForMobile) {
-    item.addEventListener("focus", function (e) {
-      handleKeyPress(e);
-    });
+  item.addEventListener("focus", function (e) {
+    handleKeyPress(e);
+  });
 
-    // item.addEventListener( "keypress", ( e ) => {
-    //   handleKeyPress( event );
-    // });
+  item.addEventListener("keydown", function (e) {
+    handleKeyPress(e);
+  });
 
-    item.addEventListener("keyup", function (e) {
-      handleKeyPress(e);
-    });
-  }
+  item.addEventListener("keyup", function (e) {
+    handleKeyPress(e);
+  });
 });
