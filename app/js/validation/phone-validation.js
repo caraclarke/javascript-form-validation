@@ -3,9 +3,9 @@ const spaceRegex = /\s/g;
 const phoneFormat = ( element ) => {
   const phEl = element;
   let value = phEl.value.replace(/\s/g, "");
-  const formatRegex = /\-/g;
+  const formatRegex = /-/g;
 
-  if ( formatRegex.test( value) ) { value = value.replace( /\-/g, "" ); }
+  if ( formatRegex.test( value) ) { value = value.replace( /-/g, "" ); }
 
   if ( value.length > 10) {
     value = lengthRequirement( value, 10 );

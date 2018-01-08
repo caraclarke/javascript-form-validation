@@ -5,10 +5,10 @@ var spaceRegex = /\s/g;
 var phoneFormat = function phoneFormat(element) {
   var phEl = element;
   var value = phEl.value.replace(/\s/g, "");
-  var formatRegex = /\-/g;
+  var formatRegex = /-/g;
 
   if (formatRegex.test(value)) {
-    value = value.replace(/\-/g, "");
+    value = value.replace(/-/g, "");
   }
 
   if (value.length > 10) {
