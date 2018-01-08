@@ -9,12 +9,16 @@ var clearFormLevelErrorLinks = function clearFormLevelErrorLinks() {
   }
 };
 
-var createFormLevelErrorLink = function createFormLevelErrorLink(errField, error) {
+var createFormLevelErrorLink = function createFormLevelErrorLink(errField, prevField, error) {
   var id = errField.getAttribute("id");
   var listItem = document.createElement("li");
   listItem.className = "error-item";
   listItem.id = "list-error-for-" + id;
 
   listItem.innerHTML = "<a href=\"#" + id + "\">" + error + "</a>";
-  inlineAlertList.appendChild(listItem);
+  if (errField.classList.contains("radio-field") && prevField.classList.contains("radio-field")) {
+    return;
+  } else {
+    inlineAlertList.appendChild(listItem);
+  }
 };

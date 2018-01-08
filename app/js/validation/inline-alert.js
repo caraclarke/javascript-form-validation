@@ -7,12 +7,16 @@ const clearFormLevelErrorLinks = ( ) => {
   }
 };
 
-const createFormLevelErrorLink = ( errField, error ) => {
+const createFormLevelErrorLink = ( errField, prevField, error ) => {
   const id = errField.getAttribute( "id" );
   const listItem = document.createElement("li");
   listItem.className = "error-item";
   listItem.id = `list-error-for-${ id }`;
 
   listItem.innerHTML = `<a href="#${ id }">${ error }</a>`;
-  inlineAlertList.appendChild(listItem);
+  if ( errField.classList.contains( "radio-field" ) && prevField.classList.contains( "radio-field" ) ) {
+    return;
+  } else {
+    inlineAlertList.appendChild(listItem);
+  }
 }
