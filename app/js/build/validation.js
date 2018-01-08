@@ -8,6 +8,7 @@ var form = document.querySelectorAll(".js-form-valid");
 var dobField = document.querySelector(".js-dob");
 var mobilePhoneField = document.querySelector(".js-pn");
 var emailField = document.querySelector(".js-email");
+var radioButtons = document.querySelectorAll(".radio-field");
 
 /* **************************
   VALIDATION FUNCTIONS
@@ -216,6 +217,20 @@ document.addEventListener("focusin", function (e) {
 
   // remove error styling when focus into input
   removeErrorMessage(e.target);
+});
+
+radioButtons.forEach(function (item) {
+  item.addEventListener("click", function (e) {
+    e.stopPropagation();
+
+    // dont need to clear the error if there is no error
+    if (!e.target.parentElement.parentElement.parentElement.classList.contains("error")) {
+      return;
+    }
+
+    // remove error styling when focus into input
+    removeErrorMessage(e.target);
+  });
 });
 
 // blur format phone and DOB

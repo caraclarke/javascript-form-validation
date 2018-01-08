@@ -1,6 +1,6 @@
 # JavaScript Form Validation
 
-This project is a set of files and examples of form validation. It can be leveraged as a whole or taken in pieces. The validation specific files can be found in `app/js/validation/` or built to es2015 in `app/js/build/`. The validity polyfill that ats as a backup for augmenting native HTML5 form validation elements and attributes is kept in the main `app/js/` folder.
+This project is a set of files and examples of form validation. It can be leveraged as a whole or taken in pieces. The validation specific files can be found in `app/js/validation/` or built to es2015 in `app/js/build/`. The validity polyfill that acts as a backup for augmenting native HTML5 form validation elements and attributes is kept in the main `app/js/` folder.
 
 ### Validation Files
 - validation.js
