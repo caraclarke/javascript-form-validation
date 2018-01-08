@@ -249,7 +249,7 @@ document.addEventListener( "submit", ( e ) => {
     error = checkForError(fields[ i ]);
     if (error) {
       showErrorMessage(fields[ i ], error);
-      createFormLevelErrorLink( fields[ i ], fields[ i - 1], error );
+      createFormLevelErrorLink( fields[ i ], fields[ i - 1 ], error );
 
       if (!hasError) {
         hasError = fields[ i ];
