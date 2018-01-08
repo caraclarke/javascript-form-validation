@@ -285,7 +285,7 @@
         "dataFieldName": "Gender",
         "radioValue": "genderFemale",
         "radioId": "gender-female",
-        "radioClass": "js-error",
+        "radioClass": "",
         "class": "col-xs-12 pd block",
         "required": "required"
       },
@@ -295,7 +295,7 @@
         "dataFieldName": "Gender",
         "radioValue": "genderMale",
         "radioId": "gender-male",
-        "radioClass": "js-error",
+        "radioClass": "",
         "class": "col-xs-12 pd block",
         "required": "required"
       }
