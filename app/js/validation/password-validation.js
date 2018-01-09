@@ -44,23 +44,13 @@ const checkNumber = ( password, index, removeText, addText ) => {
 };
 
 const checkPwMatch = () => {
-  const password = passwordField[ 0 ];
-  const passwordConfirm = passwordField[ 1 ];
-
-  if ( password.value !== "" && passwordConfirm.value !== "" ) {
-    if ( password.value !== passwordConfirm.value ) {
-      passwordField.forEach( ( field ) => {
-        field.setCustomValidity("Passwords must match");
-        showErrorMessage( field, "Passwords do not match" );
-      });
-
-      passwordField[ 1 ].classList.remove( "matching" );
-      return false;
-    }
+  if ( passwordField[ 0 ].value !== passwordField[ 1 ].value ) {
+    passwordField[ 1 ].classList.remove( "matching" );
+    return false;
+  } else {
+    passwordField[ 1 ].classList.add( "matching" );
+    return true;
   }
-
-  passwordField[ 1 ].classList.add( "matching" );
-  return true;
 };
 
 /* **************************
@@ -81,6 +71,7 @@ const reqPwErr = ( capBool, lowerBool, numBool, matchBool, reqField ) => {
   }
 
   if ( !matchBool ) {
+    reqField.setCustomValidity("Passwords do not match");
     return "Passwords do not match";
   }
 
@@ -90,18 +81,24 @@ const reqPwErr = ( capBool, lowerBool, numBool, matchBool, reqField ) => {
 /* **************************
   CHECK FOR VALIDITY
 *************************** */
-const passwordCheck = ( element ) => {
-  const password = element.value;
+const passwordCheck = ( currentElement, otherPasswordField ) => {
+  const passwordOne = currentElement.value;
+  const passwordTwo = otherPasswordField.value;
 
-  if ( password !== "" ) {
-    hasCapital = checkUppercase( password, element );
-    hasLowercase = checkLowercase( password, element );
-    hasNumber = checkNumber( password, element );
+  if ( passwordOne !== "" ) {
+    hasCapital = checkUppercase( passwordOne, currentElement );
+    hasLowercase = checkLowercase( passwordOne, currentElement );
+    hasNumber = checkNumber( passwordOne, currentElement );
+  }
+
+  if ( passwordOne !== "" && passwordTwo !== "") {
     isMatching = checkPwMatch();
+  } else {
+    isMatching = true;
   }
 
   if ( hasCapital && hasLowercase && hasNumber && isMatching ) {
-    element.setCustomValidity("");
+    currentElement.setCustomValidity("");
     passwordReqIcon.classList.remove( "hide" );
 
     passwordField.forEach((item) => {
@@ -112,10 +109,10 @@ const passwordCheck = ( element ) => {
       }
     });
   } else {
-    element.setCustomValidity("Please enter a valid answer");
+    currentElement.setCustomValidity("Please enter a valid answer");
     passwordReqIcon.classList.add( "hide" );
-    const errMsg = reqPwErr( hasCapital, hasLowercase, hasNumber, isMatching, element );
-    showErrorMessage( element, errMsg );
+    const errMsg = reqPwErr( hasCapital, hasLowercase, hasNumber, isMatching, currentElement );
+    showErrorMessage( currentElement, errMsg );
   }
 };
 
@@ -154,15 +151,22 @@ passwordField.forEach( ( item ) => {
   item.addEventListener( "blur", ( e ) => {
     e.stopPropagation();
 
-    passwordCheck( e.target );
+    const fieldsIndex = Array.prototype.slice.call(passwordField);
+    const elIndex = fieldsIndex.indexOf( e.target );
+    let sendIndex = 1;
+    elIndex === 0 ? sendIndex = 1 : sendIndex = 0;
+
+    passwordCheck( e.target, passwordField[ sendIndex ] );
     if ( checkForMobile ) { showCapsLockWarning( false, e.target ); }
   });
 
-  item.addEventListener( "keydown", ( e ) => {
-    handleKeyPress( e );
-  });
+  if ( !checkForMobile ) {
+    item.addEventListener( "keydown", ( e ) => {
+      handleKeyPress( e );
+    });
 
-  item.addEventListener( "keyup", ( e ) => {
-    handleKeyPress( e );
-  });
+    item.addEventListener( "keyup", ( e ) => {
+      handleKeyPress( e );
+    });
+  }
 });

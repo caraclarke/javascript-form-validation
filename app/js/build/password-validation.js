@@ -46,23 +46,13 @@ var checkNumber = function checkNumber(password, index, removeText, addText) {
 };
 
 var checkPwMatch = function checkPwMatch() {
-  var password = passwordField[0];
-  var passwordConfirm = passwordField[1];
-
-  if (password.value !== "" && passwordConfirm.value !== "") {
-    if (password.value !== passwordConfirm.value) {
-      passwordField.forEach(function (field) {
-        field.setCustomValidity("Passwords must match");
-        showErrorMessage(field, "Passwords do not match");
-      });
-
-      passwordField[1].classList.remove("matching");
-      return false;
-    }
+  if (passwordField[0].value !== passwordField[1].value) {
+    passwordField[1].classList.remove("matching");
+    return false;
+  } else {
+    passwordField[1].classList.add("matching");
+    return true;
   }
-
-  passwordField[1].classList.add("matching");
-  return true;
 };
 
 /* **************************
@@ -83,6 +73,7 @@ var reqPwErr = function reqPwErr(capBool, lowerBool, numBool, matchBool, reqFiel
   }
 
   if (!matchBool) {
+    reqField.setCustomValidity("Passwords do not match");
     return "Passwords do not match";
   }
 
@@ -92,18 +83,24 @@ var reqPwErr = function reqPwErr(capBool, lowerBool, numBool, matchBool, reqFiel
 /* **************************
   CHECK FOR VALIDITY
 *************************** */
-var passwordCheck = function passwordCheck(element) {
-  var password = element.value;
+var passwordCheck = function passwordCheck(currentElement, otherPasswordField) {
+  var passwordOne = currentElement.value;
+  var passwordTwo = otherPasswordField.value;
 
-  if (password !== "") {
-    hasCapital = checkUppercase(password, element);
-    hasLowercase = checkLowercase(password, element);
-    hasNumber = checkNumber(password, element);
+  if (passwordOne !== "") {
+    hasCapital = checkUppercase(passwordOne, currentElement);
+    hasLowercase = checkLowercase(passwordOne, currentElement);
+    hasNumber = checkNumber(passwordOne, currentElement);
+  }
+
+  if (passwordOne !== "" && passwordTwo !== "") {
     isMatching = checkPwMatch();
+  } else {
+    isMatching = true;
   }
 
   if (hasCapital && hasLowercase && hasNumber && isMatching) {
-    element.setCustomValidity("");
+    currentElement.setCustomValidity("");
     passwordReqIcon.classList.remove("hide");
 
     passwordField.forEach(function (item) {
@@ -114,10 +111,10 @@ var passwordCheck = function passwordCheck(element) {
       }
     });
   } else {
-    element.setCustomValidity("Please enter a valid answer");
+    currentElement.setCustomValidity("Please enter a valid answer");
     passwordReqIcon.classList.add("hide");
-    var errMsg = reqPwErr(hasCapital, hasLowercase, hasNumber, isMatching, element);
-    showErrorMessage(element, errMsg);
+    var errMsg = reqPwErr(hasCapital, hasLowercase, hasNumber, isMatching, currentElement);
+    showErrorMessage(currentElement, errMsg);
   }
 };
 
@@ -156,17 +153,24 @@ passwordField.forEach(function (item) {
   item.addEventListener("blur", function (e) {
     e.stopPropagation();
 
-    passwordCheck(e.target);
+    var fieldsIndex = Array.prototype.slice.call(passwordField);
+    var elIndex = fieldsIndex.indexOf(e.target);
+    var sendIndex = 1;
+    elIndex === 0 ? sendIndex = 1 : sendIndex = 0;
+
+    passwordCheck(e.target, passwordField[sendIndex]);
     if (checkForMobile) {
       showCapsLockWarning(false, e.target);
     }
   });
 
-  item.addEventListener("keydown", function (e) {
-    handleKeyPress(e);
-  });
+  if (!checkForMobile) {
+    item.addEventListener("keydown", function (e) {
+      handleKeyPress(e);
+    });
 
-  item.addEventListener("keyup", function (e) {
-    handleKeyPress(e);
-  });
+    item.addEventListener("keyup", function (e) {
+      handleKeyPress(e);
+    });
+  }
 });
