@@ -52,9 +52,9 @@ const checkPwMatch = () => {
       passwordField.forEach( ( field ) => {
         field.setCustomValidity("Passwords must match");
         showErrorMessage( field, "Passwords do not match" );
+        passwordField[ 1 ].classList.remove( "matching" );
       });
 
-      passwordField[ 1 ].classList.remove( "matching" );
       return false;
     }
   }
@@ -158,11 +158,13 @@ passwordField.forEach( ( item ) => {
     if ( checkForMobile ) { showCapsLockWarning( false, e.target ); }
   });
 
-  item.addEventListener( "keydown", ( e ) => {
-    handleKeyPress( e );
-  });
+  if ( !checkForMobile ) {
+    item.addEventListener( "keydown", ( e ) => {
+      handleKeyPress( e );
+    });
 
-  item.addEventListener( "keyup", ( e ) => {
-    handleKeyPress( e );
-  });
+    item.addEventListener( "keyup", ( e ) => {
+      handleKeyPress( e );
+    });
+  }
 });

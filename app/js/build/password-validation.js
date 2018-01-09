@@ -54,9 +54,9 @@ var checkPwMatch = function checkPwMatch() {
       passwordField.forEach(function (field) {
         field.setCustomValidity("Passwords must match");
         showErrorMessage(field, "Passwords do not match");
+        passwordField[1].classList.remove("matching");
       });
 
-      passwordField[1].classList.remove("matching");
       return false;
     }
   }
@@ -162,11 +162,13 @@ passwordField.forEach(function (item) {
     }
   });
 
-  item.addEventListener("keydown", function (e) {
-    handleKeyPress(e);
-  });
+  if (!checkForMobile) {
+    item.addEventListener("keydown", function (e) {
+      handleKeyPress(e);
+    });
 
-  item.addEventListener("keyup", function (e) {
-    handleKeyPress(e);
-  });
+    item.addEventListener("keyup", function (e) {
+      handleKeyPress(e);
+    });
+  }
 });
