@@ -73,6 +73,7 @@ var reqPwErr = function reqPwErr(capBool, lowerBool, numBool, matchBool, reqFiel
   }
 
   if (!matchBool) {
+    reqField.setCustomValidity("Passwords do not match");
     return "Passwords do not match";
   }
 
@@ -94,6 +95,8 @@ var passwordCheck = function passwordCheck(currentElement, otherPasswordField) {
 
   if (passwordOne !== "" && passwordTwo !== "") {
     isMatching = checkPwMatch();
+  } else {
+    isMatching = true;
   }
 
   if (hasCapital && hasLowercase && hasNumber && isMatching) {
