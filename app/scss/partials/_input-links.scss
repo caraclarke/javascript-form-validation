@@ -9,3 +9,23 @@
     visibility: visible;
   }
 }
+
+.input-pw {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  & + a {
+    position: absolute;
+    right: 25px;
+    top: 33px;
+    text-transform: uppercase;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-red-light;
+      text-decoration: none;
+    }
+  }
+}

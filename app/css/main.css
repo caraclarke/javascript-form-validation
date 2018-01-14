@@ -6031,6 +6031,19 @@ button.close {
   display: block;
   visibility: visible; }
 
+.input-pw {
+  position: relative;
+  display: inline-block;
+  width: 100%; }
+  .input-pw + a {
+    position: absolute;
+    right: 25px;
+    top: 33px;
+    text-transform: uppercase; }
+    .input-pw + a:hover, .input-pw + a:active, .input-pw + a:focus {
+      color: #eb0000;
+      text-decoration: none; }
+
 .inline-alert,
 .inline-alert--error {
   display: block;
