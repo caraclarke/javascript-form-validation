@@ -1,15 +1,15 @@
-<div class="checkbox-input-area <%= checkbox.topClass %>">
+<div class="form-check mb-2 mr-sm-2 mb-sm-0 <%= checkbox.topClass %>">
   <% checkbox.boxes.forEach(function(item) { %>
-  <span class="checkbox block">
-    <label for="<%= item.id %>" class="check-radio-label <%= item.class %>">
-      <%- item.label %>
-    <input class="js-validate checkbox-field" id="<%= item.id %>" name="<%= item.name %>" type="checkbox"
+   <label for="<%= item.id %>" class="form-check-label <%= item.class %>">
+     <input class="js-validate form-check-input"
+      id="<%= item.id %>"
+      name="<%= item.name %>"
       <%if ( item.dataFieldName ) { %> data-fieldName="<%= item.dataFieldName %>" <% } %>
       <%= item.required %>
-      <%= item.checked %> />
-    <span class="fake-input"></span>
-    </label>
-  </span>
+      <%= item.checked %>
+      type="checkbox" />
 
+      <%- item.label %>
+   </label>
   <% }); %>
-</div>
+ </div>

@@ -4,32 +4,32 @@
   <form id="example-form" class="js-form-valid ui-form col-xs-12 col-md-7">
     <% include ../components/_error-inline-alert %>
 
-    <div class="col-xs-12 pd">
+    <div class="col-xs-12 form-group">
       <% input= data.firstName; %>
       <% include ../components/_input %>
     </div>
 
-    <div class="col-xs-12 pd">
+    <div class="col-xs-12">
       <% input= data.inputAddressOne; %>
       <% include ../components/_input %>
     </div>
 
-    <div class="col-xs-12 pd">
+    <div class="col-xs-12">
       <% input= data.zipcode; %>
       <% include ../components/_input %>
     </div>
 
-    <div class="col-xs-12 pd">
+    <div class="col-xs-12">
       <% input= data.inputDOB; %>
       <% include ../components/_input %>
     </div>
 
-    <div class="col-xs-12 pd">
+    <div class="col-xs-12">
       <% input= data.emailAddress; %>
       <% include ../components/_input %>
     </div>
 
-    <div class="col-xs-12 pd">
+    <div class="col-xs-12">
       <% input= data.password; %>
       <% include ../components/_input-pw %>
 
@@ -37,22 +37,22 @@
       <% include ../components/_input-pw %>
     </div>
 
-    <div class="col-xs-12 pd">
+    <div class="col-xs-12">
       <% input= data.phoneNumber; %>
       <% include ../components/_input %>
     </div>
 
-    <div class="col-xs-12 pd">
+    <div class="col-xs-12">
       <% var radioBtn= data.gender; %>
       <% include ../components/_radio-btn %>
     </div>
 
-    <div class="col-xs-12 pd">
+    <div class="col-xs-12">
       <% var checkbox= data.termsAndCond; %>
       <% include ../components/_checkbox %>
     </div>
 
-   <!--  <div class="col-xs-12 pd">
+   <!--  <div class="col-xs-12">
       <h5>The following examples relate to potential security question validations and follow these rules:</h5>
       <ul>
         <li>Security Answer cannot match password or username</li>
@@ -65,7 +65,7 @@
       <% include ../components/_input %>
     </div>
 
-    <div class="col-xs-12 pd">
+    <div class="col-xs-12">
       <% var select= data.securityQuestion.questionOne; %>
       <% include ../components/_select %>
       <% input= data.securityQuestion.answerInputOne; %>
@@ -80,7 +80,7 @@
       <% include ../components/_input %>
     </div> -->
 
-    <div class="pd col-md-5 col-xs-12 primary-btn-wrap">
+    <div class= col-md-5 col-xs-12 primary-btn-wrap">
       <% var btn= data.continueBtn; %>
       <% include ../components/_btn %>
       </div>
