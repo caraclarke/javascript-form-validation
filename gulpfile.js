@@ -161,14 +161,3 @@ gulp.task('watch', ['browserSync', 'sass'], function() {
 gulp.task('default', function(cb) {
   runSequence('ejs', ['sass', 'validations', 'browserSync', 'watch'], cb);
 });
-
-// ---------- GULPICON -------
-
-// grab the config, tack on the output destination
-var config = require('./icon-config.js');
-config.dest = './app/images/icons';
-// grab the file paths
-var files = glob.sync('./app/images/icons/svg/*.svg');
-
-// set up the gulp task
-gulp.task('icons', gulpicon(files, config));
