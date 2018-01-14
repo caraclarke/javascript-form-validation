@@ -316,7 +316,7 @@
     ]
   },
   "continueBtn": {
-  "class": "primary-btn btn-block",
+  "class": "btn-block",
   "id": "reg-btn",
   "type": "submit",
   "text": "Continue"

@@ -5925,6 +5925,7 @@ button.close {
 
 .ui-form .input-desc,
 .ui-form .input-help {
+  margin-top: 8px;
   line-height: 1rem;
   margin-bottom: 8px; }
   .ui-form .input-desc p,
