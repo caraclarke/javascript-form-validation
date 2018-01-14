@@ -3,7 +3,6 @@
 ****************************/
 
 @import '../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap';
-@import './styleguide';
 @import 'base/mixins';
 @import 'base/variables';
 
@@ -15,6 +14,7 @@
 @import 'partials/form';
 @import 'partials/caps-lock-checker';
 @import 'partials/input-links';
+@import 'partials/alert';
 
 html {
   font-size: 16px;
