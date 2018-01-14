@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JavaScript form validaion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- build:css css/styles.min.css -->
+      <link rel="stylesheet" href="app/css/normalize.css">
+      <link rel="stylesheet" href="app/css/main.css">
+    <!-- endbuild -->
+  </head>
+  <body>
+
+  <div class="container-marketing col-xs-12 pd">
+
+
+<div class="col-xs-12">
+  <form id="example-form" class="js-form-valid ui-form col-xs-12 col-md-7">
+    <div class="inline-alert inline-alert--error hide" id="fe-error-container" tabindex="-1">
+  <span class="alert-icon icon--icon-error"></span>
+  <div class="alert-content">
+    <h3>We're sorry</h3>
+    <p>The following information is required.</p>
+    <ul class="err-list" id="error-list"></ul>
+  </div>
+</div>
+
+
+    <div class="col-xs-12 form-group">
+      
+      <div class="text-input-area pd col-md-11 col-xs-12 ">
+  <label for="input-fn" id="first-name" class="">First Name</label>
+
+  <input
+    id="input-fn"
+    aria-labelledby="first-name fn-text"
+    class="form-control js-validate "
+    name="firstName"
+    type="text"
+    placeholder="First Name"
+    
+     pattern="^[a-zA-Z\s\-&#39;]*$" 
+     data-fieldName="First name" 
+     data-title="Enter a valid name with letters only." 
+    
+    
+     maxlength="30" 
+    required />
+
+  
+    <div class="input-desc" id="fn-text">
+      <p>Name can only contain letters, spaces and dashes</p>
+    </div>
+  
+</div>
+
+    </div>
+
+    <div class="col-xs-12">
+      
+      <div class="text-input-area pd col-md-11 col-xs-12 ">
+  <label for="input-addOne" id="input-address-one" class="">Street address</label>
+
+  <input
+    id="input-addOne"
+    aria-labelledby="input-address-one "
+    class="form-control js-validate js-address"
+    name="addressOne"
+    type="text"
+    placeholder="Street address"
+    
+     pattern="^[^&lt;&gt;&amp;]+$" 
+     data-fieldName="Street address" 
+     data-title="Enter a valid address with no special characters" 
+    
+    
+    
+    required />
+
+  
+    <div class="input-desc" id="">
+      <p>Address cannot accept < > or &</p>
+    </div>
+  
+</div>
+
+    </div>
+
+    <div class="col-xs-12">
+      
+      <div class="text-input-area pd col-md-11 col-xs-12 ">
+  <label for="input-zipcode" id="input-zipcode" class="">Zipcode</label>
+
+  <input
+    id="input-zipcode"
+    aria-labelledby="input-zipcode input-zipcode-text"
+    class="form-control js-validate "
+    name="zipcode"
+    type="tel"
+    placeholder="Zipcode"
+    
+     pattern="^[0-9]+$" 
+     data-fieldName="Zipcode" 
+     data-title="Zipcode can only be numbers" 
+    
+     minlength="10" 
+     maxlength="10" 
+    required />
+
+  
+    <div class="input-desc" id="input-zipcode-text">
+      <p>Must be 10 characters, input can only be numbers</p>
+    </div>
+  
+</div>
+
+    </div>
+
+    <div class="col-xs-12">
+      
+      <div class="text-input-area pd col-md-11 col-xs-12 ">
+  <label for="input-dob" id="dob" class="">Date of birth</label>
+
+  <input
+    id="input-dob"
+    aria-labelledby="dob input-dob-text"
+    class="form-control js-validate js-dob"
+    name="dob"
+    type="tel"
+    placeholder="MM/DD/YYYY"
+    
+    
+     data-fieldName="Date of birth" 
+     data-title="Enter a valid DOB" 
+    
+     minlength="8" 
+     maxlength="10" 
+    required />
+
+  
+    <div class="input-desc" id="input-dob-text">
+      <p>MM/DD/YYYY</p>
+    </div>
+  
+</div>
+
+    </div>
+
+    <div class="col-xs-12">
+      
+      <div class="text-input-area col-xs-12 pd ">
+  <label for="input-eadd" id="email-address" class="">Email Address</label>
+
+  <input
+    id="input-eadd"
+    aria-labelledby="email-address "
+    class="form-control js-validate js-email"
+    name="emailAddress"
+    type="email"
+    placeholder="Email Address"
+    
+     pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" 
+     data-fieldName="Email Address" 
+     data-title="Enter a valid email address" 
+    
+    
+    
+    required />
+
+  
+    <div class="input-desc" id="">
+      <p>Email must be in standard email format</p>
+    </div>
+  
+</div>
+
+    </div>
+
+    <div class="col-xs-12">
+      
+      <div class="text-input-area col-xs-12 pd">
+  <label id="password" class="">Password</label>
+  <div class="input-cont">
+
+    <input
+      id="input-pw"
+      aria-labelledby="password pw-text"
+      class="form-control js-validate js-password-show js-password"
+      name="password"
+      type="password"
+      placeholder="Password"
+       pattern="^[^.,&lt;&gt;*%]+$" 
+       data-fieldName="Password" 
+      
+      
+       minlength="8" 
+       maxlength="25" 
+      required />
+
+    <a class="pw-show js-show-one">Show</a>
+
+  
+    <div class="input-desc" id="pw-text">
+      <p>Must contain 8 characters, at least 1 uppercase letter, at least 1 lowercase letter</p>
+      <span class="check-icon icon--green-check hide">
+        <span class="sr-only">Requirements met</span>
+      </span>
+    </div>
+  
+
+  </div>
+
+</div>
+
+
+      
+      <div class="text-input-area col-xs-12 pd">
+  <label id="confirm-password" class="">Re-enter Password</label>
+  <div class="input-cont">
+
+    <input
+      id="input-cpw"
+      aria-labelledby="confirm-password pw-confirm-text"
+      class="form-control js-validate js-password-confirm-show js-password"
+      name="confirmPassword"
+      type="password"
+      placeholder="Confirm Password"
+       pattern="^[^.,&lt;&gt;*%]+$" 
+       data-fieldName="Confirm password" 
+      
+      
+       minlength="8" 
+       maxlength="25" 
+      required />
+
+    <a class="pw-show js-show-two">Show</a>
+
+  
+    <div class="input-desc" id="pw-confirm-text">
+      <p>Passwords match <span class='icons icon--green-check'></span></p>
+      <span class="check-icon icon--green-check hide">
+        <span class="sr-only">Requirements met</span>
+      </span>
+    </div>
+  
+
+  </div>
+
+</div>
+
+    </div>
+
+    <div class="col-xs-12">
+      
+      <div class="text-input-area phone-section col-xs-12 pd ">
+  <label for="input-pn" id="phone" class="">Mobile Phone</label>
+
+  <input
+    id="input-pn"
+    aria-labelledby="phone phone-num-text"
+    class="form-control js-validate js-pn"
+    name="phoneNumber"
+    type="tel"
+    placeholder="Mobile Phone"
+    
+     pattern="([0-9]{3}-[0-9]{3}-[0-9]{4})" 
+     data-fieldName="Mobile phone" 
+    
+    
+     minlength="10" 
+     maxlength="12" 
+    required />
+
+  
+    <div class="input-desc" id="phone-num-text">
+      <p>XXX-XXX-XXXX format, no letters or other special characters</p>
+    </div>
+  
+</div>
+
+    </div>
+
+    <div class="col-xs-12">
+      
+      <fieldset class="form-group row js-radio">
+<legend class="col-form-legend col-sm-2">Gender:</legend>
+<div class="col-sm-10">
+  
+  <div class="form-check col-xs-12 pd block">
+    <label for="gender-female" class="form-check-label">
+      <input
+      type="radio"
+      class="form-check-input js-validate "
+      name="gender"
+      id="gender-female"
+      value="gender-female"
+       data-fieldName="Gender" 
+      required />
+      Female
+    </label>
+  </div>
+  
+  <div class="form-check col-xs-12 pd block">
+    <label for="gender-male" class="form-check-label">
+      <input
+      type="radio"
+      class="form-check-input js-validate "
+      name="gender"
+      id="gender-male"
+      value="gender-male"
+       data-fieldName="Gender" 
+      required />
+      Male
+    </label>
+  </div>
+  
+</div>
+</fieldset>
+
+    </div>
+
+    <div class="col-xs-12">
+      
+      <div class="form-check mb-2 mr-sm-2 mb-sm-0 js-terms col-xs-12 pd">
+  
+   <label for="terms-and-cond" class="form-check-label ">
+     <input class="js-validate form-check-input"
+      id="terms-and-cond"
+      name="termsandcond"
+       data-fieldName="Terms and Conditions" 
+      required
+      
+      type="checkbox" />
+
+      I agree to the Terms &amp; Conditions
+   </label>
+  
+ </div>
+
+    </div>
+
+    <div class="col-md-5 col-xs-12 primary-btn-wrap">
+      
+      <button class="btn-block btn btn-primary" id="reg-btn" type="submit">Continue</button>
+
+      </div>
+  </form>
+
+</div>
+
+  </div>
+
+    <script type="text/javascript" src="app/js/build/node-polyfill.js"></script>
+    <script type="text/javascript" src="app/js/build/password.js"></script>
+    <!-- build:js js/validation.min.js -->
+      <script type="text/javascript" src="app/js/build/validity-polyfill.js"></script>
+      <script type="text/javascript" src="app/js/build/validation.js"></script>
+      <script type="text/javascript" src="app/js/build/dob-validation.js"></script>
+      <script type="text/javascript" src="app/js/build/phone-validation.js"></script>
+      <script type="text/javascript" src="app/js/build/password-validation.js"></script>
+      <script type="text/javascript" src="app/js/build/security-validation.js"></script>
+      <script type="text/javascript" src="app/js/build/inline-alert.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
+
