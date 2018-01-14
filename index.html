@@ -286,43 +286,39 @@
 
     <div class="col-xs-12">
       
-      <fieldset class="radio-input-area js-radio">
-  <legend class="radio-label">Gender:</legend>
+      <fieldset class="form-group row js-radio">
+<legend class="col-form-legend col-sm-2">Gender:</legend>
+<div class="col-sm-10">
   
-  <span class="radio-button js-validate col-xs-12 pd block">
-    <label for="gender-female" class="check-radio-label js-validate">Female
-    <!-- <p>Female</p> -->
-
-    <input
-    name="gender"
-    class="radio-field js-validate "
-    id="gender-female"
-    type="radio"
-    value="gender-female"
-     data-fieldName="Gender" 
-    required />
-    <span class="fake-input"></span>
+  <div class="form-check col-xs-12 pd block">
+    <label for="gender-female" class="form-check-label">
+      <input
+      type="radio"
+      class="form-check-input js-validate "
+      name="gender"
+      id="gender-female"
+      value="gender-female"
+       data-fieldName="Gender" 
+      required />
+      Female
     </label>
-  </span>
-
+  </div>
   
-  <span class="radio-button js-validate col-xs-12 pd block">
-    <label for="gender-male" class="check-radio-label js-validate">Male
-    <!-- <p>Male</p> -->
-
-    <input
-    name="gender"
-    class="radio-field js-validate "
-    id="gender-male"
-    type="radio"
-    value="gender-male"
-     data-fieldName="Gender" 
-    required />
-    <span class="fake-input"></span>
+  <div class="form-check col-xs-12 pd block">
+    <label for="gender-male" class="form-check-label">
+      <input
+      type="radio"
+      class="form-check-input js-validate "
+      name="gender"
+      id="gender-male"
+      value="gender-male"
+       data-fieldName="Gender" 
+      required />
+      Male
     </label>
-  </span>
-
+  </div>
   
+</div>
 </fieldset>
 
     </div>
@@ -540,16 +536,16 @@
 
   </div>
 
-    <script type="text/javascript" src="./js/build/node-polyfill.js"></script>
-    <script type="text/javascript" src="./js/build/password.js"></script>
+    <script type="text/javascript" src="app/js/build/node-polyfill.js"></script>
+    <script type="text/javascript" src="app/js/build/password.js"></script>
     <!-- build:js js/validation.min.js -->
-      <script type="text/javascript" src="./js/build/validity-polyfill.js"></script>
-      <script type="text/javascript" src="./js/build/validation.js"></script>
-      <script type="text/javascript" src="./js/build/dob-validation.js"></script>
-      <script type="text/javascript" src="./js/build/phone-validation.js"></script>
-      <script type="text/javascript" src="./js/build/password-validation.js"></script>
-      <script type="text/javascript" src="./js/build/security-validation.js"></script>
-      <script type="text/javascript" src="./js/build/inline-alert.js"></script>
+      <script type="text/javascript" src="app/js/build/validity-polyfill.js"></script>
+      <script type="text/javascript" src="app/js/build/validation.js"></script>
+      <script type="text/javascript" src="app/js/build/dob-validation.js"></script>
+      <script type="text/javascript" src="app/js/build/phone-validation.js"></script>
+      <script type="text/javascript" src="app/js/build/password-validation.js"></script>
+      <script type="text/javascript" src="app/js/build/security-validation.js"></script>
+      <script type="text/javascript" src="app/js/build/inline-alert.js"></script>
     <!-- endbuild -->
   </body>
 </html>

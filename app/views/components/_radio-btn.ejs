@@ -1,21 +1,20 @@
-<fieldset class="radio-input-area js-radio">
-  <legend class="radio-label"><%= radioBtn.radioTopLabel %></legend>
+<fieldset class="form-group row js-radio">
+<legend class="col-form-legend col-sm-2"><%= radioBtn.radioTopLabel %></legend>
+<div class="col-sm-10">
   <% radioBtn.radio.forEach(function(item) { %>
-  <span class="radio-button js-validate <%= item.class %>">
-    <label for="<%= item.radioId %>" class="check-radio-label js-validate"><%- item.labelText %>
-    <!-- <p><%- item.labelText %></p> -->
-
-    <input
-    name="<%= item.radioName %>"
-    class="radio-field js-validate <%= item.radioClass %>"
-    id="<%= item.radioId %>"
-    type="radio"
-    value="<%= item.radioId %>"
-    <%if ( item.dataFieldName ) { %> data-fieldName="<%= item.dataFieldName %>" <% } %>
-    <%= item.required %> />
-    <span class="fake-input"></span>
+  <div class="form-check <%= item.class %>">
+    <label for="<%= item.radioId %>" class="form-check-label">
+      <input
+      type="radio"
+      class="form-check-input js-validate <%= item.radioClass %>"
+      name="<%= item.radioName %>"
+      id="<%= item.radioId %>"
+      value="<%= item.radioId %>"
+      <%if ( item.dataFieldName ) { %> data-fieldName="<%= item.dataFieldName %>" <% } %>
+      <%= item.required %> />
+      <%- item.labelText %>
     </label>
-  </span>
-
+  </div>
   <% }) %>
+</div>
 </fieldset>
