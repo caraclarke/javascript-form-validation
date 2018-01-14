@@ -23,7 +23,7 @@ var useref = require('gulp-useref');
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-      baseDir: 'app'
+      baseDir: './'
     }
   });
 });
@@ -41,7 +41,7 @@ gulp.task('clean:js', function() {
 });
 
 gulp.task('clean:ejs', function() {
-  del.sync('app/*.html');
+  del.sync('./*.html');
 });
 
 gulp.task('build:vendor', function() {
@@ -72,7 +72,7 @@ gulp.task('ejs', ['clean:ejs'], function() {
       },
       { ext:'.html' }))
     .on('error', gutil.log)
-    .pipe(gulp.dest('app/'))
+    .pipe(gulp.dest('./'))
     .pipe(browserSync.reload({
       stream: true
     }))
