@@ -1,59 +1,3 @@
-.input-cont {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-
-  &.has-text {
-    .search-icons:first-of-type {
-      display: inline-block;
-      visibility: visible;
-    }
-  }
-
-  button {
-    background: none;
-    border: none;
-    padding: 0;
-  }
-
-  a,
-  button {
-    position: absolute;
-    right: 10px;
-    top: 20px;
-    text-transform: uppercase;
-
-    &.search-icons {
-      &:first-of-type {
-        right: 45px;
-        top: 28px;
-        display: none;
-        visibility: hidden;
-
-        span.icon {
-          padding: 7px;
-        }
-      }
-
-      &:last-of-type {
-        right: 5px;
-        top: 30px;
-
-        span.icon {
-          padding: 15px;
-        }
-      }
-    }
-
-    &:hover,
-    &:active,
-    &:focus {
-      color: $color-red-light;
-      text-decoration: none;
-    }
-  }
-}
-
 #input-cpw {
   & ~ .input-desc {
     display: none;
@@ -63,10 +7,5 @@
   &.matching ~ .input-desc {
     display: block;
     visibility: visible;
-
-    .icons {
-      padding: 7px;
-      display: inline-block;
-    }
   }
 }

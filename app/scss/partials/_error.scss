@@ -1,5 +1,12 @@
+/**
+ * Show error text color
+ */
+.error {
+  color: $color-error;
+}
+
 .text-input-area {
-  .text-field {
+  .form-control {
     border: 2px solid $color-gray-15;
     background: $color-white;
     color: $color-gray-paragraph;
@@ -19,19 +26,19 @@
     }
   }
 
-  .text-field ~ .input-help {
+  .form-control ~ .input-help {
     display: none;
     visibility: hidden;
   }
 
-  .text-field.error ~ .input-help {
+  .form-control.error ~ .input-help {
     display: block;
     visibility: visible;
     color: $color-red;
   }
 }
 
-.checkbox-input-area {
+.checkbox-area {
   .input-help {
     display: none;
     visibility: hidden;
@@ -47,7 +54,10 @@
   }
 }
 
-.radio-input-area {
+.radio-area {
+  label {
+    color: $color-black;
+  }
   &.error {
     .h4 {
       color: $color-black;
@@ -60,12 +70,6 @@
   }
 
   &.error {
-    .radio-button input + .fake-input:before {
-      box-shadow: 0 0 0 2px $color-error;
-      border: 2px solid $color-error-light;
-      background: $color-error-light;
-    }
-
     .input-help {
       color: $color-error;
     }

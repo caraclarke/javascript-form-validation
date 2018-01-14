@@ -1,13 +1,53 @@
 .ui-form {
+  margin-bottom: 40px;
+
   .primary-btn {
     margin: 24px 15px 12px;
   }
 
-  .input-desc,
+  legend {
+    border-bottom: none;
+    font-size: $font-base;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .checkbox-area {
+    margin-bottom: 24px;
+  }
+
+  .checkbox-area,
+  .radio-area {
+    label {
+      font-weight: normal;
+    }
+
+    input {
+      margin-right: 4px;
+    }
+  }
+
+  .text-input-area {
+    margin-bottom: 12px;
+  }
+
+  .input-desc {
+    margin-top: 8px;
+    margin-bottom: 0;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
   .input-help {
     margin-top: 8px;
-    line-height: 1rem;
-    margin-bottom: 8px;
+  }
+
+  .input-desc,
+  .input-help {
+    line-height: 10px;
 
     p {
       display: inline-block;
