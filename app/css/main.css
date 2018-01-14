@@ -5854,63 +5854,12 @@ button.close {
 *    navigation link, footer link, etc.
 */
 /*
-* spinner override
-*/
-/*
 * Border Colors
 * 1) Border colors are used as decoration or dividers, such as as a seperator
 *    for navigation items, block borders, etc.
 */
 /* ------------------------------------ *    #TYPOGRAPHY
 \* ------------------------------------ */
-/* font  */
-/* 8px */
-/* 12px */
-/* 14px */
-/* 16px */
-/* 18px */
-/* 20px */
-/* 22px */
-/* 24px */
-/* 28px */
-/* 32px */
-/* 36px */
-/* 36px */
-/* we use these easy names to call in code by converting to the variables we use,
-ex:  font-size: font(x); */
-/* functions for font size and spacing */
-/* stylelint-disable
-block-opening-brace-space-before,
-block-closing-brace-space-before,
-declaration-block-trailing-semicolon  */
-/* stylelint-enable */
-/* ------------------------------------ *    #LAYOUT
-\* ------------------------------------ */
-/**
-* Spacing Defaults
-*/
-/* ------------------------------------ *    #BORDERS
-\* ------------------------------------ */
-/**
-* Border Width
-*/
-/**
-* Border Radius
-*/
-/* mobile header */
-/* ------------------------------------ *    #ANIMATION
-\* ------------------------------------ */
-/**
-* Animation Duration
-*/
-/**
-* Animation Easing
-*/
-/* ------------------------------------ *    #BREAKPOINTS
-\* ------------------------------------ */
-/**
-* Breakpoints
-*/
 /***************************
   STYLES
 ****************************/
@@ -6102,75 +6051,35 @@ declaration-block-trailing-semicolon  */
     padding: 7px;
     display: inline-block; }
 
-.inline-alert, .inline-alert--error, .inline-alert--warn, .inline-alert--info, .inline-alert--success {
+.inline-alert,
+.inline-alert--error {
   display: block;
   padding: 20px 20px 20px 16px;
   margin: 0 0 20px;
   border-left: 4px solid;
-  clear: both; }
-
-.inline-alert h3, .inline-alert--error h3, .inline-alert--warn h3, .inline-alert--info h3, .inline-alert--success h3 {
-  margin: 0 0 10px;
-  font-size: 16px; }
-
-.inline-alert p, .inline-alert--error p, .inline-alert--warn p, .inline-alert--info p, .inline-alert--success p {
-  margin: 0;
-  font-size: 14px; }
-
-.inline-alert ul, .inline-alert--error ul, .inline-alert--warn ul, .inline-alert--info ul, .inline-alert--success ul {
-  list-style: none;
-  margin: 10px 0 0;
-  padding: 0; }
-
-.inline-alert ul li, .inline-alert--error ul li, .inline-alert--warn ul li, .inline-alert--info ul li, .inline-alert--success ul li {
-  display: inline; }
-
-.inline-alert ul li a, .inline-alert--error ul li a, .inline-alert--warn ul li a, .inline-alert--info ul li a, .inline-alert--success ul li a {
-  text-decoration: none; }
-
-.inline-alert .alert-icon, .inline-alert--error .alert-icon, .inline-alert--warn .alert-icon, .inline-alert--info .alert-icon, .inline-alert--success .alert-icon {
-  float: left;
-  margin: 0 16px 0 0; }
-
-.inline-alert .alert-icon + .alert-content, .inline-alert--error .alert-icon + .alert-content, .inline-alert--warn .alert-icon + .alert-content, .inline-alert--info .alert-icon + .alert-content, .inline-alert--success .alert-icon + .alert-content {
-  margin-left: 40px; }
-
-.inline-alert--error {
-  background-color: rgba(204, 0, 0, 0.1);
+  clear: both;
+  background-color: #fcf2f2;
   border-color: #c00; }
-
-.inline-alert--error .alert-icon {
-  display: inline-block;
-  height: 25px;
-  width: 25px; }
-
-.inline-alert--warn {
-  background-color: rgba(255, 210, 22, 0.2);
-  border-color: #ffd216; }
-
-.inline-alert--warn .alert-icon {
-  display: inline-block;
-  height: 25px;
-  width: 25px; }
-
-.inline-alert--info {
-  background-color: rgba(184, 227, 235, 0.3);
-  border-color: #b8e3eb; }
-
-.inline-alert--info .alert-icon {
-  background: url(/images/icons/info-icon.svg) no-repeat;
-  display: inline-block;
-  height: 25px;
-  width: 25px; }
-
-.inline-alert--success {
-  background-color: rgba(167, 206, 57, 0.2);
-  border-color: #a7ce39; }
-
-.inline-alert--success .alert-icon {
-  display: inline-block;
-  height: 25px;
-  width: 25px; }
+  .inline-alert h3,
+  .inline-alert--error h3 {
+    margin: 0 0 10px;
+    font-size: 16px; }
+  .inline-alert p,
+  .inline-alert--error p {
+    margin: 0;
+    font-size: 14px; }
+  .inline-alert ul,
+  .inline-alert--error ul {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0; }
+    .inline-alert ul li,
+    .inline-alert--error ul li {
+      display: inline; }
+      .inline-alert ul li a,
+      .inline-alert--error ul li a {
+        text-decoration: none;
+        color: #c00; }
 
 html {
   font-size: 16px; }

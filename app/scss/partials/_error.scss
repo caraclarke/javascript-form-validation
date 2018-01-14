@@ -5,8 +5,8 @@
     color: $color-gray-paragraph;
 
     &.error {
-      border-color: $color-brand-primary;
-      background: $color-brand-primary-lighter;
+      border-color: $color-red;
+      background: $color-red-lighter;
     }
 
     &:active,
@@ -14,7 +14,7 @@
       border-color: $color-black;
 
       &.error {
-        border-color: $color-brand-primary;
+        border-color: $color-red;
       }
     }
   }
@@ -27,7 +27,7 @@
   .text-field.error ~ .input-help {
     display: block;
     visibility: visible;
-    color: $color-brand-primary;
+    color: $color-red;
   }
 }
 
@@ -85,7 +85,7 @@
         &:hover,
         &:focus,
         &:active {
-          color: $color-brand-primary-light;
+          color: $color-red-light;
         }
       }
     }
