@@ -6041,7 +6041,7 @@ button.close {
     top: 33px;
     text-transform: uppercase; }
     .input-pw + a:hover, .input-pw + a:active, .input-pw + a:focus {
-      color: #eb0000;
+      cursor: pointer;
       text-decoration: none; }
 
 .inline-alert,

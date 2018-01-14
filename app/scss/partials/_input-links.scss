@@ -24,7 +24,7 @@
     &:hover,
     &:active,
     &:focus {
-      color: $color-red-light;
+      cursor: pointer;
       text-decoration: none;
     }
   }
