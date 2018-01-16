@@ -81,6 +81,13 @@ const reqPwErr = ( capBool, lowerBool, numBool, matchBool, reqField ) => {
 /* **************************
   CHECK FOR VALIDITY
 *************************** */
+const showPasswordError = ( element ) => {
+  element.setCustomValidity("Please enter a valid answer");
+  passwordReqIcon.classList.add( "hide" );
+  const errMsg = reqPwErr( hasCapital, hasLowercase, hasNumber, isMatching, element );
+  showErrorMessage( element, errMsg );
+};
+
 const passwordCheck = ( currentElement, otherPasswordField ) => {
   const passwordOne = currentElement.value;
   const passwordTwo = otherPasswordField.value;
@@ -102,17 +109,16 @@ const passwordCheck = ( currentElement, otherPasswordField ) => {
     passwordReqIcon.classList.remove( "hide" );
 
     passwordField.forEach((item) => {
-      if ( item.checkValidity() ) {
+      const error = checkForError( item );
+
+      if ( !error ) {
         removeErrorMessage( item );
-      } else if ( !item.checkValidity() && item.value !== "" ) {
-        checkForError( item );
+      } else if ( error ) {
+        showPasswordError( item );
       }
     });
   } else {
-    currentElement.setCustomValidity("Please enter a valid answer");
-    passwordReqIcon.classList.add( "hide" );
-    const errMsg = reqPwErr( hasCapital, hasLowercase, hasNumber, isMatching, currentElement );
-    showErrorMessage( currentElement, errMsg );
+    showPasswordError( currentElement );
   }
 };
 
@@ -144,6 +150,19 @@ const handleKeyPress = ( event ) => {
 };
 
 /* **************************
+  INDEX PASSWORD
+*************************** */
+
+const getFields = ( currentElement ) => {
+  const fieldsIndex = Array.prototype.slice.call( passwordField );
+  const elIndex = fieldsIndex.indexOf( currentElement );
+  let sendIndex = 1;
+  elIndex === 0 ? sendIndex = 1 : sendIndex = 0;
+
+  return sendIndex;
+};
+
+/* **************************
   EVENT LISTENERS
 *************************** */
 
@@ -151,12 +170,9 @@ passwordField.forEach( ( item ) => {
   item.addEventListener( "blur", ( e ) => {
     e.stopPropagation();
 
-    const fieldsIndex = Array.prototype.slice.call(passwordField);
-    const elIndex = fieldsIndex.indexOf( e.target );
-    let sendIndex = 1;
-    elIndex === 0 ? sendIndex = 1 : sendIndex = 0;
+    const elementIndex = getFields( e.target );
 
-    passwordCheck( e.target, passwordField[ sendIndex ] );
+    passwordCheck( e.target, passwordField[ elementIndex ] );
     if ( checkForMobile ) { showCapsLockWarning( false, e.target ); }
   });
 

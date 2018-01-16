@@ -190,6 +190,11 @@ var checkForError = function checkForError(field) {
   // Dont validate submits, buttons, file and reset inputs, and disabled fields
   if (field.disabled || field.type === "file" || field.type === "reset" || field.type === "submit" || field.type === "button") return;
 
+  // Check to see if field is of type radio, and if so, evaluate fieldset instead of individual field
+  if (field.type === "radio" && field.checkValidity()) {
+    return;
+  }
+
   var validity = getError(field);
   return validity;
 };
@@ -281,7 +286,8 @@ document.addEventListener("submit", function (e) {
         hasError = fields[i];
       }
     } else if (!error && fields[i].classList.contains("js-password")) {
-      passwordCheck(fields[i]);
+      var fieldIndex = getFields(fields[i]);
+      passwordCheck(fields[i], passwordField[fieldIndex]);
     } else if (!error && fields[i].classList.contains("js-security")) {
       securityQCheck(fields[i]);
     }

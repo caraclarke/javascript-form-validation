@@ -83,6 +83,13 @@ var reqPwErr = function reqPwErr(capBool, lowerBool, numBool, matchBool, reqFiel
 /* **************************
   CHECK FOR VALIDITY
 *************************** */
+var showPasswordError = function showPasswordError(element) {
+  element.setCustomValidity("Please enter a valid answer");
+  passwordReqIcon.classList.add("hide");
+  var errMsg = reqPwErr(hasCapital, hasLowercase, hasNumber, isMatching, element);
+  showErrorMessage(element, errMsg);
+};
+
 var passwordCheck = function passwordCheck(currentElement, otherPasswordField) {
   var passwordOne = currentElement.value;
   var passwordTwo = otherPasswordField.value;
@@ -104,17 +111,16 @@ var passwordCheck = function passwordCheck(currentElement, otherPasswordField) {
     passwordReqIcon.classList.remove("hide");
 
     passwordField.forEach(function (item) {
-      if (item.checkValidity()) {
+      var error = checkForError(item);
+
+      if (!error) {
         removeErrorMessage(item);
-      } else if (!item.checkValidity() && item.value !== "") {
-        checkForError(item);
+      } else if (error) {
+        showPasswordError(item);
       }
     });
   } else {
-    currentElement.setCustomValidity("Please enter a valid answer");
-    passwordReqIcon.classList.add("hide");
-    var errMsg = reqPwErr(hasCapital, hasLowercase, hasNumber, isMatching, currentElement);
-    showErrorMessage(currentElement, errMsg);
+    showPasswordError(currentElement);
   }
 };
 
@@ -146,6 +152,19 @@ var handleKeyPress = function handleKeyPress(event) {
 };
 
 /* **************************
+  INDEX PASSWORD
+*************************** */
+
+var getFields = function getFields(currentElement) {
+  var fieldsIndex = Array.prototype.slice.call(passwordField);
+  var elIndex = fieldsIndex.indexOf(currentElement);
+  var sendIndex = 1;
+  elIndex === 0 ? sendIndex = 1 : sendIndex = 0;
+
+  return sendIndex;
+};
+
+/* **************************
   EVENT LISTENERS
 *************************** */
 
@@ -153,12 +172,9 @@ passwordField.forEach(function (item) {
   item.addEventListener("blur", function (e) {
     e.stopPropagation();
 
-    var fieldsIndex = Array.prototype.slice.call(passwordField);
-    var elIndex = fieldsIndex.indexOf(e.target);
-    var sendIndex = 1;
-    elIndex === 0 ? sendIndex = 1 : sendIndex = 0;
+    var elementIndex = getFields(e.target);
 
-    passwordCheck(e.target, passwordField[sendIndex]);
+    passwordCheck(e.target, passwordField[elementIndex]);
     if (checkForMobile) {
       showCapsLockWarning(false, e.target);
     }
